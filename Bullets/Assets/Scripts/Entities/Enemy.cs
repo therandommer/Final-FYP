@@ -15,11 +15,5 @@ public class Enemy : Entity
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    protected override void Die(Enemy enemyRef)
-    {
-        Actions.OnEnemyKilled?.Invoke(this); //triggered if not null
     }
 }

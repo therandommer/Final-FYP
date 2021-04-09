@@ -6,6 +6,11 @@ public class PlayerGameplay : MonoBehaviour
 {
     [SerializeField]
     public Player playerStats;
+    [SerializeField]
+    public GameObject equippedBullet;
+    [SerializeField]
+    public GameObject spawnPos;
+    GameObject spawnParent;
     Vector2 mousePos = Vector2.zero;
     Vector2 mousePosWorld = Vector2.zero;
     Vector2 movement = Vector2.zero;
@@ -14,7 +19,6 @@ public class PlayerGameplay : MonoBehaviour
     bool isBoosting = false;
     float angle = 0.0f; // angle used to go between player and mouse
 
-    FireType fireType = FireType.single;
     [SerializeField]
     Rigidbody2D rb = null;
     // Start is called before the first frame update
@@ -25,6 +29,21 @@ public class PlayerGameplay : MonoBehaviour
         {
             Debug.LogError($"No Rigid Body for player: " + this.name);
         }
+        equippedBullet = playerStats.bullets[0];
+        spawnParent = GameObject.Find("SpawnParent");
+        if(!spawnParent)
+		{
+            Debug.LogError("No object of name 'SpawnParent' found in scene, add one to solve this error");
+		}
+    }
+    protected virtual void SpawnThis(Vector2 spawnPos)
+    {
+        Instantiate(this, spawnPos, Quaternion.identity, GameController.spawnHolder.transform);
+    }
+    protected virtual void SpawnBullet(GameObject bullet, GameObject spawnObject)
+    {
+        GameObject cloneBullet = Instantiate(bullet, spawnObject.transform.position, this.transform.rotation);
+        cloneBullet.transform.parent = spawnParent.transform;
     }
     // Update is called once per frame
     void Update()
@@ -44,14 +63,11 @@ public class PlayerGameplay : MonoBehaviour
         LookAtMouse(this.transform.position, mousePosWorld);
         if (Input.GetButtonDown("Fire1"))
         {
-            Debug.Log(mousePos.x);
-            Debug.Log(mousePos.y);
-            Debug.Log($"World {mousePosWorld.x}");
-            Debug.Log($"World {mousePosWorld.y}");
+            SpawnBullet(equippedBullet, spawnPos);
         }
-        if (Input.GetButton("Fire1") && fireType == FireType.auto)
+        if (Input.GetButton("Fire1") && playerStats.fireType == Player.FireType.auto)
         {
-
+            SpawnBullet(equippedBullet, spawnPos);
         }
         if(Input.GetButtonDown("Boost"))
 		{
@@ -74,4 +90,14 @@ public class PlayerGameplay : MonoBehaviour
         float AngleDeg = (180 / Mathf.PI) * AngleRad;
         this.transform.rotation = Quaternion.Euler(0, 0, AngleDeg - 90);
 	}
+
+    public Vector2 GetForward()
+	{
+        return this.transform.forward;
+	}
+
+    void Die(Player thisPlayer)
+	{
+        Actions.OnPlayerKilled?.Invoke(playerStats); //triggered if not null
+    }
 }

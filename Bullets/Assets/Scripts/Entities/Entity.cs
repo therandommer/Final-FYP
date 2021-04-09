@@ -2,43 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum FireType
-{
-	single,
-	burst,
-	auto
-}
 
+
+//acts as stats script for all entities, players, enemies, bullets, etc. inherit this
 public abstract class Entity : ScriptableObject
 {
-	public SpriteRenderer sprite;
-	int health;
-	protected void OnEnable()
+	public Sprite thisSprite;
+	public int health;
+	public Vector2 moveSpeed = Vector2.zero;
+	public bool isPaused = false; //used to stop update loops, etc.
+
+	protected void OnEnable() //adds listener to action
 	{
 		Actions.OnPause += Pause;
 	}
-	protected void OnDisable()
+	protected void OnDisable() //removes listener from action
 	{
 		Actions.OnPause -= Pause;
 	}
 	protected virtual void Pause()
 	{
-
-	}
-	protected virtual void SpawnThis(Vector2 spawnPos)
-	{
-		Instantiate(this, spawnPos, Quaternion.identity, GameController.spawnHolder.transform);
-	}
-	protected virtual void SpawnBullet(GameObject bullet, GameObject spawnObject)
-	{
-		Instantiate(bullet, spawnObject.transform.position, spawnObject.transform.rotation, spawnObject.transform);
-	}
-    protected virtual void Die(Player playerRef)
-	{
-
-	}
-	protected virtual void Die(Enemy enemyRef)
-	{
-
+		isPaused = !isPaused;
 	}
 }

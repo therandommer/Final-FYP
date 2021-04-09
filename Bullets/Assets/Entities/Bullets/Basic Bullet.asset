@@ -9,14 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfe0b5221b09ffb45b2f897fc08cc2d5, type: 3}
-  m_Name: Player
+  m_Script: {fileID: 11500000, guid: 34ae8a06fedbd60438502a448554d39c, type: 3}
+  m_Name: Basic Bullet
   m_EditorClassIdentifier: 
-  thisSprite: {fileID: 0}
+  thisSprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   health: 0
-  moveSpeed: {x: 10, y: 10}
+  moveSpeed: {x: 5, y: 5}
   isPaused: 0
-  fireType: 0
-  boostMult: 1.5
-  bullets:
-  - {fileID: 5168859238285828049, guid: e4b66031debc9be429ff90b6ee8e6e3b, type: 3}
+  lifetime: 3
