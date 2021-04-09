@@ -6,6 +6,7 @@ using UnityEngine;
 public class Enemy : Entity
 {
     public int scoreValue = 20;
+    public List<Vector2> movePoints; //used for movement lerps
     // Start is called before the first frame update
     void Start()
     {

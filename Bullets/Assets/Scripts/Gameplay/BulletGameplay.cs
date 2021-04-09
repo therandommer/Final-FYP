@@ -9,28 +9,38 @@ public class BulletGameplay : AIGameplay
     void Start()
     {
         Initialise();
-        movement = thisBullet.moveSpeed;
+        speed = thisBullet.moveSpeed;
         sr.sprite = thisBullet.thisSprite;
         timeLeft = thisBullet.lifetime;
     }
     // Update is called once per frame
     void Update()
 	{
-        if(timeLeft>0.0f)
-        {
-            timeLeft -= Time.deltaTime;
-		}
-        if(timeLeft<= 0.0f)
+        if(!isPaused)
 		{
-            Die();
-		}
+            if (timeLeft > 0.0f)
+            {
+                timeLeft -= Time.deltaTime;
+            }
+            if (timeLeft <= 0.0f)
+            {
+                Die();
+            }
+        }
     }
     void FixedUpdate()
     {
-        if(thisBullet.thisType == Bullet.BulletType.basic)
+        if(!isPaused)
 		{
-            rb.velocity = transform.up * movement;
+            if (thisBullet.thisType == Bullet.BulletType.basic)
+            {
+                rb.velocity = transform.up * speed;
+            }
         }
+        if(isPaused && rb.velocity != Vector2.zero)
+		{
+            rb.velocity = Vector2.zero;
+		}
     }
 
     void OnCollisionEnter2D(Collision2D col)

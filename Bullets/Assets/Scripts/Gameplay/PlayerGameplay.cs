@@ -17,11 +17,20 @@ public class PlayerGameplay : MonoBehaviour
     float inputX = 0.0f;
     float inputY = 0.0f;
     bool isBoosting = false;
+    bool isPaused = false;
     float angle = 0.0f; // angle used to go between player and mouse
 
     [SerializeField]
     Rigidbody2D rb = null;
-    // Start is called before the first frame update
+    
+    void OnEnable()
+	{
+        Actions.OnPause += TogglePause;
+	}
+    void OnDisable()
+    {
+        Actions.OnPause -= TogglePause;
+    }
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -48,40 +57,50 @@ public class PlayerGameplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        mousePos = Input.mousePosition;
-        mousePosWorld = Camera.main.ScreenToWorldPoint(mousePos);
-        inputX = Input.GetAxis("Horizontal");
-        inputY = Input.GetAxis("Vertical");
-        if (!isBoosting)
-        {
-            movement = new Vector2(inputX, inputY) * playerStats.moveSpeed;
-        }
-        else
-        {
-            movement = new Vector2(inputX, inputY) * playerStats.moveSpeed * playerStats.boostMult;
-        }
-        LookAtMouse(this.transform.position, mousePosWorld);
-        if (Input.GetButtonDown("Fire1"))
-        {
-            SpawnBullet(equippedBullet, spawnPos);
-        }
-        if (Input.GetButton("Fire1") && playerStats.fireType == Player.FireType.auto)
-        {
-            SpawnBullet(equippedBullet, spawnPos);
-        }
-        if(Input.GetButtonDown("Boost"))
+        if(!isPaused)
 		{
-            isBoosting = true;
-		}
-        if(Input.GetButtonUp("Boost"))
-		{
-            isBoosting = false;
-		}
+            mousePos = Input.mousePosition;
+            mousePosWorld = Camera.main.ScreenToWorldPoint(mousePos);
+            inputX = Input.GetAxis("Horizontal");
+            inputY = Input.GetAxis("Vertical");
+            if (!isBoosting)
+            {
+                movement = new Vector2(inputX, inputY) * playerStats.moveSpeed;
+            }
+            else
+            {
+                movement = new Vector2(inputX, inputY) * playerStats.moveSpeed * playerStats.boostMult;
+            }
+            LookAtMouse(this.transform.position, mousePosWorld);
+            if (Input.GetButtonDown("Fire1"))
+            {
+                SpawnBullet(equippedBullet, spawnPos);
+            }
+            if (Input.GetButton("Fire1") && playerStats.fireType == Player.FireType.auto)
+            {
+                SpawnBullet(equippedBullet, spawnPos);
+            }
+            if (Input.GetButtonDown("Boost"))
+            {
+                isBoosting = true;
+            }
+            if (Input.GetButtonUp("Boost"))
+            {
+                isBoosting = false;
+            }
+        }
     }
 
     void FixedUpdate()
     {
-        rb.velocity = movement;
+        if(!isPaused)
+		{
+            rb.velocity = movement;
+        }
+        if(isPaused && rb.velocity != Vector2.zero)
+		{
+            rb.velocity = Vector2.zero;
+		}
     }
 
     void LookAtMouse(Vector3 a, Vector3 b) // a = player, b = cursor
@@ -100,4 +119,9 @@ public class PlayerGameplay : MonoBehaviour
 	{
         Actions.OnPlayerKilled?.Invoke(playerStats); //triggered if not null
     }
+
+    void TogglePause()
+	{
+        isPaused = !isPaused;
+	}
 }

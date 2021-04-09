@@ -22,7 +22,11 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetButtonDown("Pause"))
+		{
+            Actions.OnPause();
+            Debug.Log("Pausing");
+		}
     }
     private void playerDead(Player playerRef)
 	{

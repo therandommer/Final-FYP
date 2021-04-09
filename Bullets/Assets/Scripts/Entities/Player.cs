@@ -18,6 +18,5 @@ public class Player : Entity
     // Start is called before the first frame update
     void Start()
     {
-        moveSpeed = new Vector2(10, 10);
     }
 }

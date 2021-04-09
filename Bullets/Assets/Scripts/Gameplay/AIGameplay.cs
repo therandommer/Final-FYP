@@ -5,17 +5,22 @@ using UnityEngine;
 public abstract class AIGameplay : MonoBehaviour
 {
     protected Rigidbody2D rb;
-    protected Vector2 movement = Vector2.zero;
+    protected float speed;
     protected SpriteRenderer sr;
     protected int health;
-    void Start()
+    protected bool isPaused = false;
+    void OnEnable()
     {
-        
+        Actions.OnPause += TogglePause;
     }
+    void OnDisable()
+	{
+        Actions.OnPause -= TogglePause;
+	}
     protected void Initialise()
 	{
         rb = GetComponent<Rigidbody2D>();
-        if (rb == null)
+        if (!rb)
         {
             Debug.LogError($"AI: {gameObject.name} has no rigidbody assigned");
         }
@@ -31,9 +36,10 @@ public abstract class AIGameplay : MonoBehaviour
         health -= _damage;
         Debug.Log($"Damaged{this.name} for {_damage} damage");
 	}
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
+    void TogglePause()
+	{
+        isPaused = !isPaused;
+        Debug.Log($"Toggling pause for {this.name}");
+	}
 }
