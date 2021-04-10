@@ -7,6 +7,14 @@ public class Enemy : Entity
 {
     public int scoreValue = 20;
     public List<Vector2> movePoints; //used for movement lerps
+    public enum StartDirection
+    {
+        left,
+        right,
+        up,
+        down
+    }
+    public StartDirection thisDirection;
     // Start is called before the first frame update
     void Start()
     {

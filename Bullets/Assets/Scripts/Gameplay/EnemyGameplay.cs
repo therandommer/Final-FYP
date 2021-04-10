@@ -10,12 +10,26 @@ public class EnemyGameplay : AIGameplay
     int positionNo = 0;
     float pointRadius = 0.2f;
     Vector2 thisTransform;
+
     void Start()
     {
         Initialise();
         sr.sprite = thisEnemy.thisSprite;
         health = thisEnemy.health;
         thisMoveSpeed = thisEnemy.moveSpeed;
+        switch(thisEnemy.thisDirection)
+		{
+            case Enemy.StartDirection.down:
+                break;
+            case Enemy.StartDirection.up:
+                break;
+            case Enemy.StartDirection.left:
+                break;
+            case Enemy.StartDirection.right:
+                break;
+            default:
+                break;
+		}
     }
 
     void Update()
@@ -32,7 +46,8 @@ public class EnemyGameplay : AIGameplay
 	{
         if (!isPaused)
         {
-            if (transform.position != new Vector3(thisEnemy.movePoints[positionNo].x, thisEnemy.movePoints[positionNo].y, 0) && positionNo == 0) //sets initial position
+            //use this for a patrolling enemy type with fixed movement. Maybe a boss?
+            /*if (transform.position != new Vector3(thisEnemy.movePoints[positionNo].x, thisEnemy.movePoints[positionNo].y, 0) && positionNo == 0) //sets initial position
             {
                 transform.position = new Vector3(thisEnemy.movePoints[positionNo].x, thisEnemy.movePoints[positionNo].y, 0);
                 positionNo++;
@@ -45,7 +60,7 @@ public class EnemyGameplay : AIGameplay
                     positionNo = 1;
                 }
             }
-            transform.position = Vector2.MoveTowards(new Vector2(transform.position.x, transform.position.y), thisEnemy.movePoints[positionNo], thisMoveSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(new Vector2(transform.position.x, transform.position.y), thisEnemy.movePoints[positionNo], thisMoveSpeed * Time.deltaTime);*/
         }
         if (isPaused && rb.velocity != Vector2.zero)
         {

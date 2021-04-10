@@ -17,4 +17,6 @@ MonoBehaviour:
   moveSpeed: 5
   isPaused: 0
   scoreValue: 20
-  movePoints: []
+  movePoints:
+  - {x: 7, y: 0}
+  - {x: 7, y: 7}

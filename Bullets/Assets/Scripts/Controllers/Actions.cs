@@ -9,4 +9,5 @@ public static class Actions
     public static Action<Player> OnPlayerKilled;
     public static Action<Enemy> OnEnemyKilled;
     public static Action OnPause;
+    public static Action <TimeController> OnTimeReached;
 }
