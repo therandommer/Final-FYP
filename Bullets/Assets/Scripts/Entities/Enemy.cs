@@ -7,6 +7,8 @@ public class Enemy : Entity
 {
     public int scoreValue = 20;
     public List<Vector2> movePoints; //used for movement lerps
+    public List<GameObject> bullets;
+    public float fireRate; //delay between each shot in seconds
     public enum StartDirection
     {
         left,

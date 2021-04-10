@@ -43,14 +43,19 @@ public class BulletGameplay : AIGameplay
 		}
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    void OnTriggerEnter2D(Collider2D col)
 	{
-        if(col.gameObject.tag == "Enemy")
+        if(col.gameObject.tag == "Enemy" && thisBullet.thisFaction == Bullet.BulletFaction.player)
 		{
             col.gameObject.SendMessage("Damage", thisBullet.damage);
             Die();
 		}
-	}
+        if (col.gameObject.tag == "Player" && thisBullet.thisFaction == Bullet.BulletFaction.enemy)
+        {
+            col.gameObject.SendMessage("Damage", thisBullet.damage);
+            Die();
+        }
+    }
     void Die()
 	{
         Destroy(gameObject);

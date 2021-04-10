@@ -10,7 +10,8 @@ public class EnemyGameplay : AIGameplay
     int positionNo = 0;
     float pointRadius = 0.2f;
     Vector2 thisTransform;
-
+    Vector2 defaultDirection;
+    float timeAlive = 0.0f;
     void Start()
     {
         Initialise();
@@ -20,32 +21,40 @@ public class EnemyGameplay : AIGameplay
         switch(thisEnemy.thisDirection)
 		{
             case Enemy.StartDirection.down:
+                defaultDirection = Vector2.down * thisMoveSpeed;
                 break;
             case Enemy.StartDirection.up:
+                defaultDirection = Vector2.up * thisMoveSpeed;
                 break;
             case Enemy.StartDirection.left:
+                defaultDirection = Vector2.left * thisMoveSpeed;
                 break;
             case Enemy.StartDirection.right:
+                defaultDirection = Vector2.right * thisMoveSpeed;
                 break;
             default:
+                Debug.LogError($"No direction set for enemy: {this.name}");
                 break;
 		}
+        InvokeRepeating("Shoot", 0.2f, thisEnemy.fireRate);
     }
 
     void Update()
     {
+        timeAlive += Time.deltaTime;
         if (health<0)
         {
             Die(thisEnemy);
 		}
+       
         thisTransform.x = transform.position.x;
         thisTransform.y = transform.position.y;
-       
     }
     void FixedUpdate() //basic movement for patroling enemy type. Will be normalised later
 	{
         if (!isPaused)
         {
+            rb.velocity = defaultDirection;
             //use this for a patrolling enemy type with fixed movement. Maybe a boss?
             /*if (transform.position != new Vector3(thisEnemy.movePoints[positionNo].x, thisEnemy.movePoints[positionNo].y, 0) && positionNo == 0) //sets initial position
             {
@@ -66,6 +75,12 @@ public class EnemyGameplay : AIGameplay
         {
             rb.velocity = Vector2.zero;
         }
+    }
+    void Shoot()
+	{
+        int rnd = Random.Range(0, thisEnemy.bullets.Count);
+        Instantiate(thisEnemy.bullets[rnd], gameObject.transform.position, gameObject.transform.rotation, gameObject.transform);
+        Debug.Log($"Firing bullet {rnd}");
     }
     void Die(Enemy enemyRef)
 	{

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1923756220968641649}
   - component: {fileID: 279886834872213587}
   m_Layer: 0
-  m_Name: Basic Bullet
+  m_Name: Basic Bullet Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -118,9 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 795643257ac32ff42be73c62b07e4093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  sr: {fileID: 0}
-  thisBullet: {fileID: 11400000, guid: e08e710ee0d50694cb56df9e43eea4c8, type: 2}
+  thisBullet: {fileID: 11400000, guid: c0a0e588aff4bb04ba033bec6109d834, type: 2}
 --- !u!61 &279886834872213587
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -131,7 +129,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

@@ -14,5 +14,11 @@ public class Bullet : Entity
 		basic,
 		wobble
 	}
+	public enum BulletFaction
+	{
+		player,
+		enemy
+	}
+	public BulletFaction thisFaction;
 	public BulletType thisType;
 }

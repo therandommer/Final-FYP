@@ -7,10 +7,12 @@ using TMPro;
 //controls overall timeline and spawning events, etc. 
 public class TimeController : MonoBehaviour
 {
-    bool isPaused = false;
+    public bool isPaused = false;
     public float timePassed = 0.0f;
+    public float timeToNextSpawn = 0.0f;
     public float timeScale = 1.0f;
     public TextMeshProUGUI timerText;
+    public TextMeshProUGUI nextSpawnTimerText;
 
     void OnEnable()
     {
@@ -32,6 +34,7 @@ public class TimeController : MonoBehaviour
 		{
             timePassed += Time.deltaTime * timeScale;
             timerText.text = $"Time: {(Mathf.FloorToInt(timePassed/60).ToString())} : {(Mathf.FloorToInt(timePassed % 60).ToString())}";
+            nextSpawnTimerText.text = $"Next Pack: {(Mathf.CeilToInt(timeToNextSpawn / 60).ToString())} : {(Mathf.CeilToInt(timeToNextSpawn % 60).ToString())}";
         }
     }
 
