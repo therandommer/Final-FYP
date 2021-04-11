@@ -12,6 +12,7 @@ public class SpawnRequirements
     public float spawnDelay;//delay between each entity spawning
     public bool usesThisPos = false;
     public Vector2 actualSpawnPoint;//if not using the default position of this spawn point
+    public Enemy.StartDirection startDirection;
 }
 public class Spawner : MonoBehaviour
 {
@@ -48,21 +49,24 @@ public class Spawner : MonoBehaviour
 			{
                 if (spawnReq[currentSpawn].usesThisPos)
                 {
-                    Debug.Log("Spawning Object at position");
-                    Instantiate(spawnReq[currentSpawn].spawnObject, gameObject.transform, false);
+                    GameObject spawnedObject = Instantiate(spawnReq[currentSpawn].spawnObject, gameObject.transform, false);
+                    EnemyGameplay enemyScript = spawnedObject.GetComponent<EnemyGameplay>();
+                    enemyScript.thisEnemy.thisDirection = spawnReq[currentSpawn].startDirection;
+                    Debug.Log($"Created enemy has {enemyScript.thisEnemy.thisDirection} as a default direction");
                 }
                 else if (!spawnReq[currentSpawn].usesThisPos)
                 {
-                    Debug.Log("Spawning Object at specified location");
                     Vector2 thisPosition = spawnReq[currentSpawn].actualSpawnPoint;
-                    Instantiate(spawnReq[currentSpawn].spawnObject, thisPosition, this.transform.rotation, gameObject.transform);
+                    GameObject spawnedObject = Instantiate(spawnReq[currentSpawn].spawnObject, thisPosition, this.transform.rotation, gameObject.transform) as GameObject;
+                    EnemyGameplay enemyScript = spawnedObject.GetComponent<EnemyGameplay>();
+                    enemyScript.thisEnemy.thisDirection = spawnReq[currentSpawn].startDirection;
+                    Debug.Log($"Created enemy has {enemyScript.thisEnemy.thisDirection} as a default direction");
                 }
                
                 yield return new WaitForSeconds(spawnReq[currentSpawn].spawnDelay);
             }
                 currentSpawn++;
                 isSpawning = false;
-                Debug.Log($"Stopping spawn object coroutine, previous spawn was {currentSpawn} current spawn now {currentSpawn}");
                 StopCoroutine(SpawnObject());
         }
         /*if(timeC.isPaused)
@@ -76,10 +80,8 @@ public class Spawner : MonoBehaviour
         {
             if(currentSpawn<spawnReq.Count)
 			{
-                Debug.Log($"Checking Timer, time required: {spawnReq[currentSpawn].activateTimer} fpr spawn {currentSpawn}");
                 if (timeC.timePassed >= spawnReq[currentSpawn].activateTimer && !isSpawning)
                 {
-                    Debug.Log($"Starting Spawn Coroutine at time {timeC.timePassed}");
                     isSpawning = true;
                     StartCoroutine(SpawnObject());
                 }

@@ -19,6 +19,18 @@ public class Bullet : Entity
 		player,
 		enemy
 	}
+	public enum FireDirection
+	{
+		up,
+		upRight,
+		upLeft,
+		down,
+		downLeft,
+		downRight,
+		right,
+		left
+	}
 	public BulletFaction thisFaction;
 	public BulletType thisType;
+	public FireDirection thisFireDirection;
 }

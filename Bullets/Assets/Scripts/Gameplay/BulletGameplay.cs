@@ -27,6 +27,11 @@ public class BulletGameplay : AIGameplay
                 Die();
             }
         }
+        
+        if (isPaused && rb.velocity != Vector2.zero)
+        {
+            rb.velocity = Vector2.zero;
+        }
     }
     void FixedUpdate()
     {

@@ -124,4 +124,11 @@ public class PlayerGameplay : MonoBehaviour
 	{
         isPaused = !isPaused;
 	}
+
+    void Damaged(int _Damage)
+	{
+        Debug.Log($"Player haelth before damage: {playerStats.health}");
+        playerStats.health -= _Damage;
+        Debug.Log($"Player haelth after damage: {playerStats.health}");
+    }
 }

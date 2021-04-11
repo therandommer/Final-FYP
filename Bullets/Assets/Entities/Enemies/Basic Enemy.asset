@@ -20,5 +20,9 @@ MonoBehaviour:
   movePoints: []
   bullets:
   - {fileID: 5168859238285828049, guid: e4b66031debc9be429ff90b6ee8e6e3b, type: 3}
+  - {fileID: 5168859238285828049, guid: 91fd67f5f957cb249919c1360e3a4bfa, type: 3}
+  - {fileID: 5168859238285828049, guid: 9626d33aaa7147c4d829dc1da35fc63e, type: 3}
+  - {fileID: 5168859238285828049, guid: 91fd67f5f957cb249919c1360e3a4bfa, type: 3}
+  - {fileID: 5168859238285828049, guid: 91fd67f5f957cb249919c1360e3a4bfa, type: 3}
   fireRate: 2
-  thisDirection: 0
+  thisDirection: 3
