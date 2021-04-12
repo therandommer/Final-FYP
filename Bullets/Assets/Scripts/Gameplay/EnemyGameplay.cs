@@ -43,25 +43,32 @@ public class EnemyGameplay : AIGameplay
             rb.velocity = Vector2.zero;
         }
     }
-    void Shoot()
+    protected void Shoot()
 	{
         int rnd = Random.Range(0, thisEnemy.bullets.Count);
         CheckFireDirection(thisEnemy.bullets[rnd].GetComponent<BulletGameplay>().thisBullet.thisFireDirection, rnd);
         Instantiate(thisEnemy.bullets[rnd], gameObject.transform.position, fireDirection, gameObject.transform);
         Debug.Log($"Firing bullet {rnd}");
     }
-    void Die(Enemy enemyRef)
+    protected void ShootRotation()
+    {
+        int rnd = Random.Range(0, thisEnemy.bullets.Count);
+        CheckFireDirection(thisEnemy.bullets[rnd].GetComponent<BulletGameplay>().thisBullet.thisFireDirection, rnd);
+        Instantiate(thisEnemy.bullets[rnd], gameObject.transform.position, gameObject.transform.rotation, gameObject.transform);
+        Debug.Log($"Firing bullet {rnd}");
+    }
+    protected void Die(Enemy enemyRef)
 	{
         Actions.OnEnemyKilled?.Invoke(thisEnemy); //triggered if not null
         Destroy(gameObject);
     }
-    void LookAtTarget(Vector3 a, Vector3 b) // a = player, b = cursor
+    protected void LookAtTarget(Vector3 a, Vector3 b) // a = player, b = cursor
     {
         float AngleRad = Mathf.Atan2(b.y - a.y, b.x - a.x);
         float AngleDeg = (180 / Mathf.PI) * AngleRad;
-        this.transform.rotation = Quaternion.Euler(0, 0, AngleDeg);
+        this.transform.rotation = Quaternion.Euler(0, 0, AngleDeg - 90);
     }
-    void CheckDirection()
+    protected void CheckDirection()
 	{
         Debug.Log($"Checking direction for enemy, direction is {thisEnemy.thisDirection}");
         switch (thisEnemy.thisDirection)
@@ -83,7 +90,7 @@ public class EnemyGameplay : AIGameplay
                 break;
         }
     }
-    void CheckFireDirection(Bullet.FireDirection _bulletDir, int bulletRef)
+    protected void CheckFireDirection(Bullet.FireDirection _bulletDir, int bulletRef)
 	{
         Debug.Log($"Checkind direction for bullet, direction is {_bulletDir}");
         switch(thisEnemy.bullets[bulletRef].GetComponent<BulletGameplay>().thisBullet.thisFireDirection)

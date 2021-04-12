@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f, type: 3}
-  m_Color: {r: 1, g: 0.042452812, b: 0.042452812, a: 1}
+  m_Color: {r: 0.043137252, g: 0.40748617, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -146,3 +146,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisMoveSpeed: 3
   thisEnemy: {fileID: 11400000, guid: 50626ae024d610841a19b66f2af9b3e8, type: 2}
+  patrolLoops: 2

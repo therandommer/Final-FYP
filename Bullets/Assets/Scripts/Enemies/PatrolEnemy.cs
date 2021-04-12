@@ -8,7 +8,11 @@ public class PatrolEnemy : EnemyGameplay
     public int patrolLoops = 2; // loops before patrol enemy leaves
     void Start()
     {
-        
+        if (rb == null)
+        {
+            rb = gameObject.GetComponent<Rigidbody2D>();
+        }
+        InvokeRepeating("ShootRotation", thisEnemy.fireRate, thisEnemy.fireRate);
     }
 
     void FixedUpdate()
@@ -31,6 +35,7 @@ public class PatrolEnemy : EnemyGameplay
         if(patrolLoops >0)
 		{
             transform.position = Vector2.MoveTowards(new Vector2(transform.position.x, transform.position.y), thisEnemy.movePoints[positionNo], thisMoveSpeed * Time.deltaTime);
+            LookAtTarget(transform.position, thisEnemy.movePoints[positionNo]);
         }
         else
         {
