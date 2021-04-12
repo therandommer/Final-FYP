@@ -5,22 +5,20 @@ using UnityEngine;
 public class EnemyGameplay : AIGameplay
 {
     [SerializeField]
-    float thisMoveSpeed;
+    protected float thisMoveSpeed;
     public Enemy thisEnemy;
-    int positionNo = 0;
-    float pointRadius = 0.2f;
-    Vector2 thisTransform;
-    Vector2 defaultDirection;
-    Quaternion fireDirection;
-    float timeAlive = 0.0f;
+    protected int positionNo = 0;
+    protected float pointRadius = 0.2f;
+    protected Vector2 thisTransform;
+    protected Vector2 defaultDirection;
+    protected Quaternion fireDirection;
+    protected float timeAlive = 0.0f;
     void Start()
     {
         Initialise();
         sr.sprite = thisEnemy.thisSprite;
         health = thisEnemy.health;
         thisMoveSpeed = thisEnemy.moveSpeed;
-        Invoke("CheckDirection", 0.2f);
-        InvokeRepeating("Shoot", 0.2f, thisEnemy.fireRate);
     }
 
     void Update()
@@ -38,22 +36,7 @@ public class EnemyGameplay : AIGameplay
 	{
         if (!isPaused)
         {
-            rb.velocity = defaultDirection;
-            //use this for a patrolling enemy type with fixed movement. Maybe a boss?
-            /*if (transform.position != new Vector3(thisEnemy.movePoints[positionNo].x, thisEnemy.movePoints[positionNo].y, 0) && positionNo == 0) //sets initial position
-            {
-                transform.position = new Vector3(thisEnemy.movePoints[positionNo].x, thisEnemy.movePoints[positionNo].y, 0);
-                positionNo++;
-            }
-            if (Vector2.Distance(thisEnemy.movePoints[positionNo], thisTransform) < pointRadius)
-            {
-                positionNo++;
-                if (positionNo >= thisEnemy.movePoints.Count) // reset to first position
-                {
-                    positionNo = 1;
-                }
-            }
-            transform.position = Vector2.MoveTowards(new Vector2(transform.position.x, transform.position.y), thisEnemy.movePoints[positionNo], thisMoveSpeed * Time.deltaTime);*/
+
         }
         if (isPaused && rb.velocity != Vector2.zero)
         {

@@ -10,22 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ddecefe294fc4c46b5b3e8617695fa4, type: 3}
-  m_Name: Basic Enemy
+  m_Name: Patrol Enemy
   m_EditorClassIdentifier: 
   thisSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  health: 5
-  moveSpeed: 1
+  health: 8
+  moveSpeed: 5
   isPaused: 0
-  scoreValue: 20
-  movePoints: []
+  scoreValue: 40
+  movePoints:
+  - {x: 6, y: 2}
+  - {x: 2, y: 0}
+  - {x: 6, y: -2}
+  - {x: 6, y: -10}
   bullets:
   - {fileID: 5168859238285828049, guid: e4b66031debc9be429ff90b6ee8e6e3b, type: 3}
   - {fileID: 5168859238285828049, guid: 91fd67f5f957cb249919c1360e3a4bfa, type: 3}
   - {fileID: 5168859238285828049, guid: 9626d33aaa7147c4d829dc1da35fc63e, type: 3}
-  - {fileID: 5168859238285828049, guid: e5085e9b6ef3ae649b26855c9792fb39, type: 3}
-  - {fileID: 5168859238285828049, guid: 5750b32fe6ef98f49898903bfedc49c2, type: 3}
-  - {fileID: 5168859238285828049, guid: 04b90cf0917713e4c83ef1b97fd1b71c, type: 3}
-  - {fileID: 5168859238285828049, guid: 19ff92b0847096d488fbbee044abee47, type: 3}
-  - {fileID: 5168859238285828049, guid: 83211ba35f3e90e45b7a82d6fe1267d0, type: 3}
+  - {fileID: 5168859238285828049, guid: 91fd67f5f957cb249919c1360e3a4bfa, type: 3}
+  - {fileID: 5168859238285828049, guid: 91fd67f5f957cb249919c1360e3a4bfa, type: 3}
   fireRate: 2
   thisDirection: 3

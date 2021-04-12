@@ -11,8 +11,8 @@ public class Bullet : Entity
 	public int damage = 1;
     public enum BulletType
 	{
-		basic,
-		wobble
+		basic, //fire in set direction, regardless of orientation
+		direction //fire in direction object is currently facing
 	}
 	public enum BulletFaction
 	{

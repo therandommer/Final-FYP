@@ -168,6 +168,13 @@ MonoBehaviour:
     usesThisPos: 1
     actualSpawnPoint: {x: 0, y: 0}
     startDirection: 3
+  - activateTimer: 8
+    spawnObject: {fileID: 7681800708665743581, guid: 3ac88b253e1e8d2478ee5b764e66ffec, type: 3}
+    spawnNumber: 4
+    spawnDelay: 0.3
+    usesThisPos: 1
+    actualSpawnPoint: {x: 0, y: 0}
+    startDirection: 3
 --- !u!4 &211486426
 Transform:
   m_ObjectHideFlags: 0
@@ -176,7 +183,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 211486424}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.52, y: 2.2, z: -0.6838122}
+  m_LocalPosition: {x: 6, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

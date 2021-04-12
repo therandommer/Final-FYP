@@ -50,17 +50,24 @@ public class Spawner : MonoBehaviour
                 if (spawnReq[currentSpawn].usesThisPos)
                 {
                     GameObject spawnedObject = Instantiate(spawnReq[currentSpawn].spawnObject, gameObject.transform, false);
-                    EnemyGameplay enemyScript = spawnedObject.GetComponent<EnemyGameplay>();
-                    enemyScript.thisEnemy.thisDirection = spawnReq[currentSpawn].startDirection;
-                    Debug.Log($"Created enemy has {enemyScript.thisEnemy.thisDirection} as a default direction");
+                    
+                    if (spawnedObject.GetComponent<EnemyGameplay>())
+					{
+                        EnemyGameplay enemyScript = spawnedObject.GetComponent<EnemyGameplay>();
+                        enemyScript.thisEnemy.thisDirection = spawnReq[currentSpawn].startDirection;
+                        Debug.Log($"Created enemy has {enemyScript.thisEnemy.thisDirection} as a default direction");
+                    }
                 }
                 else if (!spawnReq[currentSpawn].usesThisPos)
                 {
                     Vector2 thisPosition = spawnReq[currentSpawn].actualSpawnPoint;
                     GameObject spawnedObject = Instantiate(spawnReq[currentSpawn].spawnObject, thisPosition, this.transform.rotation, gameObject.transform) as GameObject;
-                    EnemyGameplay enemyScript = spawnedObject.GetComponent<EnemyGameplay>();
-                    enemyScript.thisEnemy.thisDirection = spawnReq[currentSpawn].startDirection;
-                    Debug.Log($"Created enemy has {enemyScript.thisEnemy.thisDirection} as a default direction");
+                    if (spawnedObject.GetComponent<EnemyGameplay>())
+                    {
+                        EnemyGameplay enemyScript = spawnedObject.GetComponent<EnemyGameplay>();
+                        enemyScript.thisEnemy.thisDirection = spawnReq[currentSpawn].startDirection;
+                        Debug.Log($"Created enemy has {enemyScript.thisEnemy.thisDirection} as a default direction");
+                    }
                 }
                
                 yield return new WaitForSeconds(spawnReq[currentSpawn].spawnDelay);
