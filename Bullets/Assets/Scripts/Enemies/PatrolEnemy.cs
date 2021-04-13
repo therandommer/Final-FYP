@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// PatrolEnemy will move between a set of points, instantly spawning them at pos1
+// PatrolEnemy will move between a set of points
 public class PatrolEnemy : EnemyGameplay
 {
     public int patrolLoops = 2; // loops before patrol enemy leaves
@@ -13,7 +13,7 @@ public class PatrolEnemy : EnemyGameplay
         {
             rb = gameObject.GetComponent<Rigidbody2D>();
         }
-        InvokeRepeating("ShootRotation", thisEnemy.fireRate, thisEnemy.fireRate);
+        InvokeRepeating("ShootRotation", thisEntity.fireRate, thisEntity.fireRate);
     }
 
     void FixedUpdate()
@@ -37,6 +37,7 @@ public class PatrolEnemy : EnemyGameplay
         {
             //Debug.Log("Leaving");
             transform.position = Vector2.MoveTowards(new Vector2(transform.position.x, transform.position.y), new Vector2(transform.position.x, transform.position.y - 10), thisMoveSpeed * Time.deltaTime);
+            LookAtTarget(transform.position, new Vector3(transform.position.x, transform.position.y - 10, 0));
         }
     }
 }

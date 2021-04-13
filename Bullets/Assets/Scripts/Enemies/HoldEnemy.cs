@@ -48,6 +48,7 @@ public class HoldEnemy : EnemyGameplay
         {
             Debug.Log("Leaving");
             transform.position = Vector2.MoveTowards(new Vector2(transform.position.x, transform.position.y), new Vector2(transform.position.x, transform.position.y - 10), thisMoveSpeed * Time.deltaTime);
+            LookAtTarget(transform.position, new Vector3(transform.position.x, transform.position.y - 10, 0));
         }
     }
     void Leaving()
