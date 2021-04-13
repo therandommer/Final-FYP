@@ -13,19 +13,24 @@ public class EnemyGameplay : AIGameplay
     protected Vector2 defaultDirection;
     protected Quaternion fireDirection;
     protected float timeAlive = 0.0f;
+    
     void Start()
     {
-        Initialise();
-        sr.sprite = thisEnemy.thisSprite;
-        health = thisEnemy.health;
-        thisMoveSpeed = thisEnemy.moveSpeed;
+        
     }
 
     void Update()
     {
+        if(!hasInitialised)
+		{
+            Initialise(thisEnemy);
+            thisMoveSpeed = thisEnemy.moveSpeed;
+            Debug.Log("Default health for enemy is" + health);
+        }
         timeAlive += Time.deltaTime;
-        if (health<0)
+        if (health <=0)
         {
+            Debug.Log($"The enemy: {this.name} is dying with {health} remaining");
             Die(thisEnemy);
 		}
        
@@ -47,18 +52,21 @@ public class EnemyGameplay : AIGameplay
 	{
         int rnd = Random.Range(0, thisEnemy.bullets.Count);
         CheckFireDirection(thisEnemy.bullets[rnd].GetComponent<BulletGameplay>().thisBullet.thisFireDirection, rnd);
-        Instantiate(thisEnemy.bullets[rnd], gameObject.transform.position, fireDirection, gameObject.transform);
+        GameObject cloneBullet = Instantiate(thisEnemy.bullets[rnd], gameObject.transform.position, fireDirection, gameObject.transform);
+        cloneBullet.transform.parent = spawnParent.transform;
         Debug.Log($"Firing bullet {rnd}");
     }
     protected void ShootRotation()
     {
         int rnd = Random.Range(0, thisEnemy.bullets.Count);
         CheckFireDirection(thisEnemy.bullets[rnd].GetComponent<BulletGameplay>().thisBullet.thisFireDirection, rnd);
-        Instantiate(thisEnemy.bullets[rnd], gameObject.transform.position, gameObject.transform.rotation, gameObject.transform);
+        GameObject cloneBullet = Instantiate(thisEnemy.bullets[rnd], gameObject.transform.position, gameObject.transform.rotation, gameObject.transform);
+        cloneBullet.transform.parent = spawnParent.transform;
         Debug.Log($"Firing bullet {rnd}");
     }
     protected void Die(Enemy enemyRef)
 	{
+        Debug.Log($"Enemy {this.name} died");
         Actions.OnEnemyKilled?.Invoke(thisEnemy); //triggered if not null
         Destroy(gameObject);
     }
@@ -92,7 +100,7 @@ public class EnemyGameplay : AIGameplay
     }
     protected void CheckFireDirection(Bullet.FireDirection _bulletDir, int bulletRef)
 	{
-        Debug.Log($"Checkind direction for bullet, direction is {_bulletDir}");
+        //Debug.Log($"Checking direction for bullet, direction is {_bulletDir}");
         switch(thisEnemy.bullets[bulletRef].GetComponent<BulletGameplay>().thisBullet.thisFireDirection)
 		{
             case Bullet.FireDirection.down:

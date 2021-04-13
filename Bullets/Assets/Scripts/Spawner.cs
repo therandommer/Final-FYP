@@ -55,7 +55,7 @@ public class Spawner : MonoBehaviour
 					{
                         EnemyGameplay enemyScript = spawnedObject.GetComponent<EnemyGameplay>();
                         enemyScript.thisEnemy.thisDirection = spawnReq[currentSpawn].startDirection;
-                        Debug.Log($"Created enemy has {enemyScript.thisEnemy.thisDirection} as a default direction");
+                        //Debug.Log($"Created enemy has {enemyScript.thisEnemy.thisDirection} as a default direction");
                     }
                 }
                 else if (!spawnReq[currentSpawn].usesThisPos)
@@ -66,7 +66,7 @@ public class Spawner : MonoBehaviour
                     {
                         EnemyGameplay enemyScript = spawnedObject.GetComponent<EnemyGameplay>();
                         enemyScript.thisEnemy.thisDirection = spawnReq[currentSpawn].startDirection;
-                        Debug.Log($"Created enemy has {enemyScript.thisEnemy.thisDirection} as a default direction");
+                        //Debug.Log($"Created enemy has {enemyScript.thisEnemy.thisDirection} as a default direction");
                     }
                 }
                

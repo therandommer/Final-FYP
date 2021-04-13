@@ -8,14 +8,16 @@ public class BulletGameplay : AIGameplay
     float timeLeft;
     void Start()
     {
-        Initialise();
-        speed = thisBullet.moveSpeed;
-        sr.sprite = thisBullet.thisSprite;
-        timeLeft = thisBullet.lifetime;
+        
     }
     // Update is called once per frame
     void Update()
 	{
+        if(!hasInitialised)
+		{
+            Initialise(thisBullet);
+            timeLeft = thisBullet.lifetime;
+        }
         if(!isPaused)
 		{
             if (timeLeft > 0.0f)
@@ -52,6 +54,7 @@ public class BulletGameplay : AIGameplay
 	{
         if(col.gameObject.tag == "Enemy" && thisBullet.thisFaction == Bullet.BulletFaction.player)
 		{
+            Debug.Log($"Dealing {thisBullet.damage} damage to enemy");
             col.gameObject.SendMessage("Damage", thisBullet.damage);
             Die();
 		}

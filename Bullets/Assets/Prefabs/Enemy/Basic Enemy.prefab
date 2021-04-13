@@ -144,5 +144,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f14f2ccc4162b345a18e0bdf5b8b15f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 4
   thisMoveSpeed: 2
   thisEnemy: {fileID: 11400000, guid: 66971db60cd11a24cb6259a5c7273c27, type: 2}
