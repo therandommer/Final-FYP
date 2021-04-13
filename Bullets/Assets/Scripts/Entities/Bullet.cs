@@ -12,7 +12,8 @@ public class Bullet : Entity
     public enum BulletType
 	{
 		basic, //fire in set direction, regardless of orientation
-		direction //fire in direction object is currently facing
+		towardsTarget, //towards either player or enemy depending on faction, will get position at time of firing
+		curveTowardsTarget //same as towards but will home in with a curve
 	}
 	public enum BulletFaction
 	{

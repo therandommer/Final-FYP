@@ -9,20 +9,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ddecefe294fc4c46b5b3e8617695fa4, type: 3}
-  m_Name: Curve Enemy
+  m_Script: {fileID: 11500000, guid: a9f9f694aef3b06469f9dbd299246fa0, type: 3}
+  m_Name: Hold Enemy
   m_EditorClassIdentifier: 
   thisSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   health: 8
-  moveSpeed: 5
+  moveSpeed: 4
   isPaused: 0
-  scoreValue: 40
+  scoreValue: 60
+  bullets:
+  - {fileID: 696151262608964079, guid: 2a108f107930ac54bb18a68a04425601, type: 3}
+  fireRate: 1.5
+  thisDirection: 0
+  holdTimer: 5
   movePoints:
   - {x: 6, y: 2}
-  - {x: 2, y: 0}
-  - {x: 6, y: -2}
-  - {x: 6, y: -10}
-  bullets:
-  - {fileID: 9049166375193089590, guid: 173a981649b141b47875fdf604c596a2, type: 3}
-  fireRate: 2
-  thisDirection: 3
+  - {x: 3, y: 1}
+  - {x: 1, y: 3}

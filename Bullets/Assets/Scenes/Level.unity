@@ -157,7 +157,7 @@ MonoBehaviour:
   - activateTimer: 4
     spawnObject: {fileID: 7681800708665743581, guid: fb6f4b4b9cac21a48ad4d5ed3bc4a670, type: 3}
     spawnNumber: 4
-    spawnDelay: 0.3
+    spawnDelay: 0.4
     usesThisPos: 1
     actualSpawnPoint: {x: 0, y: 0}
     startDirection: 0
@@ -171,10 +171,17 @@ MonoBehaviour:
   - activateTimer: 8
     spawnObject: {fileID: 7681800708665743581, guid: 3ac88b253e1e8d2478ee5b764e66ffec, type: 3}
     spawnNumber: 4
-    spawnDelay: 0.3
+    spawnDelay: 0.5
     usesThisPos: 1
     actualSpawnPoint: {x: 0, y: 0}
     startDirection: 3
+  - activateTimer: 8
+    spawnObject: {fileID: 7681800708665743581, guid: f79b5feba79e80f4d80e977a2637e914, type: 3}
+    spawnNumber: 4
+    spawnDelay: 0.5
+    usesThisPos: 1
+    actualSpawnPoint: {x: 0, y: 0}
+    startDirection: 0
 --- !u!4 &211486426
 Transform:
   m_ObjectHideFlags: 0

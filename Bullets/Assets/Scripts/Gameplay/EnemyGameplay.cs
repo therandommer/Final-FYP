@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyGameplay : AIGameplay
 {
-    [SerializeField]
     protected float thisMoveSpeed;
     public Enemy thisEnemy;
     protected int positionNo = 0;
@@ -25,7 +24,7 @@ public class EnemyGameplay : AIGameplay
 		{
             Initialise(thisEnemy);
             thisMoveSpeed = thisEnemy.moveSpeed;
-            Debug.Log("Default health for enemy is" + health);
+            //Debug.Log("Default health for enemy is" + health);
         }
         timeAlive += Time.deltaTime;
         if (health <=0)
@@ -53,16 +52,24 @@ public class EnemyGameplay : AIGameplay
         int rnd = Random.Range(0, thisEnemy.bullets.Count);
         CheckFireDirection(thisEnemy.bullets[rnd].GetComponent<BulletGameplay>().thisBullet.thisFireDirection, rnd);
         GameObject cloneBullet = Instantiate(thisEnemy.bullets[rnd], gameObject.transform.position, fireDirection, gameObject.transform);
+        if (!spawnParent)
+        {
+            spawnParent = GameObject.Find("SpawnParent");
+        }
         cloneBullet.transform.parent = spawnParent.transform;
-        Debug.Log($"Firing bullet {rnd}");
+        //Debug.Log($"Firing bullet {rnd}");
     }
     protected void ShootRotation()
     {
         int rnd = Random.Range(0, thisEnemy.bullets.Count);
         CheckFireDirection(thisEnemy.bullets[rnd].GetComponent<BulletGameplay>().thisBullet.thisFireDirection, rnd);
         GameObject cloneBullet = Instantiate(thisEnemy.bullets[rnd], gameObject.transform.position, gameObject.transform.rotation, gameObject.transform);
+        if(!spawnParent)
+		{
+            spawnParent = GameObject.Find("SpawnParent");
+		}
         cloneBullet.transform.parent = spawnParent.transform;
-        Debug.Log($"Firing bullet {rnd}");
+        //Debug.Log($"Firing bullet {rnd}");
     }
     protected void Die(Enemy enemyRef)
 	{
@@ -70,15 +77,10 @@ public class EnemyGameplay : AIGameplay
         Actions.OnEnemyKilled?.Invoke(thisEnemy); //triggered if not null
         Destroy(gameObject);
     }
-    protected void LookAtTarget(Vector3 a, Vector3 b) // a = player, b = cursor
-    {
-        float AngleRad = Mathf.Atan2(b.y - a.y, b.x - a.x);
-        float AngleDeg = (180 / Mathf.PI) * AngleRad;
-        this.transform.rotation = Quaternion.Euler(0, 0, AngleDeg - 90);
-    }
+    
     protected void CheckDirection()
 	{
-        Debug.Log($"Checking direction for enemy, direction is {thisEnemy.thisDirection}");
+        //Debug.Log($"Checking direction for enemy, direction is {thisEnemy.thisDirection}");
         switch (thisEnemy.thisDirection)
         {
             case Enemy.StartDirection.down:

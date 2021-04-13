@@ -145,6 +145,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 7
-  thisMoveSpeed: 3
-  thisEnemy: {fileID: 11400000, guid: 50626ae024d610841a19b66f2af9b3e8, type: 2}
+  thisEnemy: {fileID: 11400000, guid: f24a3651a9fca934dab904a34baa710c, type: 2}
   patrolLoops: 2
+  thisEntity: {fileID: 11400000, guid: f24a3651a9fca934dab904a34baa710c, type: 2}
