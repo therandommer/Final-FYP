@@ -20,10 +20,11 @@ public class Spawner : MonoBehaviour
     int currentSpawn = 0; //index number
     TimeController timeC;
     bool isSpawning = false;
+    GameObject spawnParent;
     void OnEnable()
 	{
-
-	}
+        spawnParent = GameObject.Find("SpawnParent");
+    }
     void OnDisable()
 	{
 
@@ -55,6 +56,11 @@ public class Spawner : MonoBehaviour
 					{
                         EnemyGameplay enemyScript = spawnedObject.GetComponent<EnemyGameplay>();
                         enemyScript.thisEnemy.thisDirection = spawnReq[currentSpawn].startDirection;
+                        if (!spawnParent)
+                        {
+                            spawnParent = GameObject.Find("SpawnParent");
+                        }
+                        spawnedObject.transform.parent = spawnParent.transform;
                         //Debug.Log($"Created enemy has {enemyScript.thisEnemy.thisDirection} as a default direction");
                     }
                 }
@@ -68,8 +74,12 @@ public class Spawner : MonoBehaviour
                         enemyScript.thisEnemy.thisDirection = spawnReq[currentSpawn].startDirection;
                         //Debug.Log($"Created enemy has {enemyScript.thisEnemy.thisDirection} as a default direction");
                     }
+                    if (!spawnParent)
+                    {
+                        spawnParent = GameObject.Find("SpawnParent");
+                    }
+                    spawnedObject.transform.parent = spawnParent.transform;
                 }
-               
                 yield return new WaitForSeconds(spawnReq[currentSpawn].spawnDelay);
             }
                 currentSpawn++;
@@ -94,6 +104,10 @@ public class Spawner : MonoBehaviour
                 }
                 timeC.timeToNextSpawn = spawnReq[currentSpawn].activateTimer - timeC.timePassed;
             }
+            if(currentSpawn == spawnReq.Count)
+			{
+                gameObject.SetActive(false);
+			}
         } 
         
         

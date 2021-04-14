@@ -21,7 +21,11 @@ public class BulletGameplay : AIGameplay
         if(!hasInitialised)
 		{
             Initialise(thisBullet);
-            timeLeft = thisBullet.lifetime;
+            if(thisBullet.lifetime != 0)
+			{
+                timeLeft = thisBullet.lifetime;
+                Invoke("Die", timeLeft);
+            }
         }
         if(!acquiredTarget)
 		{
@@ -40,17 +44,6 @@ public class BulletGameplay : AIGameplay
                 acquiredTarget = true;
 			}
 		}
-        if(!isPaused)
-		{
-            if (timeLeft > 0.0f)
-            {
-                timeLeft -= Time.deltaTime;
-            }
-            if (timeLeft <= 0.0f)
-            {
-                Die();
-            }
-        }
         
         if (isPaused && rb.velocity != Vector2.zero)
         {
@@ -61,6 +54,10 @@ public class BulletGameplay : AIGameplay
     {
         if(!isPaused)
 		{
+            if(!rb)
+			{
+                rb = gameObject.GetComponent<Rigidbody2D>();
+			}
             switch(thisBullet.thisType)
 			{
                 case Bullet.BulletType.basic:

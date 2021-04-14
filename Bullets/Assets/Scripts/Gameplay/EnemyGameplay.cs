@@ -49,34 +49,44 @@ public class EnemyGameplay : AIGameplay
     }
     protected void Shoot()
 	{
-        int rnd = Random.Range(0, thisEnemy.bullets.Count);
-        CheckFireDirection(thisEnemy.bullets[rnd].GetComponent<BulletGameplay>().thisBullet.thisFireDirection, rnd);
-        GameObject cloneBullet = Instantiate(thisEnemy.bullets[rnd], gameObject.transform.position, fireDirection, gameObject.transform);
-        if (!spawnParent)
-        {
-            spawnParent = GameObject.Find("SpawnParent");
+        if(!isPaused)
+		{
+            int rnd = Random.Range(0, thisEnemy.bullets.Count);
+            CheckFireDirection(thisEnemy.bullets[rnd].GetComponent<BulletGameplay>().thisBullet.thisFireDirection, rnd);
+            GameObject cloneBullet = Instantiate(thisEnemy.bullets[rnd], gameObject.transform.position, fireDirection, gameObject.transform);
+            if (!spawnParent)
+            {
+                spawnParent = GameObject.Find("SpawnParent");
+            }
+            cloneBullet.transform.parent = spawnParent.transform;
         }
-        cloneBullet.transform.parent = spawnParent.transform;
-        //Debug.Log($"Firing bullet {rnd}");
     }
     protected void ShootRotation()
     {
-        int rnd = Random.Range(0, thisEnemy.bullets.Count);
-        CheckFireDirection(thisEnemy.bullets[rnd].GetComponent<BulletGameplay>().thisBullet.thisFireDirection, rnd);
-        GameObject cloneBullet = Instantiate(thisEnemy.bullets[rnd], gameObject.transform.position, gameObject.transform.rotation, gameObject.transform);
-        if(!spawnParent)
+        if(!isPaused)
 		{
-            spawnParent = GameObject.Find("SpawnParent");
-		}
-        cloneBullet.transform.parent = spawnParent.transform;
-        //Debug.Log($"Firing bullet {rnd}");
+            int rnd = Random.Range(0, thisEnemy.bullets.Count);
+            CheckFireDirection(thisEnemy.bullets[rnd].GetComponent<BulletGameplay>().thisBullet.thisFireDirection, rnd);
+            GameObject cloneBullet = Instantiate(thisEnemy.bullets[rnd], gameObject.transform.position, gameObject.transform.rotation, gameObject.transform);
+            if (!spawnParent)
+            {
+                spawnParent = GameObject.Find("SpawnParent");
+            }
+            cloneBullet.transform.parent = spawnParent.transform;
+        }
     }
+    //If died through player
     protected void Die(Enemy enemyRef)
 	{
         Debug.Log($"Enemy {this.name} died");
         Actions.OnEnemyKilled?.Invoke(thisEnemy); //triggered if not null
         Destroy(gameObject);
     }
+    //if despawned
+    protected void Despawn()
+	{
+        Destroy(gameObject);
+	}
     
     protected void CheckDirection()
 	{
