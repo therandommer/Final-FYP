@@ -97,6 +97,7 @@ public class BulletGameplay : AIGameplay
 		{
             Debug.Log($"Dealing {thisBullet.damage} damage to enemy");
             col.gameObject.SendMessage("Damage", thisBullet.damage);
+            Actions.OnBulletHit?.Invoke(thisBullet);
             Die();
 		}
         if (col.gameObject.tag == "Player" && thisBullet.thisFaction == Bullet.BulletFaction.enemy)

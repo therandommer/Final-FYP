@@ -9,6 +9,7 @@ public class Bullet : Entity
 {
     public float lifetime = 3.0f;
 	public int damage = 1;
+	public int scoreValue = 1;
     public enum BulletType
 	{
 		basic, //fire in set direction, regardless of orientation

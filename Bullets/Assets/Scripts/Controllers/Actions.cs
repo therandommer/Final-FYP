@@ -8,6 +8,7 @@ public static class Actions
 {
     public static Action<Player> OnPlayerKilled;
     public static Action<Enemy> OnEnemyKilled;
+    public static Action<Bullet> OnBulletHit; //bullet score for hitting enemies
     public static Action OnPause;
     public static Action <TimeController> OnTimeReached;
 }
