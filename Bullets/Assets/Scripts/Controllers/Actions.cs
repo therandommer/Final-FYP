@@ -7,6 +7,7 @@ using System;
 public static class Actions
 {
     public static Action<Player> OnPlayerKilled;
+    public static Action<int> OnPlayerHit; //updates player health on the UI
     public static Action<Enemy> OnEnemyKilled;
     public static Action<Bullet> OnBulletHit; //bullet score for hitting enemies
     public static Action OnPause;

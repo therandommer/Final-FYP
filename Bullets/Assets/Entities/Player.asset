@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   thisSprite: {fileID: 0}
-  health: 0
+  health: 100
   moveSpeed: 10
-  isPaused: 0
+  isPaused: 1
   fireType: 0
   boostMult: 1.5
   bullets:

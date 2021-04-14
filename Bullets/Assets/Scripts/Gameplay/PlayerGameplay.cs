@@ -6,6 +6,7 @@ public class PlayerGameplay : MonoBehaviour
 {
     [SerializeField]
     public Player playerStats;
+    int thisHealth;
     [SerializeField]
     public GameObject equippedBullet;
     [SerializeField]
@@ -33,6 +34,7 @@ public class PlayerGameplay : MonoBehaviour
     }
     void Start()
     {
+        thisHealth = playerStats.health;
         rb = gameObject.GetComponent<Rigidbody2D>();
         if (rb == null)
         {
@@ -125,10 +127,9 @@ public class PlayerGameplay : MonoBehaviour
         isPaused = !isPaused;
 	}
 
-    void Damaged(int _Damage)
+    void Damage(int _Damage)
 	{
-        Debug.Log($"Player haelth before damage: {playerStats.health}");
-        playerStats.health -= _Damage;
-        Debug.Log($"Player haelth after damage: {playerStats.health}");
+        thisHealth -= _Damage;
+        Actions.OnPlayerHit?.Invoke(thisHealth);
     }
 }
