@@ -43,4 +43,9 @@ public class TimeController : MonoBehaviour
         isPaused = !isPaused;
         Debug.Log($"Toggling pause for {this.name}");
     }
+    public void SendPauseAction()
+	{
+        Actions.OnPause?.Invoke();
+
+    }
 }
