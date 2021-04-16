@@ -32,4 +32,8 @@ public class MenuController : MonoBehaviour
         else
             pauseMenu.SetActive(false);
 	}
+    public void SendPauseAction()
+	{
+        Actions.OnPause?.Invoke();
+	}
 }
