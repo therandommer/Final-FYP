@@ -7,19 +7,29 @@ using TMPro;
 public class GameUIController : MonoBehaviour
 {
 	public TextMeshProUGUI healthText;
-	public TextMeshProUGUI armourBoostText;
+	public TextMeshProUGUI shieldBoostText;
 	public TextMeshProUGUI weaponBoostText;
     void OnEnable()
 	{
 		Actions.OnPlayerHit += UpdateHealthText;
+		Actions.OnWeaponGot += UpdateWeaponText;
+		Actions.OnShieldGot += UpdateShieldText;
 	}
     void OnDisable()
 	{
 		Actions.OnPlayerHit -= UpdateHealthText;
 	}
-
+	
     void UpdateHealthText(int _newHealth)
 	{
 		healthText.text = $"Health: {_newHealth} / 100";
+	}
+	void UpdateWeaponText(int _newWeapon)
+	{
+		weaponBoostText.text = $"Weapon: {_newWeapon}";
+	}
+	void UpdateShieldText(int _newShield)
+	{
+		shieldBoostText.text = $"Shield: {_newShield}";
 	}
 }

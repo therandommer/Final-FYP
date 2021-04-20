@@ -2739,6 +2739,7 @@ GameObject:
   - component: {fileID: 1312643731}
   - component: {fileID: 1312643730}
   - component: {fileID: 1312643729}
+  - component: {fileID: 1312643732}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2811,6 +2812,102 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1312643732
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312643728}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1369636657
 GameObject:
   m_ObjectHideFlags: 0
@@ -4677,6 +4774,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 061a11853a6fc3540b3515966061f903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreDropMultiplier: 2
   scoreText: {fileID: 1711548536}
 --- !u!114 &2037106582
 MonoBehaviour:
@@ -4703,6 +4801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c622a163fb02d9f469e44da4b6d9b25f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 1312643728}
 --- !u!4 &2037106584
 Transform:
   m_ObjectHideFlags: 0
@@ -4731,10 +4830,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPaused: 0
   timePassed: 0
+  maxTime: 0
   timeToNextSpawn: 0
   timeScale: 1
   timerText: {fileID: 1182934878}
   nextSpawnTimerText: {fileID: 1988806515}
+  endOfSongTimeText: {fileID: 0}
 --- !u!114 &2037106586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4748,7 +4849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthText: {fileID: 12177173}
-  armourBoostText: {fileID: 1219398069}
+  shieldBoostText: {fileID: 0}
   weaponBoostText: {fileID: 331100190}
 --- !u!1 &2095469956
 GameObject:
@@ -4894,6 +4995,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 460232481625919415, guid: 3a483272d802536439298d2915664a9f, type: 3}
+      propertyPath: spawnReq.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 460232481625919415, guid: 3a483272d802536439298d2915664a9f, type: 3}
+      propertyPath: spawnReq.Array.data[0].spawnDelay
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 460232481625919415, guid: 3a483272d802536439298d2915664a9f, type: 3}
+      propertyPath: spawnReq.Array.data[0].spawnNumber
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 460232481625919415, guid: 3a483272d802536439298d2915664a9f, type: 3}
+      propertyPath: spawnReq.Array.data[0].spawnObject
+      value: 
+      objectReference: {fileID: 7681800708665743581, guid: 3ac88b253e1e8d2478ee5b764e66ffec, type: 3}
+    - target: {fileID: 460232481625919415, guid: 3a483272d802536439298d2915664a9f, type: 3}
+      propertyPath: spawnReq.Array.data[0].activateTimer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3463389513878664420, guid: 3a483272d802536439298d2915664a9f, type: 3}
       propertyPath: m_RootOrder
       value: 6

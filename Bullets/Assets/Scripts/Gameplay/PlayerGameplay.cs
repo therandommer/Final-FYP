@@ -7,6 +7,9 @@ public class PlayerGameplay : MonoBehaviour
     [SerializeField]
     public Player playerStats;
     int thisHealth;
+    int thisShieldLevel;
+    int thisWeaponLevel;
+    bool updateWeapon;
     [SerializeField]
     public GameObject equippedBullet;
     [SerializeField]
@@ -27,14 +30,18 @@ public class PlayerGameplay : MonoBehaviour
     void OnEnable()
 	{
         Actions.OnPause += TogglePause;
-	}
+        Actions.OnCollectableAcquired += DropCollected;
+    }
     void OnDisable()
     {
         Actions.OnPause -= TogglePause;
+        Actions.OnCollectableAcquired -= DropCollected;
     }
     void Start()
     {
         thisHealth = playerStats.health;
+        thisWeaponLevel = playerStats.weaponLevel;
+        thisShieldLevel = playerStats.shieldLevel;
         rb = gameObject.GetComponent<Rigidbody2D>();
         if (rb == null)
         {
@@ -46,6 +53,7 @@ public class PlayerGameplay : MonoBehaviour
 		{
             Debug.LogError("No object of name 'SpawnParent' found in scene, add one to solve this error");
 		}
+        Actions.OnPlayerHit?.Invoke(thisHealth); //sets starting health value for ui
     }
     protected virtual void SpawnThis(Vector2 spawnPos)
     {
@@ -59,6 +67,10 @@ public class PlayerGameplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(updateWeapon)
+		{
+            equippedBullet = playerStats.bullets[thisWeaponLevel];
+		}
         if(!isPaused)
 		{
             mousePos = Input.mousePosition;
@@ -112,6 +124,24 @@ public class PlayerGameplay : MonoBehaviour
         this.transform.rotation = Quaternion.Euler(0, 0, AngleDeg - 90);
 	}
 
+    void DropCollected(Drop _thisDrop)
+    {
+        switch (_thisDrop.type)
+        {
+            case DropType.eHealth:
+                thisHealth += _thisDrop.dropStrength;
+                Actions.OnPlayerHit?.Invoke(thisHealth); //reuse this action, just to update UI
+                break;
+            case DropType.eShield:
+                thisShieldLevel += _thisDrop.dropStrength;
+                Actions.OnShieldGot?.Invoke(thisShieldLevel);
+                break;
+            case DropType.eWeapon:
+                thisWeaponLevel += _thisDrop.dropStrength;
+                Actions.OnWeaponGot?.Invoke(thisWeaponLevel);
+                break;
+        }
+    }
     public Vector2 GetForward()
 	{
         return this.transform.forward;
@@ -129,7 +159,10 @@ public class PlayerGameplay : MonoBehaviour
 
     void Damage(int _Damage)
 	{
-        thisHealth -= _Damage;
+        int newDamage = _Damage -= (thisShieldLevel - 1);
+        if (newDamage < 0)
+            newDamage = 1;
+        thisHealth -= newDamage;
         Actions.OnPlayerHit?.Invoke(thisHealth);
     }
 }

@@ -7,30 +7,33 @@ using TMPro;
 public class ScoreController : MonoBehaviour
 {
     int totalScore = 0;
+    public int scoreDropMultiplier = 2;
     public TextMeshProUGUI scoreText;
     //subscribing to entitykilled actions 
     private void OnEnable()
     {
         Actions.OnEnemyKilled += EnemyDead;
-        Actions.OnBulletHit += BulletHit;
+		Actions.OnBulletHit += BulletHit;
+        Actions.OnCollectableAcquired += DropCollected;
     }
     private void OnDisable()
     {
         Actions.OnEnemyKilled -= EnemyDead;
         Actions.OnBulletHit -= BulletHit;
+        Actions.OnCollectableAcquired -= DropCollected;
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    void DropCollected(Drop _thisDrop)
+	{
+        if(scoreText)
+		{
+            if(_thisDrop.type != DropType.eScore)
+			{
+                scoreText.text = $"Score: {totalScore += _thisDrop.scoreValue}";
+            }
+            else
+                scoreText.text = $"Score: {totalScore += _thisDrop.scoreValue * scoreDropMultiplier}";
+        }
+	}
     void BulletHit(Bullet _bulletRef)
 	{
         if(scoreText)

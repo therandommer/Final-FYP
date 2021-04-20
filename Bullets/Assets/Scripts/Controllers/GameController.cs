@@ -5,6 +5,8 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public static GameObject spawnHolder;
+    private AudioClip levelMusic;
+    public GameObject audioSource;
     private void OnEnable()
     {
         Actions.OnPlayerKilled += playerDead;
@@ -16,7 +18,8 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource.GetComponent<AudioSource>().clip = levelMusic;
+        Actions.OnSongChanged?.Invoke(audioSource.GetComponent<AudioSource>().clip.length);
     }
 
     // Update is called once per frame
@@ -24,7 +27,7 @@ public class GameController : MonoBehaviour
     {
         if(Input.GetButtonDown("Pause"))
 		{
-            Actions.OnPause();
+            Actions.OnPause?.Invoke();
             Debug.Log("Pausing");
 		}
     }

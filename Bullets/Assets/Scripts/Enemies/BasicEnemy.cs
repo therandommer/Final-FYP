@@ -20,5 +20,9 @@ public class BasicEnemy : EnemyGameplay
 		{
             rb.velocity = defaultDirection;
         }
+        if(isPaused)
+		{
+            rb.velocity = Vector2.zero;
+		}
     }
 }

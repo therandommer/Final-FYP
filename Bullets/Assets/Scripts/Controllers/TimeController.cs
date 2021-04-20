@@ -8,19 +8,24 @@ using TMPro;
 public class TimeController : MonoBehaviour
 {
     public bool isPaused = false;
+    bool needsSongTimeUpdate = true;
     public float timePassed = 0.0f;
+    public float maxTime = 0.0f;
     public float timeToNextSpawn = 0.0f;
     public float timeScale = 1.0f;
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI nextSpawnTimerText;
+    public TextMeshProUGUI endOfSongTimeText;
 
     void OnEnable()
     {
         Actions.OnPause += TogglePause;
+        Actions.OnSongChanged += UpdateSongLength;
     }
     void OnDisable()
     {
         Actions.OnPause -= TogglePause;
+        Actions.OnSongChanged -= UpdateSongLength;
     }
     void Start()
     {
@@ -35,6 +40,10 @@ public class TimeController : MonoBehaviour
             timePassed += Time.deltaTime * timeScale;
             timerText.text = $"Time: {(Mathf.FloorToInt(timePassed/60).ToString())} : {(Mathf.FloorToInt(timePassed % 60).ToString())}";
             nextSpawnTimerText.text = $"Next Pack: {(Mathf.CeilToInt(timeToNextSpawn / 60).ToString())} : {(Mathf.CeilToInt(timeToNextSpawn % 60).ToString())}";
+            if(needsSongTimeUpdate)
+			{
+                endOfSongTimeText.text = $"Song time: {(Mathf.FloorToInt(maxTime / 60).ToString())} : {(Mathf.FloorToInt(maxTime % 60).ToString())}";
+			}
         }
     }
 
@@ -46,6 +55,10 @@ public class TimeController : MonoBehaviour
     public void SendPauseAction()
 	{
         Actions.OnPause?.Invoke();
-
     }
+    public void UpdateSongLength(float _time)
+	{
+        maxTime = _time;
+        needsSongTimeUpdate = true;
+	}
 }
