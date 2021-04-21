@@ -1,0 +1,8 @@
+shield.png (Created by zeroisnotnull)
+	source: https://opengameart.org/content/shield-sprite
+blue_ship_space.png (Created by hookiz)
+	source: https://opengameart.org/content/ship-space-0 
+hjm_shells_sheet_1.png (Created by Varkalandar)
+	source: https://opengameart.org/content/shell-type-ships
+"Laser Sprites" folder (Created by Wenrexa)
+	source: https://opengameart.org/content/assets-free-laser-bullets-pack-2020

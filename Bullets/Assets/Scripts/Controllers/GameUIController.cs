@@ -18,6 +18,8 @@ public class GameUIController : MonoBehaviour
     void OnDisable()
 	{
 		Actions.OnPlayerHit -= UpdateHealthText;
+		Actions.OnWeaponGot -= UpdateWeaponText;
+		Actions.OnShieldGot -= UpdateShieldText;
 	}
 	
     void UpdateHealthText(int _newHealth)

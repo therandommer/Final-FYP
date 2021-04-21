@@ -1,0 +1,3711 @@
+fileFormatVersion: 2
+guid: 27a37a2b421fed043a0cafd1b6c71e3a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -74353540078898183
+    second: hjm-shells_sheet_1_0
+  - first:
+      213: 4412581768973526357
+    second: hjm-shells_sheet_1_1
+  - first:
+      213: 1210403843916802794
+    second: hjm-shells_sheet_1_2
+  - first:
+      213: -7656388647586310741
+    second: hjm-shells_sheet_1_3
+  - first:
+      213: -7117413778869701994
+    second: hjm-shells_sheet_1_4
+  - first:
+      213: -6717795447652930775
+    second: hjm-shells_sheet_1_5
+  - first:
+      213: -2611161992885308307
+    second: hjm-shells_sheet_1_6
+  - first:
+      213: 5128914023410355291
+    second: hjm-shells_sheet_1_7
+  - first:
+      213: 929937895697743997
+    second: hjm-shells_sheet_1_8
+  - first:
+      213: -4415942466201815846
+    second: hjm-shells_sheet_1_9
+  - first:
+      213: -1624373554837217033
+    second: hjm-shells_sheet_1_10
+  - first:
+      213: 4544284900427924036
+    second: hjm-shells_sheet_1_11
+  - first:
+      213: -3239958287435444287
+    second: hjm-shells_sheet_1_12
+  - first:
+      213: -3766558876194975519
+    second: hjm-shells_sheet_1_13
+  - first:
+      213: 2548496544302427954
+    second: hjm-shells_sheet_1_14
+  - first:
+      213: -911722207567534718
+    second: hjm-shells_sheet_1_15
+  - first:
+      213: 1228321821926411631
+    second: hjm-shells_sheet_1_16
+  - first:
+      213: -9052054667387105521
+    second: hjm-shells_sheet_1_17
+  - first:
+      213: 3896853951155688083
+    second: hjm-shells_sheet_1_18
+  - first:
+      213: 7997901582819795063
+    second: hjm-shells_sheet_1_19
+  - first:
+      213: -7280264439452534583
+    second: hjm-shells_sheet_1_20
+  - first:
+      213: 505673359859357118
+    second: hjm-shells_sheet_1_21
+  - first:
+      213: -6690071821226695834
+    second: hjm-shells_sheet_1_22
+  - first:
+      213: 1764012609081933805
+    second: hjm-shells_sheet_1_23
+  - first:
+      213: 6826830945536302697
+    second: hjm-shells_sheet_1_24
+  - first:
+      213: 8851724804689199434
+    second: hjm-shells_sheet_1_25
+  - first:
+      213: -1087431086806860044
+    second: hjm-shells_sheet_1_26
+  - first:
+      213: 5732629463580963246
+    second: hjm-shells_sheet_1_27
+  - first:
+      213: 3226820675840876078
+    second: hjm-shells_sheet_1_28
+  - first:
+      213: -4609822400418974138
+    second: hjm-shells_sheet_1_29
+  - first:
+      213: -8145533829154373601
+    second: hjm-shells_sheet_1_30
+  - first:
+      213: -5142198705309254847
+    second: hjm-shells_sheet_1_31
+  - first:
+      213: 6464035770717098219
+    second: hjm-shells_sheet_1_32
+  - first:
+      213: 7446448879457852997
+    second: hjm-shells_sheet_1_33
+  - first:
+      213: 2521707183665069180
+    second: hjm-shells_sheet_1_34
+  - first:
+      213: 9135702313045619423
+    second: hjm-shells_sheet_1_35
+  - first:
+      213: -303021537896696498
+    second: hjm-shells_sheet_1_36
+  - first:
+      213: 6415415528375759585
+    second: hjm-shells_sheet_1_37
+  - first:
+      213: 8052212235356651351
+    second: hjm-shells_sheet_1_38
+  - first:
+      213: 93000088316875461
+    second: hjm-shells_sheet_1_39
+  - first:
+      213: -7753733349012334352
+    second: hjm-shells_sheet_1_40
+  - first:
+      213: -52140391659575821
+    second: hjm-shells_sheet_1_41
+  - first:
+      213: -3194917253308037569
+    second: hjm-shells_sheet_1_42
+  - first:
+      213: -4811630182811343717
+    second: hjm-shells_sheet_1_43
+  - first:
+      213: -7738888843928990903
+    second: hjm-shells_sheet_1_44
+  - first:
+      213: 4200766773125607952
+    second: hjm-shells_sheet_1_45
+  - first:
+      213: 3731104686351351362
+    second: hjm-shells_sheet_1_46
+  - first:
+      213: -4344230244680878049
+    second: hjm-shells_sheet_1_47
+  - first:
+      213: -1928876014382539642
+    second: hjm-shells_sheet_1_48
+  - first:
+      213: 4178515694889376631
+    second: hjm-shells_sheet_1_49
+  - first:
+      213: -5466347282646637248
+    second: hjm-shells_sheet_1_50
+  - first:
+      213: 5300763783573165056
+    second: hjm-shells_sheet_1_51
+  - first:
+      213: 2925964449506085356
+    second: hjm-shells_sheet_1_52
+  - first:
+      213: 3289434476307081750
+    second: hjm-shells_sheet_1_53
+  - first:
+      213: -8295712058619864240
+    second: hjm-shells_sheet_1_54
+  - first:
+      213: -6345720993672394710
+    second: hjm-shells_sheet_1_55
+  - first:
+      213: 5663670183290853117
+    second: hjm-shells_sheet_1_56
+  - first:
+      213: -2268859574362389438
+    second: hjm-shells_sheet_1_57
+  - first:
+      213: -8494758405770586335
+    second: hjm-shells_sheet_1_58
+  - first:
+      213: 478897398885569159
+    second: hjm-shells_sheet_1_59
+  - first:
+      213: -5068994752340016173
+    second: hjm-shells_sheet_1_60
+  - first:
+      213: 2022076867466253977
+    second: hjm-shells_sheet_1_61
+  - first:
+      213: -8703170878705063714
+    second: hjm-shells_sheet_1_62
+  - first:
+      213: -5620635093785930766
+    second: hjm-shells_sheet_1_63
+  - first:
+      213: -1920370096802682131
+    second: hjm-shells_sheet_1_64
+  - first:
+      213: 8127080279857545932
+    second: hjm-shells_sheet_1_65
+  - first:
+      213: 514072187534541845
+    second: hjm-shells_sheet_1_66
+  - first:
+      213: 2197522789160091085
+    second: hjm-shells_sheet_1_67
+  - first:
+      213: 9171255939505581277
+    second: hjm-shells_sheet_1_68
+  - first:
+      213: 3006520198744418866
+    second: hjm-shells_sheet_1_69
+  - first:
+      213: -815783214184584428
+    second: hjm-shells_sheet_1_70
+  - first:
+      213: -3972566675035645044
+    second: hjm-shells_sheet_1_71
+  - first:
+      213: -5494865512551405607
+    second: hjm-shells_sheet_1_72
+  - first:
+      213: -5606229990428925316
+    second: hjm-shells_sheet_1_73
+  - first:
+      213: 7375660659551250550
+    second: hjm-shells_sheet_1_74
+  - first:
+      213: 1124509983949911057
+    second: hjm-shells_sheet_1_75
+  - first:
+      213: -2495860522979627548
+    second: hjm-shells_sheet_1_76
+  - first:
+      213: 1175041033141205029
+    second: hjm-shells_sheet_1_77
+  - first:
+      213: -8533161556023922350
+    second: hjm-shells_sheet_1_78
+  - first:
+      213: -6442678184071110621
+    second: hjm-shells_sheet_1_79
+  - first:
+      213: 4890149585325029107
+    second: hjm-shells_sheet_1_80
+  - first:
+      213: 1233391190707215017
+    second: hjm-shells_sheet_1_81
+  - first:
+      213: 4361045818514774982
+    second: hjm-shells_sheet_1_82
+  - first:
+      213: -8532906812142737639
+    second: hjm-shells_sheet_1_83
+  - first:
+      213: -9052404211411245872
+    second: hjm-shells_sheet_1_84
+  - first:
+      213: 3717274291754285109
+    second: hjm-shells_sheet_1_85
+  - first:
+      213: -978257416628754304
+    second: hjm-shells_sheet_1_86
+  - first:
+      213: -5567856338595919975
+    second: hjm-shells_sheet_1_87
+  - first:
+      213: 5207053019355950736
+    second: hjm-shells_sheet_1_88
+  - first:
+      213: 8277086086077598184
+    second: hjm-shells_sheet_1_89
+  - first:
+      213: -1109940811700504652
+    second: hjm-shells_sheet_1_90
+  - first:
+      213: 1825010726958695293
+    second: hjm-shells_sheet_1_91
+  - first:
+      213: 5116028928970815920
+    second: hjm-shells_sheet_1_92
+  - first:
+      213: 6324419418617033975
+    second: hjm-shells_sheet_1_93
+  - first:
+      213: -4706338193037120820
+    second: hjm-shells_sheet_1_94
+  - first:
+      213: 7287568209952504887
+    second: hjm-shells_sheet_1_95
+  - first:
+      213: -1442112602053921037
+    second: hjm-shells_sheet_1_96
+  - first:
+      213: -222094431957455588
+    second: hjm-shells_sheet_1_97
+  - first:
+      213: -4549697474366823983
+    second: hjm-shells_sheet_1_98
+  - first:
+      213: 5481589325329389080
+    second: hjm-shells_sheet_1_99
+  - first:
+      213: 5327742113175589370
+    second: hjm-shells_sheet_1_100
+  - first:
+      213: -8236737952592524033
+    second: hjm-shells_sheet_1_101
+  - first:
+      213: 6401463143257862780
+    second: hjm-shells_sheet_1_102
+  - first:
+      213: 560430602072172653
+    second: hjm-shells_sheet_1_103
+  - first:
+      213: 1720701275014858038
+    second: hjm-shells_sheet_1_104
+  - first:
+      213: -1778053924370425950
+    second: hjm-shells_sheet_1_105
+  - first:
+      213: -1143210291316879483
+    second: hjm-shells_sheet_1_106
+  - first:
+      213: -6413679817228049116
+    second: hjm-shells_sheet_1_107
+  - first:
+      213: 5606868298633878059
+    second: hjm-shells_sheet_1_108
+  - first:
+      213: 399191849941069509
+    second: hjm-shells_sheet_1_109
+  - first:
+      213: -5337635302360956705
+    second: hjm-shells_sheet_1_110
+  - first:
+      213: 8970768472400791501
+    second: hjm-shells_sheet_1_111
+  - first:
+      213: -2112149957691962468
+    second: hjm-shells_sheet_1_112
+  - first:
+      213: 4421202078456578363
+    second: hjm-shells_sheet_1_113
+  - first:
+      213: 7118431530821377501
+    second: hjm-shells_sheet_1_114
+  - first:
+      213: 3940379285198376480
+    second: hjm-shells_sheet_1_115
+  - first:
+      213: -2676886344918160417
+    second: hjm-shells_sheet_1_116
+  - first:
+      213: 813477988545324701
+    second: hjm-shells_sheet_1_117
+  - first:
+      213: -1801606470578934336
+    second: hjm-shells_sheet_1_118
+  - first:
+      213: -5274550044538591309
+    second: hjm-shells_sheet_1_119
+  - first:
+      213: -5063546666254932616
+    second: hjm-shells_sheet_1_120
+  - first:
+      213: -7749082086842275573
+    second: hjm-shells_sheet_1_121
+  - first:
+      213: -490226496683310185
+    second: hjm-shells_sheet_1_122
+  - first:
+      213: 1035070331585254948
+    second: hjm-shells_sheet_1_123
+  - first:
+      213: 6630175530086742141
+    second: hjm-shells_sheet_1_124
+  - first:
+      213: -8564741552081529501
+    second: hjm-shells_sheet_1_125
+  - first:
+      213: 7644290353290889496
+    second: hjm-shells_sheet_1_126
+  - first:
+      213: 1906026182771377341
+    second: hjm-shells_sheet_1_127
+  - first:
+      213: -1304470656942237996
+    second: hjm-shells_sheet_1_128
+  - first:
+      213: -1062306771826328878
+    second: hjm-shells_sheet_1_129
+  - first:
+      213: -67620120042837060
+    second: hjm-shells_sheet_1_130
+  - first:
+      213: -2190123348222531304
+    second: hjm-shells_sheet_1_131
+  - first:
+      213: -5945861764583950959
+    second: hjm-shells_sheet_1_132
+  - first:
+      213: -6301752784808998927
+    second: hjm-shells_sheet_1_133
+  - first:
+      213: -1490672523902144342
+    second: hjm-shells_sheet_1_134
+  - first:
+      213: -4878422243100540797
+    second: hjm-shells_sheet_1_135
+  - first:
+      213: 1960244887020543418
+    second: hjm-shells_sheet_1_136
+  - first:
+      213: 7380331192029490121
+    second: hjm-shells_sheet_1_137
+  - first:
+      213: 4774086000777671317
+    second: hjm-shells_sheet_1_138
+  - first:
+      213: -448964575749458209
+    second: hjm-shells_sheet_1_139
+  - first:
+      213: 6966649093309338474
+    second: hjm-shells_sheet_1_140
+  - first:
+      213: 8271814224398246828
+    second: hjm-shells_sheet_1_141
+  - first:
+      213: -4322767590995711575
+    second: hjm-shells_sheet_1_142
+  - first:
+      213: -8412322120390869054
+    second: hjm-shells_sheet_1_143
+  - first:
+      213: -3188651089799785919
+    second: hjm-shells_sheet_1_144
+  - first:
+      213: 6589791197029863518
+    second: hjm-shells_sheet_1_145
+  - first:
+      213: -150179958216822204
+    second: hjm-shells_sheet_1_146
+  - first:
+      213: -6942596717221602129
+    second: hjm-shells_sheet_1_147
+  - first:
+      213: -8077927166808383727
+    second: hjm-shells_sheet_1_148
+  - first:
+      213: -4712857455820554791
+    second: hjm-shells_sheet_1_149
+  - first:
+      213: 5707462214867951607
+    second: hjm-shells_sheet_1_150
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_0
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 784
+        width: 47
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f3fdc769d7d7fef0800000000000000
+      internalID: -74353540078898183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_1
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 785
+        width: 49
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55528027db3ac3d30800000000000000
+      internalID: 4412581768973526357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_2
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 786
+        width: 46
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeaad6f02e73cc010800000000000000
+      internalID: 1210403843916802794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_3
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 788
+        width: 47
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba5d84e171b0fb590800000000000000
+      internalID: -7656388647586310741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_4
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 786
+        width: 46
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6923007b0edd93d90800000000000000
+      internalID: -7117413778869701994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_5
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 780
+        width: 55
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92b29ecf1a895c2a0800000000000000
+      internalID: -6717795447652930775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_6
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 783
+        width: 47
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d64f113800a43cbd0800000000000000
+      internalID: -2611161992885308307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_7
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 787
+        width: 50
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5cc4e051209d2740800000000000000
+      internalID: 5128914023410355291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_8
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 788
+        width: 48
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d700d30d69dc7ec00800000000000000
+      internalID: 929937895697743997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_9
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 781
+        width: 53
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad47a7149bb67b2c0800000000000000
+      internalID: -4415942466201815846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_10
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 788
+        width: 51
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f0a361bbd01579e0800000000000000
+      internalID: -1624373554837217033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_11
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 779
+        width: 51
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4428d205a0b801f30800000000000000
+      internalID: 4544284900427924036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_12
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 775
+        width: 57
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cfc3568a1b5903d0800000000000000
+      internalID: -3239958287435444287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_13
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 781
+        width: 48
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e0ddce78ae7abbc0800000000000000
+      internalID: -3766558876194975519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_14
+      rect:
+        serializedVersion: 2
+        x: 1142
+        y: 781
+        width: 52
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23fe472ca141e5320800000000000000
+      internalID: 2548496544302427954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_15
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 706
+        width: 51
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2852a149b79e853f0800000000000000
+      internalID: -911722207567534718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_16
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 704
+        width: 48
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6dc8c96030eb0110800000000000000
+      internalID: 1228321821926411631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_17
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 700
+        width: 52
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0f89f66d34a06280800000000000000
+      internalID: -9052054667387105521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_18
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 706
+        width: 52
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 392563ca508641630800000000000000
+      internalID: 3896853951155688083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_19
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 684
+        width: 48
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77022886d114efe60800000000000000
+      internalID: 7997901582819795063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_20
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 706
+        width: 47
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c8f587901e47fa90800000000000000
+      internalID: -7280264439452534583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_21
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 708
+        width: 45
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb59bcadd33840700800000000000000
+      internalID: 505673359859357118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_22
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 696
+        width: 58
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 663aee5cf171823a0800000000000000
+      internalID: -6690071821226695834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_23
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 707
+        width: 49
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: def73af2f180b7810800000000000000
+      internalID: 1764012609081933805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_24
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 699
+        width: 53
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96ed55a2396cdbe50800000000000000
+      internalID: 6826830945536302697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_25
+      rect:
+        serializedVersion: 2
+        x: 827
+        y: 708
+        width: 47
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a418309bfc4a7da70800000000000000
+      internalID: 8851724804689199434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_26
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 688
+        width: 52
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fef821203ba8e0f0800000000000000
+      internalID: -1087431086806860044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_27
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 705
+        width: 47
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea17ea5df146e8f40800000000000000
+      internalID: 5732629463580963246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_28
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 706
+        width: 47
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2e9169ee48f7cc20800000000000000
+      internalID: 3226820675840876078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_29
+      rect:
+        serializedVersion: 2
+        x: 1133
+        y: 698
+        width: 63
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 646736163fe9600c0800000000000000
+      internalID: -4609822400418974138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_30
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 603
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f108357a32045fe80800000000000000
+      internalID: -8145533829154373601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_31
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 598
+        width: 72
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14b7195a58d33a8b0800000000000000
+      internalID: -5142198705309254847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_32
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 619
+        width: 68
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be0d209194ed4b950800000000000000
+      internalID: 6464035770717098219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_33
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 608
+        width: 58
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54ed03a8dc9175760800000000000000
+      internalID: 7446448879457852997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_34
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 622
+        width: 60
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7c38eda257eef220800000000000000
+      internalID: 2521707183665069180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_35
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 627
+        width: 48
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd27cc6c9d888ce70800000000000000
+      internalID: 9135702313045619423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_36
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 614
+        width: 55
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e45ff5a44837bcbf0800000000000000
+      internalID: -303021537896696498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_37
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 611
+        width: 61
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e2bc57ce62280950800000000000000
+      internalID: 6415415528375759585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_38
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 615
+        width: 53
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75fbc789d543fbf60800000000000000
+      internalID: 8052212235356651351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_39
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 622
+        width: 57
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c2153c66176a4100800000000000000
+      internalID: 93000088316875461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_40
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 626
+        width: 47
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f81501a994356490800000000000000
+      internalID: -7753733349012334352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_41
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 620
+        width: 49
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f56eac0792c64ff0800000000000000
+      internalID: -52140391659575821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_42
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 627
+        width: 49
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f36cecd7faf59a3d0800000000000000
+      internalID: -3194917253308037569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_43
+      rect:
+        serializedVersion: 2
+        x: 1067
+        y: 626
+        width: 46
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b946bf287d7a93db0800000000000000
+      internalID: -4811630182811343717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_44
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 599
+        width: 56
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94b016d4991f99490800000000000000
+      internalID: -7738888843928990903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_45
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 544
+        width: 55
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0127a60af1f1c4a30800000000000000
+      internalID: 4200766773125607952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_46
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 521
+        width: 69
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24e74c9a1fb87c330800000000000000
+      internalID: 3731104686351351362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_47
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 542
+        width: 59
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f18b943fb9136b3c0800000000000000
+      internalID: -4344230244680878049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_48
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 545
+        width: 51
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68c15fa0c714b35e0800000000000000
+      internalID: -1928876014382539642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_49
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 533
+        width: 48
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77b9642c2e11df930800000000000000
+      internalID: 4178515694889376631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_50
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 536
+        width: 55
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 045eceebb12a324b0800000000000000
+      internalID: -5466347282646637248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_51
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 540
+        width: 50
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00452269398109940800000000000000
+      internalID: 5300763783573165056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_52
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 536
+        width: 53
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce94b361a2d1b9820800000000000000
+      internalID: 2925964449506085356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_53
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 543
+        width: 53
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61ae4306a3b66ad20800000000000000
+      internalID: 3289434476307081750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_54
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 547
+        width: 49
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05bd903d5d5bfdc80800000000000000
+      internalID: -8295712058619864240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_55
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 536
+        width: 64
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a280b6890687fe7a0800000000000000
+      internalID: -6345720993672394710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_56
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 542
+        width: 57
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df6d5083606699e40800000000000000
+      internalID: 5663670183290853117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_57
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 541
+        width: 63
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 244c2e0fc346380e0800000000000000
+      internalID: -2268859574362389438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_58
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 542
+        width: 47
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 127d743bc3e8c1a80800000000000000
+      internalID: -8494758405770586335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_59
+      rect:
+        serializedVersion: 2
+        x: 1146
+        y: 539
+        width: 47
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 782de60a5a265a600800000000000000
+      internalID: 478897398885569159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_60
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 464
+        width: 52
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d34472212057a9b0800000000000000
+      internalID: -5068994752340016173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_61
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 462
+        width: 57
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9965cd1923cdf0c10800000000000000
+      internalID: 2022076867466253977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_62
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 467
+        width: 48
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed8a24b7230283780800000000000000
+      internalID: -8703170878705063714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_63
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 438
+        width: 65
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f39bce592e7ff1b0800000000000000
+      internalID: -5620635093785930766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_64
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 464
+        width: 54
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dea2bce42997955e0800000000000000
+      internalID: -1920370096802682131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_65
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 462
+        width: 50
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc2cdf5947039c070800000000000000
+      internalID: 8127080279857545932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_66
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 464
+        width: 50
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51487ee4ee9522700800000000000000
+      internalID: 514072187534541845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_67
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 463
+        width: 48
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcd76b1755b2f7e10800000000000000
+      internalID: 2197522789160091085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_68
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 464
+        width: 48
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddceb628fa8d64f70800000000000000
+      internalID: 9171255939505581277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_69
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 464
+        width: 51
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23aa238013e49b920800000000000000
+      internalID: 3006520198744418866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_70
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 463
+        width: 51
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41b2dc82d71cda4f0800000000000000
+      internalID: -815783214184584428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_71
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 459
+        width: 51
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8b12f718ab9ed8c0800000000000000
+      internalID: -3972566675035645044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_72
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 468
+        width: 49
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d724dbede05eb3b0800000000000000
+      internalID: -5494865512551405607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_73
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 455
+        width: 55
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c72a75bd68ba232b0800000000000000
+      internalID: -5606229990428925316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_74
+      rect:
+        serializedVersion: 2
+        x: 1137
+        y: 453
+        width: 60
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 678206cba4c9b5660800000000000000
+      internalID: 7375660659551250550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_75
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 382
+        width: 53
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 114f6bb5fdf0b9f00800000000000000
+      internalID: 1124509983949911057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_76
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 369
+        width: 51
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ede0e6f31cec5dd0800000000000000
+      internalID: -2495860522979627548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_77
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 371
+        width: 55
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 528b3e018959e4010800000000000000
+      internalID: 1175041033141205029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_78
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 383
+        width: 56
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 251bc2286ce149980800000000000000
+      internalID: -8533161556023922350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_79
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 366
+        width: 54
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 320684c83520796a0800000000000000
+      internalID: -6442678184071110621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_80
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 361
+        width: 58
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f672d3832d4dd340800000000000000
+      internalID: 4890149585325029107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_81
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 382
+        width: 54
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9aa133fc0c2ed1110800000000000000
+      internalID: 1233391190707215017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_82
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 378
+        width: 59
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cb96cde01c858c30800000000000000
+      internalID: 4361045818514774982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_83
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 385
+        width: 53
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 917a8b0b676059980800000000000000
+      internalID: -8532906812142737639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_84
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 386
+        width: 47
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d42597d4566f5280800000000000000
+      internalID: -9052404211411245872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_85
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 377
+        width: 53
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 538b4bcf549669330800000000000000
+      internalID: 3717274291754285109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_86
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 381
+        width: 51
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 088a3f600188c62f0800000000000000
+      internalID: -978257416628754304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_87
+      rect:
+        serializedVersion: 2
+        x: 973
+        y: 372
+        width: 61
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9974599e8200bb2b0800000000000000
+      internalID: -5567856338595919975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_88
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 379
+        width: 49
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09e2659022b234840800000000000000
+      internalID: 5207053019355950736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_89
+      rect:
+        serializedVersion: 2
+        x: 1145
+        y: 387
+        width: 48
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e9cbfff0fd1ed270800000000000000
+      internalID: 8277086086077598184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_90
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 300
+        width: 49
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b7f1e466b2b890f0800000000000000
+      internalID: -1109940811700504652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_91
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 306
+        width: 52
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7386ab369db35910800000000000000
+      internalID: 1825010726958695293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_92
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 304
+        width: 52
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b97deb7439cff640800000000000000
+      internalID: 5116028928970815920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_93
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 279
+        width: 57
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f43049f3f9d4c750800000000000000
+      internalID: 6324419418617033975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_94
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 293
+        width: 49
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cca2b23495abfaeb0800000000000000
+      internalID: -4706338193037120820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_95
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 305
+        width: 52
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73cf5aefca4a22560800000000000000
+      internalID: 7287568209952504887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_96
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 308
+        width: 47
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f63674aa369cfbe0800000000000000
+      internalID: -1442112602053921037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_97
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 303
+        width: 49
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1d65947a46faecf0800000000000000
+      internalID: -222094431957455588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_98
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 295
+        width: 52
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d1afdc904a3cd0c0800000000000000
+      internalID: -4549697474366823983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_99
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 298
+        width: 51
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 816d4dcd274821c40800000000000000
+      internalID: 5481589325329389080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_100
+      rect:
+        serializedVersion: 2
+        x: 827
+        y: 308
+        width: 47
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af158be6931ffe940800000000000000
+      internalID: 5327742113175589370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_101
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 299
+        width: 56
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffc8eb3e87a31bd80800000000000000
+      internalID: -8236737952592524033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_102
+      rect:
+        serializedVersion: 2
+        x: 985
+        y: 298
+        width: 50
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c72f3a8ffc096d850800000000000000
+      internalID: 6401463143257862780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_103
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 301
+        width: 54
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6825cdc9ac07c700800000000000000
+      internalID: 560430602072172653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_104
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 305
+        width: 53
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63582d561b821e710800000000000000
+      internalID: 1720701275014858038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_105
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 220
+        width: 51
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a7596650651357e0800000000000000
+      internalID: -1778053924370425950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_106
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 223
+        width: 47
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58f8c7a0c408220f0800000000000000
+      internalID: -1143210291316879483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_107
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 220
+        width: 57
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 425a707ff280ef6a0800000000000000
+      internalID: -6413679817228049116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_108
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 220
+        width: 54
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2a987ad2099fcd40800000000000000
+      internalID: 5606868298633878059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_109
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 211
+        width: 51
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cee7fc5fd63a8500800000000000000
+      internalID: 399191849941069509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_110
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 226
+        width: 50
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd0c036f8f8ece5b0800000000000000
+      internalID: -5337635302360956705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_111
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 217
+        width: 57
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc709bf75629e7c70800000000000000
+      internalID: 8970768472400791501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_112
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 228
+        width: 49
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9b0a6bddc220b2e0800000000000000
+      internalID: -2112149957691962468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_113
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 227
+        width: 50
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b318f96add34b5d30800000000000000
+      internalID: 4421202078456578363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_114
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 208
+        width: 59
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddd5c8023cfb9c260800000000000000
+      internalID: 7118431530821377501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_115
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 222
+        width: 47
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02e8e86351a0fa630800000000000000
+      internalID: 3940379285198376480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_116
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 225
+        width: 48
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdb2f035d0ac9dad0800000000000000
+      internalID: -2676886344918160417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_117
+      rect:
+        serializedVersion: 2
+        x: 987
+        y: 222
+        width: 49
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d96e7dbabed0a4b00800000000000000
+      internalID: 813477988545324701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_118
+      rect:
+        serializedVersion: 2
+        x: 1055
+        y: 222
+        width: 59
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cde818d5786ff6e0800000000000000
+      internalID: -1801606470578934336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_119
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 218
+        width: 54
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b7a1452ea80dc6b0800000000000000
+      internalID: -5274550044538591309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_120
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 127
+        width: 48
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 875e246822baab9b0800000000000000
+      internalID: -5063546666254932616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_121
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 140
+        width: 48
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b096c6ef5eab57490800000000000000
+      internalID: -7749082086842275573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_122
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 138
+        width: 48
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79305bd399d5239f0800000000000000
+      internalID: -490226496683310185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_123
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 143
+        width: 54
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4265fa78bfe4d5e00800000000000000
+      internalID: 1035070331585254948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_124
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 147
+        width: 50
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d78be45348d130c50800000000000000
+      internalID: 6630175530086742141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_125
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 147
+        width: 47
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3651723bfece32980800000000000000
+      internalID: -8564741552081529501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_126
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 125
+        width: 55
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81949db3399f51a60800000000000000
+      internalID: 7644290353290889496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_127
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 140
+        width: 50
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db48ea4f6b0937a10800000000000000
+      internalID: 1906026182771377341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_128
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 145
+        width: 51
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d6990159d695ede0800000000000000
+      internalID: -1304470656942237996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_129
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 119
+        width: 53
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dabcce8e9de141f0800000000000000
+      internalID: -1062306771826328878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_130
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 131
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbb6d2debd3cf0ff0800000000000000
+      internalID: -67620120042837060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_131
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 123
+        width: 61
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81928e62b6e1b91e0800000000000000
+      internalID: -2190123348222531304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_132
+      rect:
+        serializedVersion: 2
+        x: 969
+        y: 121
+        width: 64
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19575664a3e0c7da0800000000000000
+      internalID: -5945861764583950959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_133
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 147
+        width: 48
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f78127fa3dab88a0800000000000000
+      internalID: -6301752784808998927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_134
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 145
+        width: 52
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa0b068cc31105be0800000000000000
+      internalID: -1490672523902144342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_135
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 64
+        width: 54
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 380c0af11dc5c4cb0800000000000000
+      internalID: -4878422243100540797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_136
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 67
+        width: 46
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abd92a3c650343b10800000000000000
+      internalID: 1960244887020543418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_137
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 66
+        width: 49
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cb27a1dd143c6660800000000000000
+      internalID: 7380331192029490121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_138
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 60
+        width: 56
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 592b48b6ce5f04240800000000000000
+      internalID: 4774086000777671317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_139
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 55
+        width: 54
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd638b9d815f4c9f0800000000000000
+      internalID: -448964575749458209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_140
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 46
+        width: 53
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a63108180728ea060800000000000000
+      internalID: 6966649093309338474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_141
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 64
+        width: 52
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca3e74d06336bc270800000000000000
+      internalID: 8271814224398246828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_142
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 65
+        width: 49
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a9212c67c17204c0800000000000000
+      internalID: -4322767590995711575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_143
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 48
+        width: 55
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cff0f51a9d614b80800000000000000
+      internalID: -8412322120390869054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_144
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 46
+        width: 58
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14252df5ab2afb3d0800000000000000
+      internalID: -3188651089799785919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_145
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 55
+        width: 54
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5016f2fd24a37b50800000000000000
+      internalID: 6589791197029863518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_146
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 63
+        width: 47
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4427a1aaf147aedf0800000000000000
+      internalID: -150179958216822204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_147
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 50
+        width: 61
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fac9633b111f6af90800000000000000
+      internalID: -6942596717221602129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_148
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 57
+        width: 48
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11f98ec5a0075ef80800000000000000
+      internalID: -8077927166808383727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hjm-shells_sheet_1_149
+      rect:
+        serializedVersion: 2
+        x: 1141
+        y: 59
+        width: 53
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ddb3cc1d11989eb0800000000000000
+      internalID: -4712857455820554791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

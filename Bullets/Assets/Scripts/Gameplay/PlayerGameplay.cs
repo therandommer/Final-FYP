@@ -130,14 +130,20 @@ public class PlayerGameplay : MonoBehaviour
         {
             case DropType.eHealth:
                 thisHealth += _thisDrop.dropStrength;
+                if (thisHealth > playerStats.health)
+                    thisHealth = playerStats.health;
                 Actions.OnPlayerHit?.Invoke(thisHealth); //reuse this action, just to update UI
                 break;
             case DropType.eShield:
                 thisShieldLevel += _thisDrop.dropStrength;
+                if (thisShieldLevel > playerStats.maxShieldLevel)
+                    thisShieldLevel = playerStats.maxShieldLevel;
                 Actions.OnShieldGot?.Invoke(thisShieldLevel);
                 break;
             case DropType.eWeapon:
                 thisWeaponLevel += _thisDrop.dropStrength;
+                if (thisWeaponLevel > playerStats.maxWeaponLevel)
+                    thisWeaponLevel = playerStats.maxWeaponLevel;
                 Actions.OnWeaponGot?.Invoke(thisWeaponLevel);
                 break;
         }

@@ -118,6 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 795643257ac32ff42be73c62b07e4093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
   thisBullet: {fileID: 11400000, guid: 104edec2d992f3246aecc53d14559efb, type: 2}
 --- !u!61 &179296069007350793
 BoxCollider2D:
@@ -263,6 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 795643257ac32ff42be73c62b07e4093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
   thisBullet: {fileID: 11400000, guid: 104edec2d992f3246aecc53d14559efb, type: 2}
 --- !u!61 &179296069120468856
 BoxCollider2D:
@@ -408,6 +410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 795643257ac32ff42be73c62b07e4093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
   thisBullet: {fileID: 11400000, guid: 104edec2d992f3246aecc53d14559efb, type: 2}
 --- !u!61 &179296069133867736
 BoxCollider2D:
@@ -553,6 +556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 795643257ac32ff42be73c62b07e4093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
   thisBullet: {fileID: 11400000, guid: 104edec2d992f3246aecc53d14559efb, type: 2}
 --- !u!61 &179296069533478882
 BoxCollider2D:
@@ -698,6 +702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 795643257ac32ff42be73c62b07e4093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
   thisBullet: {fileID: 11400000, guid: 104edec2d992f3246aecc53d14559efb, type: 2}
 --- !u!61 &179296069983501308
 BoxCollider2D:
@@ -843,6 +848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 795643257ac32ff42be73c62b07e4093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
   thisBullet: {fileID: 11400000, guid: 104edec2d992f3246aecc53d14559efb, type: 2}
 --- !u!61 &179296070013512109
 BoxCollider2D:
@@ -950,7 +956,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: f65b4740f03e5d34dafc8a8d60e9ac5a, type: 3}
   m_Color: {r: 0.0046724924, g: 0.8786825, b: 0.990566, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -994,6 +1000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 795643257ac32ff42be73c62b07e4093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
   thisBullet: {fileID: 11400000, guid: 104edec2d992f3246aecc53d14559efb, type: 2}
 --- !u!61 &4164766836318218676
 BoxCollider2D:
@@ -1012,7 +1019,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.2, y: 0.2}
+    oldSize: {x: 1.26, y: 1.23}
     newSize: {x: 0.2, y: 0.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
