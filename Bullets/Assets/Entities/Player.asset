@@ -16,7 +16,12 @@ MonoBehaviour:
   health: 100
   moveSpeed: 10
   isPaused: 1
-  fireType: 0
   boostMult: 1.5
   bullets:
   - {fileID: 5168859238285828049, guid: 5aad15175856c574380cad99d3bcb204, type: 3}
+  - {fileID: 5168859238285828049, guid: 7c0fcdf3af266c241bd7695d35c275cd, type: 3}
+  shieldLevel: 1
+  maxShieldLevel: 5
+  weaponLevel: 1
+  maxWeaponLevel: 5
+  startFireRate: 1

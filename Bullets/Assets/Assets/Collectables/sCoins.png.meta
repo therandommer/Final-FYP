@@ -1,0 +1,540 @@
+fileFormatVersion: 2
+guid: 60f383e5c01cef04dab2610638016a00
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4265127356287315645
+    second: sCoins_0
+  - first:
+      213: 5350680657610391966
+    second: sCoins_1
+  - first:
+      213: 8148475240556818644
+    second: sCoins_2
+  - first:
+      213: -3783684059811895500
+    second: sCoins_3
+  - first:
+      213: 2428535799576291944
+    second: sCoins_4
+  - first:
+      213: -953582086806599424
+    second: sCoins_5
+  - first:
+      213: -1419218856324327659
+    second: sCoins_6
+  - first:
+      213: 1112491409291667790
+    second: sCoins_7
+  - first:
+      213: 605676485685266502
+    second: sCoins_8
+  - first:
+      213: 4366329233317677484
+    second: sCoins_9
+  - first:
+      213: -5878594306444333191
+    second: sCoins_10
+  - first:
+      213: -5298136718901041806
+    second: sCoins_11
+  - first:
+      213: -8602750961343727203
+    second: sCoins_12
+  - first:
+      213: -7289758695720819297
+    second: sCoins_13
+  - first:
+      213: 1689154081225701453
+    second: sCoins_14
+  - first:
+      213: 3149615929111345196
+    second: sCoins_15
+  - first:
+      213: -8616935603860151698
+    second: sCoins_16
+  - first:
+      213: -1158985108300225952
+    second: sCoins_17
+  - first:
+      213: -1898447042743345570
+    second: sCoins_18
+  - first:
+      213: 6549629388081273040
+    second: sCoins_19
+  - first:
+      213: -8946952144768565043
+    second: sCoins_20
+  - first:
+      213: -7364177792213867522
+    second: sCoins_21
+  - first:
+      213: -2748599654421070067
+    second: sCoins_22
+  - first:
+      213: -3382401471735808658
+    second: sCoins_23
+  - first:
+      213: -3436006693206558422
+    second: sCoins_24
+  - first:
+      213: 5819020267033481896
+    second: sCoins_25
+  - first:
+      213: 6986859569898792921
+    second: sCoins_26
+  - first:
+      213: 2813713701585065717
+    second: sCoins_27
+  - first:
+      213: -2032237762107589738
+    second: sCoins_28
+  - first:
+      213: -6160218177029827538
+    second: sCoins_29
+  - first:
+      213: 6025506772256060171
+    second: sCoins_30
+  - first:
+      213: 5531059938491997889
+    second: sCoins_31
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 20
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sCoins_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 49
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 5, y: 0, z: 0, w: 9}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbe6e41abb6c03b30800000000000000
+      internalID: 4265127356287315645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sCoins_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 39
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e91cb6f75bf614a40800000000000000
+      internalID: 5350680657610391966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sCoins_2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 49
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d0747e0f03351170800000000000000
+      internalID: 8148475240556818644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sCoins_3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 48
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 437aa98f467ad7bc0800000000000000
+      internalID: -3783684059811895500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sCoins_4
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 25
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86a601a5174e3b120800000000000000
+      internalID: 2428535799576291944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sCoins_5
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 47
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00987b3f42234c2f0800000000000000
+      internalID: -953582086806599424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sCoins_6
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 33
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 517904238fbed4ce0800000000000000
+      internalID: -1419218856324327659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sCoins_7
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 1
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e49e082ea0d507f00800000000000000
+      internalID: 1112491409291667790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sCoins_8
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 3
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 648c3120e8bc76800800000000000000
+      internalID: 605676485685266502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sCoins_9
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 36
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca9cd4ccd41589c30800000000000000
+      internalID: 4366329233317677484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sCoins_10
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 3
+        width: 35
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97f60c9df990b6ea0800000000000000
+      internalID: -5878594306444333191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sCoins_11
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 36
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 275237299bc3976b0800000000000000
+      internalID: -5298136718901041806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sCoins_12
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 32
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d99f4f97493ec9880800000000000000
+      internalID: -8602750961343727203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sCoins_13
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 0
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f95ee3bc61395da90800000000000000
+      internalID: -7289758695720819297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sCoins_14
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 36
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d48fb56ffa4117710800000000000000
+      internalID: 1689154081225701453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sCoins_15
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 0
+        width: 4
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c28f799000fa5bb20800000000000000
+      internalID: 3149615929111345196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

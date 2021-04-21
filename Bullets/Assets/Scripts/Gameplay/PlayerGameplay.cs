@@ -6,10 +6,12 @@ public class PlayerGameplay : MonoBehaviour
 {
     [SerializeField]
     public Player playerStats;
+    public GameObject bulletSpawnPoint;
     int thisHealth;
     int thisShieldLevel;
     int thisWeaponLevel;
     bool updateWeapon;
+    bool isFiring = false; //controls full auto
     [SerializeField]
     public GameObject equippedBullet;
     [SerializeField]
@@ -59,9 +61,9 @@ public class PlayerGameplay : MonoBehaviour
     {
         Instantiate(this, spawnPos, Quaternion.identity, GameController.spawnHolder.transform);
     }
-    protected virtual void SpawnBullet(GameObject bullet, GameObject spawnObject)
+    protected virtual void SpawnBullet()
     {
-        GameObject cloneBullet = Instantiate(bullet, spawnObject.transform.position, this.transform.rotation);
+        GameObject cloneBullet = Instantiate(equippedBullet, bulletSpawnPoint.transform.position, this.transform.rotation);
         cloneBullet.transform.parent = spawnParent.transform;
     }
     // Update is called once per frame
@@ -69,7 +71,13 @@ public class PlayerGameplay : MonoBehaviour
     {
         if(updateWeapon)
 		{
-            equippedBullet = playerStats.bullets[thisWeaponLevel];
+            equippedBullet = playerStats.bullets[thisWeaponLevel-1];
+            if(isFiring)
+			{
+                CancelInvoke("SpawnBullet");
+                InvokeRepeating("SpawnBullet", 0, playerStats.startFireRate / thisWeaponLevel);
+			}
+            updateWeapon = false;
 		}
         if(!isPaused)
 		{
@@ -86,13 +94,15 @@ public class PlayerGameplay : MonoBehaviour
                 movement = new Vector2(inputX, inputY) * playerStats.moveSpeed * playerStats.boostMult;
             }
             LookAtMouse(this.transform.position, mousePosWorld);
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetButtonDown("Fire1") && !isFiring)
             {
-                SpawnBullet(equippedBullet, spawnPos);
+                isFiring = true;
+                InvokeRepeating("SpawnBullet", 0, playerStats.startFireRate/thisWeaponLevel);
             }
-            if (Input.GetButton("Fire1") && playerStats.fireType == Player.FireType.auto)
+            if (Input.GetButtonUp("Fire1") && isFiring)
             {
-                SpawnBullet(equippedBullet, spawnPos);
+                isFiring = false;
+                CancelInvoke("SpawnBullet");
             }
             if (Input.GetButtonDown("Boost"))
             {
@@ -144,6 +154,7 @@ public class PlayerGameplay : MonoBehaviour
                 thisWeaponLevel += _thisDrop.dropStrength;
                 if (thisWeaponLevel > playerStats.maxWeaponLevel)
                     thisWeaponLevel = playerStats.maxWeaponLevel;
+                updateWeapon = true;
                 Actions.OnWeaponGot?.Invoke(thisWeaponLevel);
                 break;
         }

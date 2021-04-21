@@ -1288,10 +1288,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5713928451018672562, guid: e6eecdbc249f6384db147dbb7f4d6766, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 1ee460ed66d62b84e907da767f8a8605, type: 3}
     - target: {fileID: 5713928451018672563, guid: e6eecdbc249f6384db147dbb7f4d6766, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1339,30 +1335,6 @@ PrefabInstance:
     - target: {fileID: 5713928451018672575, guid: e6eecdbc249f6384db147dbb7f4d6766, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6032448848204893492, guid: e6eecdbc249f6384db147dbb7f4d6766, type: 3}
-      propertyPath: m_Size.x
-      value: 0.2212582
-      objectReference: {fileID: 0}
-    - target: {fileID: 6032448848204893492, guid: e6eecdbc249f6384db147dbb7f4d6766, type: 3}
-      propertyPath: m_Size.y
-      value: 0.4095814
-      objectReference: {fileID: 0}
-    - target: {fileID: 6032448848204893492, guid: e6eecdbc249f6384db147dbb7f4d6766, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.0050898045
-      objectReference: {fileID: 0}
-    - target: {fileID: 6032448848204893492, guid: e6eecdbc249f6384db147dbb7f4d6766, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.012724504
-      objectReference: {fileID: 0}
-    - target: {fileID: 6032448848204893492, guid: e6eecdbc249f6384db147dbb7f4d6766, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 1.0333333
-      objectReference: {fileID: 0}
-    - target: {fileID: 6032448848204893492, guid: e6eecdbc249f6384db147dbb7f4d6766, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.0333333
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6eecdbc249f6384db147dbb7f4d6766, type: 3}
@@ -5134,9 +5106,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: WeaponDrop
       objectReference: {fileID: 0}
+    - target: {fileID: 1460748338647194684, guid: 4ee69904ac3977f4388f8c997982b981, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 23ee13013de3e0341b561fd4574179ac, type: 3}
+    - target: {fileID: 1460748338647194684, guid: 4ee69904ac3977f4388f8c997982b981, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1460748338647194684, guid: 4ee69904ac3977f4388f8c997982b981, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1460748338647194684, guid: 4ee69904ac3977f4388f8c997982b981, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1460748338647194685, guid: 4ee69904ac3977f4388f8c997982b981, type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1460748338647194685, guid: 4ee69904ac3977f4388f8c997982b981, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1460748338647194685, guid: 4ee69904ac3977f4388f8c997982b981, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5177,6 +5169,22 @@ PrefabInstance:
     - target: {fileID: 1460748338647194685, guid: 4ee69904ac3977f4388f8c997982b981, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1460748338647194686, guid: 4ee69904ac3977f4388f8c997982b981, type: 3}
+      propertyPath: m_Size.x
+      value: 5.239954
+      objectReference: {fileID: 0}
+    - target: {fileID: 1460748338647194686, guid: 4ee69904ac3977f4388f8c997982b981, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.031096697
+      objectReference: {fileID: 0}
+    - target: {fileID: 1460748338647194686, guid: 4ee69904ac3977f4388f8c997982b981, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 5.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1460748338647194686, guid: 4ee69904ac3977f4388f8c997982b981, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 5.12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ee69904ac3977f4388f8c997982b981, type: 3}
