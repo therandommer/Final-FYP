@@ -12,7 +12,7 @@ public class TimeController : MonoBehaviour
     public float timePassed = 0.0f;
     public float maxTime = 0.0f;
     public float timeToNextSpawn = 0.0f;
-    public float timeScale = 1.0f;
+    float previousTimeScale = 1.0f;
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI nextSpawnTimerText;
     public TextMeshProUGUI endOfSongTimeText;
@@ -37,7 +37,7 @@ public class TimeController : MonoBehaviour
     {
         if(!isPaused)
 		{
-            timePassed += Time.deltaTime * timeScale;
+            timePassed += Time.deltaTime;
             timerText.text = $"Time: {(Mathf.FloorToInt(timePassed/60).ToString())} : {(Mathf.FloorToInt(timePassed % 60).ToString())}";
             nextSpawnTimerText.text = $"Next Pack: {(Mathf.CeilToInt(timeToNextSpawn / 60).ToString())} : {(Mathf.CeilToInt(timeToNextSpawn % 60).ToString())}";
             if(needsSongTimeUpdate)
@@ -49,6 +49,15 @@ public class TimeController : MonoBehaviour
 
     void TogglePause()
     {
+        if(Time.timeScale > 0)
+		{
+            previousTimeScale = Time.timeScale;
+            Time.timeScale = 0;
+		}
+        else if(Time.timeScale == 0)
+		{
+            Time.timeScale = previousTimeScale;
+		}
         isPaused = !isPaused;
         Debug.Log($"Toggling pause for {this.name}");
     }

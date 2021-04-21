@@ -10,7 +10,6 @@ public class Player : Entity
     public int shieldLevel = 1;
     public int maxShieldLevel = 5;
     public int weaponLevel = 1;
-    public int maxWeaponLevel = 5;
     public float startFireRate = 1.0f;
     void Start()
     {

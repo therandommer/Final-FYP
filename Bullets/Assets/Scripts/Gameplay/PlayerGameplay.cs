@@ -10,6 +10,7 @@ public class PlayerGameplay : MonoBehaviour
     int thisHealth;
     int thisShieldLevel;
     int thisWeaponLevel;
+    int thisMaxWeaponLevel;
     bool updateWeapon;
     bool isFiring = false; //controls full auto
     [SerializeField]
@@ -44,6 +45,7 @@ public class PlayerGameplay : MonoBehaviour
         thisHealth = playerStats.health;
         thisWeaponLevel = playerStats.weaponLevel;
         thisShieldLevel = playerStats.shieldLevel;
+        thisMaxWeaponLevel = playerStats.bullets.Count;
         rb = gameObject.GetComponent<Rigidbody2D>();
         if (rb == null)
         {
@@ -151,10 +153,18 @@ public class PlayerGameplay : MonoBehaviour
                 Actions.OnShieldGot?.Invoke(thisShieldLevel);
                 break;
             case DropType.eWeapon:
-                thisWeaponLevel += _thisDrop.dropStrength;
-                if (thisWeaponLevel > playerStats.maxWeaponLevel)
-                    thisWeaponLevel = playerStats.maxWeaponLevel;
-                updateWeapon = true;
+                if (thisWeaponLevel > thisMaxWeaponLevel)
+				{
+                    thisWeaponLevel = thisMaxWeaponLevel; //maybe increase fire rate later?
+                }
+                else if (thisWeaponLevel < thisMaxWeaponLevel)
+				{
+                    thisWeaponLevel += _thisDrop.dropStrength;
+                    if (thisWeaponLevel > thisMaxWeaponLevel)
+                        thisWeaponLevel = thisMaxWeaponLevel;
+                    updateWeapon = true;
+                    
+                }
                 Actions.OnWeaponGot?.Invoke(thisWeaponLevel);
                 break;
         }

@@ -23,5 +23,4 @@ MonoBehaviour:
   shieldLevel: 1
   maxShieldLevel: 5
   weaponLevel: 1
-  maxWeaponLevel: 5
-  startFireRate: 0.5
+  startFireRate: 0.3

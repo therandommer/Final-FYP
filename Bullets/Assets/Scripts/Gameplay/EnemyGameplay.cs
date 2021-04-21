@@ -78,8 +78,16 @@ public class EnemyGameplay : AIGameplay
     //If died through player
     protected void Die(Enemy enemyRef)
 	{
-        Debug.Log($"Enemy {this.name} died");
+        //Debug.Log($"Enemy {this.name} died");
         Actions.OnEnemyKilled?.Invoke(thisEnemy); //triggered if not null
+        int randomRoll = Random.Range(1, 100);
+        if(randomRoll<thisEnemy.dropChance)
+		{
+            Debug.Log("Spawning");
+            int tmp = Random.Range(0, thisEnemy.availableDrops.Count);
+            GameObject newDrop = Instantiate(thisEnemy.availableDrops[tmp], gameObject.transform);
+            newDrop.transform.parent = GameObject.Find("Powerups").transform;
+        }
         Destroy(gameObject);
     }
     //if despawned

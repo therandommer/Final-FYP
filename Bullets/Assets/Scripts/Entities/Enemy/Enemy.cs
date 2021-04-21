@@ -9,7 +9,7 @@ public class Enemy : Entity
     
     public List<GameObject> bullets;
 
-    public List<Drop> availableDrops;
+    public List<GameObject> availableDrops;
     public float dropChance;
     public float fireRate; //delay between each shot in seconds
     public enum StartDirection
