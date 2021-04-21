@@ -11,9 +11,17 @@ public class BulletGameplay : AIGameplay
     bool acquiredTarget = false;
     bool isLookingTowards = false;
     float curveTimer = 0f;
+    bool hasCollided = false;
+    SpriteRenderer thisRenderer;
     void Start()
     {
-        
+        thisRenderer = gameObject.GetComponent<SpriteRenderer>();
+        if(!thisRenderer)
+		{
+            Debug.LogError($"No sprite renderer for bullet: {this.name}. Adding fake sprite renderer");
+            gameObject.AddComponent<SpriteRenderer>();
+            thisRenderer = gameObject.GetComponent<SpriteRenderer>();
+		}
     }
     // Update is called once per frame
     void Update()
@@ -93,19 +101,28 @@ public class BulletGameplay : AIGameplay
 
     void OnTriggerEnter2D(Collider2D col)
 	{
-        if(col.gameObject.tag == "Enemy" && thisBullet.thisFaction == Bullet.BulletFaction.player)
+        if(!hasCollided)
 		{
-            Debug.Log($"Dealing {thisBullet.damage} damage to enemy");
-            col.gameObject.SendMessage("Damage", thisBullet.damage);
-            Actions.OnBulletHit?.Invoke(thisBullet);
-            Die();
-		}
-        if (col.gameObject.tag == "Player" && thisBullet.thisFaction == Bullet.BulletFaction.enemy)
-        {
-            col.gameObject.SendMessage("Damage", thisBullet.damage);
-            Die();
+            if (col.gameObject.tag == "Enemy" && thisBullet.thisFaction == Bullet.BulletFaction.player)
+            {
+                col.gameObject.SendMessage("Damage", thisBullet.damage);
+                Actions.OnBulletHit?.Invoke(thisBullet);
+                Hide();
+            }
+            if (col.gameObject.tag == "Player" && thisBullet.thisFaction == Bullet.BulletFaction.enemy)
+            {
+                Debug.Log($"Dealing {thisBullet.damage} damage to player");
+                col.gameObject.SendMessage("Damage", thisBullet.damage);
+                Hide();
+            }
         }
+        
     }
+    void Hide()
+	{
+        hasCollided = true;
+        thisRenderer.enabled = !thisRenderer.enabled;
+	}
     void Die()
 	{
         Destroy(gameObject);

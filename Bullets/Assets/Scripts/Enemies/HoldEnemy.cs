@@ -8,6 +8,7 @@ public class HoldEnemy : EnemyGameplay
     bool startHolding = false;
     public int patrolLoops = 2; // loops before patrol enemy leaves
     bool isLeaving = false;
+    public List<Vector2> movePoints; //randomly generated, used to determine this path
     public HoldEnemyEntity thisEntity;
     bool isCountingDown = false;
 
@@ -17,6 +18,10 @@ public class HoldEnemy : EnemyGameplay
         {
             rb = gameObject.GetComponent<Rigidbody2D>();
         }
+        for(int i = 0; i < thisEntity.totalStops; ++i)
+		{
+            movePoints.Add(new Vector2(Random.Range(thisEntity.xRange.x, thisEntity.xRange.y), Random.Range(thisEntity.yRange.x, thisEntity.yRange.y)));
+		}
         InvokeRepeating("ShootRotation", thisEnemy.fireRate, thisEnemy.fireRate);
     }
     void FixedUpdate()
@@ -31,13 +36,13 @@ public class HoldEnemy : EnemyGameplay
         }
         if (!isPaused)
 		{
-            if (Vector2.Distance(thisEntity.movePoints[positionNo], thisTransform) < pointRadius)
+            if (Vector2.Distance(movePoints[positionNo], thisTransform) < pointRadius)
             {
                 if (!startHolding)
                 {
                     positionNo++;
                 }
-                if (positionNo >= thisEntity.movePoints.Count && patrolLoops != 0 && !startHolding) // reset to first position
+                if (positionNo >= movePoints.Count && patrolLoops != 0 && !startHolding) // reset to first position
                 {
                     positionNo = 0;
                     patrolLoops--;
@@ -50,8 +55,8 @@ public class HoldEnemy : EnemyGameplay
             }
             if (patrolLoops > 0)
             {
-                transform.position = Vector2.MoveTowards(new Vector2(transform.position.x, transform.position.y), thisEntity.movePoints[positionNo], thisMoveSpeed * Time.deltaTime);
-                LookAtTarget(transform.position, thisEntity.movePoints[positionNo]);
+                transform.position = Vector2.MoveTowards(new Vector2(transform.position.x, transform.position.y), movePoints[positionNo], thisMoveSpeed * Time.deltaTime);
+                LookAtTarget(transform.position, movePoints[positionNo]);
             }
             if (isLeaving)
             {

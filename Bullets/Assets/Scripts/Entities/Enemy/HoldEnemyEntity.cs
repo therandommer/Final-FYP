@@ -6,5 +6,8 @@ using UnityEngine;
 public class HoldEnemyEntity : Enemy
 {
     public float holdTimer = 5.0f; //timer before enemy leaves
-    public List<Vector2> movePoints; //used for movement
+    public int totalStops = 2; //points to move between before it stops
+    public Vector2 xRange = new Vector2(-9.0f, 9.0f);
+    public Vector2 yRange = new Vector2(-4.0f, 4.0f);
+    //public List<Vector2> movePoints; //used for movement
 }

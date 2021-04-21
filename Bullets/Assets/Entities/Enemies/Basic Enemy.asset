@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Basic Enemy
   m_EditorClassIdentifier: 
   thisSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  health: 5
+  health: 3
   moveSpeed: 2
   isPaused: 0
   scoreValue: 20
@@ -30,8 +30,8 @@ MonoBehaviour:
   availableDrops:
   - {fileID: 1460748338647194658, guid: 7a7444dae0ea56f4aa650e3584bc7838, type: 3}
   - {fileID: 1460748338647194658, guid: 7db47c49578a48d48af2a306a2eb4fac, type: 3}
-  - {fileID: 1460748338647194658, guid: 0208b51c9ca0b3d4d9efc1b14bfca654, type: 3}
-  - {fileID: 1460748338647194658, guid: 4ee69904ac3977f4388f8c997982b981, type: 3}
-  dropChance: 80
+  - {fileID: 1460748338647194658, guid: 7a7444dae0ea56f4aa650e3584bc7838, type: 3}
+  - {fileID: 1460748338647194658, guid: 7a7444dae0ea56f4aa650e3584bc7838, type: 3}
+  dropChance: 10
   fireRate: 2
-  thisDirection: 0
+  thisDirection: 1

@@ -13,16 +13,21 @@ MonoBehaviour:
   m_Name: Hold Enemy
   m_EditorClassIdentifier: 
   thisSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  health: 8
+  health: 6
   moveSpeed: 4
   isPaused: 0
   scoreValue: 60
   bullets:
   - {fileID: 696151262608964079, guid: 2a108f107930ac54bb18a68a04425601, type: 3}
+  availableDrops:
+  - {fileID: 1460748338647194658, guid: 7a7444dae0ea56f4aa650e3584bc7838, type: 3}
+  - {fileID: 1460748338647194658, guid: 7db47c49578a48d48af2a306a2eb4fac, type: 3}
+  - {fileID: 1460748338647194658, guid: 4ee69904ac3977f4388f8c997982b981, type: 3}
+  - {fileID: 1460748338647194658, guid: 7a7444dae0ea56f4aa650e3584bc7838, type: 3}
+  dropChance: 20
   fireRate: 1.5
   thisDirection: 0
   holdTimer: 5
-  movePoints:
-  - {x: 6, y: 2}
-  - {x: 3, y: 1}
-  - {x: 1, y: 3}
+  totalStops: 2
+  xRange: {x: -9, y: 9}
+  yRange: {x: -4, y: 4}
