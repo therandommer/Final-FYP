@@ -5,19 +5,13 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Entity", menuName = "Entity/Player", order = 1)]
 public class Player : Entity
 {
-    public enum FireType
-    {
-        single,
-        burst,
-        auto
-    }
-    public FireType fireType = FireType.single;
     public float boostMult = 1.5f;
     public List<GameObject> bullets = null;
-    
-    // Start is called before the first frame update
+    public int shieldLevel = 1;
+    public int maxShieldLevel = 5;
+    public int weaponLevel = 1;
+    public float startFireRate = 1.0f;
     void Start()
     {
-        moveSpeed = new Vector2(10, 10);
     }
 }

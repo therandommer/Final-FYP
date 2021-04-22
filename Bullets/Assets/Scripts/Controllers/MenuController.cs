@@ -27,6 +27,13 @@ public class MenuController : MonoBehaviour
     }
     void TogglePause()
 	{
-
+        if (!pauseMenu.activeInHierarchy)
+            pauseMenu.SetActive(true);
+        else
+            pauseMenu.SetActive(false);
+	}
+    public void SendPauseAction()
+	{
+        Actions.OnPause?.Invoke();
 	}
 }

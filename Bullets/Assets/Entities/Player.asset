@@ -13,10 +13,17 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   thisSprite: {fileID: 0}
-  health: 0
-  moveSpeed: {x: 10, y: 10}
-  isPaused: 0
-  fireType: 0
+  health: 100
+  moveSpeed: 10
+  isPaused: 1
   boostMult: 1.5
   bullets:
-  - {fileID: 5168859238285828049, guid: e4b66031debc9be429ff90b6ee8e6e3b, type: 3}
+  - {fileID: 5168859238285828049, guid: 5aad15175856c574380cad99d3bcb204, type: 3}
+  - {fileID: 5168859238285828049, guid: 7c0fcdf3af266c241bd7695d35c275cd, type: 3}
+  - {fileID: 5168859238285828049, guid: d0860b7eefa1a9f46bd95adff04ee882, type: 3}
+  - {fileID: 5168859238285828049, guid: 93f796e58bc011948a55eaa4f66b351e, type: 3}
+  - {fileID: 5168859238285828049, guid: 68e14dc4dc06bac4d83d15312f7210ce, type: 3}
+  shieldLevel: 1
+  maxShieldLevel: 5
+  weaponLevel: 1
+  startFireRate: 0.3

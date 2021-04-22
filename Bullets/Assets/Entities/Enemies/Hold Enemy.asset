@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9f9f694aef3b06469f9dbd299246fa0, type: 3}
+  m_Name: Hold Enemy
+  m_EditorClassIdentifier: 
+  thisSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  health: 6
+  moveSpeed: 4
+  isPaused: 0
+  scoreValue: 60
+  bullets:
+  - {fileID: 696151262608964079, guid: 2a108f107930ac54bb18a68a04425601, type: 3}
+  availableDrops:
+  - {fileID: 1460748338647194658, guid: 7a7444dae0ea56f4aa650e3584bc7838, type: 3}
+  - {fileID: 1460748338647194658, guid: 7db47c49578a48d48af2a306a2eb4fac, type: 3}
+  - {fileID: 1460748338647194658, guid: 4ee69904ac3977f4388f8c997982b981, type: 3}
+  - {fileID: 1460748338647194658, guid: 7a7444dae0ea56f4aa650e3584bc7838, type: 3}
+  dropChance: 20
+  fireRate: 1.5
+  thisDirection: 0
+  holdTimer: 5
+  totalStops: 2
+  xRange: {x: -9, y: 9}
+  yRange: {x: -4, y: 4}

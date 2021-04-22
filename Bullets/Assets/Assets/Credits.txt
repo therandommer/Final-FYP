@@ -1,0 +1,16 @@
+shield.png (Created by zeroisnotnull)
+	source: https://opengameart.org/content/shield-sprite
+blue_ship_space.png (Created by hookiz)
+	source: https://opengameart.org/content/ship-space-0 
+hjm_shells_sheet_1.png (Created by Varkalandar)
+	source: https://opengameart.org/content/shell-type-ships
+"Laser Sprites" folder (Created by Wenrexa)
+	source: https://opengameart.org/content/assets-free-laser-bullets-pack-2020
+"Guns" folder (Created by knik1985)
+	source: https://opengameart.org/content/space-weapon
+sCoins.png (Created by patvanmackelberg)
+	source: https://opengameart.org/content/16x16-small-and-medium-coin-animation
+"Hammers" folder (Part of the CC0 Hammer Icons collection by Antum Deluge)
+	source: https://opengameart.org/content/cc0-hammer-icons collection from OpenClipart.org
+Music: Neverland - Hatsune Miku
+	source: https://soundcloud.com/aya-hoshino/hatsune-miku-neverland (All credits go to original composers)

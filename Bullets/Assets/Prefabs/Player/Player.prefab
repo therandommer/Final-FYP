@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 5713928451018672562}
   - component: {fileID: 5713928451018672561}
   - component: {fileID: 5713928451018672560}
+  - component: {fileID: 6032448848204893492}
+  - component: {fileID: 4197830056440781556}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: db750325989564987a34393247d883b4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1ee460ed66d62b84e907da767f8a8605, type: 3}
   m_Color: {r: 0.21368816, g: 0.6979172, b: 0.9245283, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,7 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 11400000, guid: bd411dbbe82f65442af00085c23514c5, type: 2}
-  equippedBullet: {fileID: 0}
+  bulletSpawnPoint: {fileID: 5713928452982092685}
+  equippedBullet: {fileID: 5168859238285828049, guid: 5aad15175856c574380cad99d3bcb204, type: 3}
   spawnPos: {fileID: 5713928452982092685}
   rb: {fileID: 5713928451018672560}
 --- !u!50 &5713928451018672560
@@ -122,6 +125,45 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!61 &6032448848204893492
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5713928451018672575}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0050898045, y: -0.012724504}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.0333333, y: 1.0333333}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.2212582, y: 0.4095814}
+  m_EdgeRadius: 0
+--- !u!114 &4197830056440781556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5713928451018672575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 789008f5418ad784b9f08963c3f41c0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 0}
 --- !u!1 &5713928452982092685
 GameObject:
   m_ObjectHideFlags: 0

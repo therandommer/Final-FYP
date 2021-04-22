@@ -9,7 +9,7 @@ public abstract class Entity : ScriptableObject
 {
 	public Sprite thisSprite;
 	public int health;
-	public Vector2 moveSpeed = Vector2.zero;
+	public float moveSpeed;
 	public bool isPaused = false; //used to stop update loops, etc.
 
 	protected void OnEnable() //adds listener to action

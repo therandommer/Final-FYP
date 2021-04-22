@@ -7,6 +7,16 @@ using System;
 public static class Actions
 {
     public static Action<Player> OnPlayerKilled;
+    public static Action<int> OnPlayerHit; //updates player health on the UI
     public static Action<Enemy> OnEnemyKilled;
+    public static Action<Bullet> OnBulletHit; //bullet score for hitting enemies
     public static Action OnPause;
+    public static Action OnLevelStart;
+    public static Action OnLevelComplete;
+    public static Action OnLevelRestart;
+    public static Action<float> OnSongChanged;
+    public static Action<TimeController> OnTimeReached;
+    public static Action<Drop> OnCollectableAcquired;
+    public static Action<int> OnWeaponGot;
+    public static Action<int> OnShieldGot;
 }

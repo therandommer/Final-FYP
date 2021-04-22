@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8219311798138018395}
   - component: {fileID: 7598002978341872112}
-  - component: {fileID: 1904200387202168445}
   - component: {fileID: 3024161217021246645}
   - component: {fileID: 1338928101555825037}
+  - component: {fileID: 1788195149867470017}
   m_Layer: 0
   m_Name: Basic Enemy
   m_TagString: Enemy
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7681800708665743581}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.5037265, y: -0.059314612, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -85,21 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1904200387202168445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7681800708665743581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1480b24632bf51840917989bcf696bad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  sr: {fileID: 0}
-  thisEnemy: {fileID: 11400000, guid: a2aa8ac85ac69644c9855c428c7598e0, type: 2}
 --- !u!50 &3024161217021246645
 Rigidbody2D:
   serializedVersion: 4
@@ -131,7 +116,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -147,3 +132,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1788195149867470017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7681800708665743581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f14f2ccc4162b345a18e0bdf5b8b15f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 4
+  thisEnemy: {fileID: 11400000, guid: f966b83f7c799ad4784cea9a4780bcd2, type: 2}
