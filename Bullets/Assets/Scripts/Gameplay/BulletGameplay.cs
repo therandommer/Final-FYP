@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletGameplay : AIGameplay
 {
     public Bullet thisBullet;
+    public GameObject childObj;
     float timeLeft;
     Vector2 targetDestination = Vector2.zero;
     Vector2 targetDirection = Vector2.zero;
@@ -119,6 +120,10 @@ public class BulletGameplay : AIGameplay
 	{
         hasCollided = true;
         thisRenderer.enabled = !thisRenderer.enabled;
+        if(childObj)
+		{
+            childObj.SetActive(false);
+		}
 	}
     void Die()
 	{

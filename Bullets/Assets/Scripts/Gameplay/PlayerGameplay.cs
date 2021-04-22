@@ -80,7 +80,14 @@ public class PlayerGameplay : MonoBehaviour
 				if (isFiring)
 				{
 					CancelInvoke("SpawnBullet");
-					InvokeRepeating("SpawnBullet", 0, playerStats.startFireRate / thisWeaponLevel);
+					if(thisWeaponLevel<3)
+					{
+						InvokeRepeating("SpawnBullet", 0, playerStats.startFireRate / thisWeaponLevel);
+					}
+					else
+					{
+						InvokeRepeating("SpawnBullet", 0, playerStats.startFireRate / thisWeaponLevel);
+					}
 				}
 				updateWeapon = false;
 			}
@@ -100,7 +107,14 @@ public class PlayerGameplay : MonoBehaviour
 			if (Input.GetButtonDown("Fire1") && !isFiring)
 			{
 				isFiring = true;
-				InvokeRepeating("SpawnBullet", 0, playerStats.startFireRate / thisWeaponLevel);
+				if (thisWeaponLevel < 3)
+				{
+					InvokeRepeating("SpawnBullet", 0, playerStats.startFireRate / thisWeaponLevel);
+				}
+				else
+				{
+					InvokeRepeating("SpawnBullet", 0, playerStats.startFireRate / thisWeaponLevel);
+				}
 			}
 			if (Input.GetButtonUp("Fire1") && isFiring)
 			{
