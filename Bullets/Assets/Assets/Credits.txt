@@ -16,3 +16,5 @@ backgroundSpace_01.1.png (Created by Satur9)
 	source: https://opengameart.org/content/cc0-hammer-icons collection from OpenClipart.org
 Music: Neverland - Hatsune Miku
 	source: https://soundcloud.com/aya-hoshino/hatsune-miku-neverland (All credits go to original composers)
+Folder: BubbleFont (Created by Almarkhatype)
+	source: https://www.fontspace.com/bubble-bobble-font-f44703

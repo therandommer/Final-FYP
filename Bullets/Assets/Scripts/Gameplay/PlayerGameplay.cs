@@ -113,7 +113,7 @@ public class PlayerGameplay : MonoBehaviour
 				}
 				else
 				{
-					InvokeRepeating("SpawnBullet", 0, playerStats.startFireRate / thisWeaponLevel);
+					InvokeRepeating("SpawnBullet", 0, playerStats.startFireRate / 3);
 				}
 			}
 			if (Input.GetButtonUp("Fire1") && isFiring)
