@@ -9,17 +9,22 @@ public class GameUIController : MonoBehaviour
 	public TextMeshProUGUI healthText;
 	public TextMeshProUGUI shieldBoostText;
 	public TextMeshProUGUI weaponBoostText;
+	public GameObject levelFinishedUI;
+	public TextMeshProUGUI songNameText;
+	public TextMeshProUGUI finalScoreText;
     void OnEnable()
 	{
 		Actions.OnPlayerHit += UpdateHealthText;
 		Actions.OnWeaponGot += UpdateWeaponText;
 		Actions.OnShieldGot += UpdateShieldText;
+		Actions.OnLevelComplete += DisplayCompleteUI;
 	}
     void OnDisable()
 	{
 		Actions.OnPlayerHit -= UpdateHealthText;
 		Actions.OnWeaponGot -= UpdateWeaponText;
 		Actions.OnShieldGot -= UpdateShieldText;
+		Actions.OnLevelComplete -= DisplayCompleteUI;
 	}
 	
     void UpdateHealthText(int _newHealth)
@@ -33,5 +38,13 @@ public class GameUIController : MonoBehaviour
 	void UpdateShieldText(int _newShield)
 	{
 		shieldBoostText.text = $"Shield: {_newShield}";
+	}
+
+	void DisplayCompleteUI()
+	{
+		levelFinishedUI.SetActive(true);
+		songNameText.text = Camera.main.GetComponent<AudioSource>().clip.name;
+		finalScoreText.text = GetComponent<ScoreController>().scoreText.text;
+		GameObject.Find("Player").SetActive(false);
 	}
 }

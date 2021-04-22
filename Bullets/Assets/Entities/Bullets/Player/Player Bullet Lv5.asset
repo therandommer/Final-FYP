@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34ae8a06fedbd60438502a448554d39c, type: 3}
-  m_Name: Basic Bullet Ally
+  m_Name: Player Bullet Lv5
   m_EditorClassIdentifier: 
-  thisSprite: {fileID: 21300000, guid: 6ba19a156469a9a49b6e3862d7057ac4, type: 3}
+  thisSprite: {fileID: 21300000, guid: 24880658ac0948048ab602868d0fdc30, type: 3}
   health: 0
-  moveSpeed: 10
+  moveSpeed: 15
   isPaused: 0
   lifetime: 3
-  damage: 1
+  damage: 2
   scoreValue: 1
   thisFaction: 0
   thisType: 0

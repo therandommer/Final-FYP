@@ -109,7 +109,5 @@ public class Spawner : MonoBehaviour
                 gameObject.SetActive(false);
 			}
         } 
-        
-        
     }
 }

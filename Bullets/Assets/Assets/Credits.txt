@@ -12,3 +12,5 @@ sCoins.png (Created by patvanmackelberg)
 	source: https://opengameart.org/content/16x16-small-and-medium-coin-animation
 "Hammers" folder (Part of the CC0 Hammer Icons collection by Antum Deluge)
 	source: https://opengameart.org/content/cc0-hammer-icons collection from OpenClipart.org
+Music: Neverland - Hatsune Miku
+	source: https://soundcloud.com/aya-hoshino/hatsune-miku-neverland (All credits go to original composers)

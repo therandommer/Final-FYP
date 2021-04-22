@@ -8,10 +8,11 @@ using TMPro;
 public class TimeController : MonoBehaviour
 {
     public bool isPaused = false;
-    bool needsSongTimeUpdate = true;
+    bool musicStarted = false;
     public float timePassed = 0.0f;
     public float maxTime = 0.0f;
     public float timeToNextSpawn = 0.0f;
+    public float startDelay = 3.0f;
     float previousTimeScale = 1.0f;
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI nextSpawnTimerText;
@@ -29,21 +30,28 @@ public class TimeController : MonoBehaviour
     }
     void Start()
     {
-
+        timePassed = -startDelay;
     }
-
-    // Update is called once per frame
     void Update()
     {
         if(!isPaused)
 		{
-            timePassed += Time.deltaTime;
-            timerText.text = $"Time: {(Mathf.FloorToInt(timePassed/60).ToString())} : {(Mathf.FloorToInt(timePassed % 60).ToString())}";
-            nextSpawnTimerText.text = $"Next Pack: {(Mathf.CeilToInt(timeToNextSpawn / 60).ToString())} : {(Mathf.CeilToInt(timeToNextSpawn % 60).ToString())}";
-            if(needsSongTimeUpdate)
+            if(timePassed<maxTime)
 			{
-                endOfSongTimeText.text = $"Song time: {(Mathf.FloorToInt(maxTime / 60).ToString())} : {(Mathf.FloorToInt(maxTime % 60).ToString())}";
+                timePassed += Time.deltaTime;
+                timerText.text = $"Time: {(Mathf.FloorToInt(timePassed / 60).ToString())} : {(Mathf.FloorToInt(timePassed % 60).ToString())}/{(Mathf.FloorToInt(maxTime / 60).ToString())} : {(Mathf.FloorToInt(maxTime % 60).ToString())}";
+                nextSpawnTimerText.text = $"Next Pack: {(Mathf.CeilToInt(timeToNextSpawn / 60).ToString())} : {(Mathf.CeilToInt(timeToNextSpawn % 60).ToString())}";
+                if (timePassed >= 0.0f && !musicStarted)
+                {
+                    Actions.OnLevelStart?.Invoke();
+                    musicStarted = true;
+                }
+            }
+            if(timePassed>=maxTime)
+			{
+                Actions.OnLevelComplete?.Invoke();
 			}
+           
         }
     }
 
@@ -68,6 +76,5 @@ public class TimeController : MonoBehaviour
     public void UpdateSongLength(float _time)
 	{
         maxTime = _time;
-        needsSongTimeUpdate = true;
 	}
 }

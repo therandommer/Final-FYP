@@ -5,20 +5,23 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public static GameObject spawnHolder;
-    private AudioClip levelMusic;
+    public AudioClip levelMusic;
     public GameObject audioSource;
+    AudioSource thisSource;
     private void OnEnable()
     {
         Actions.OnPlayerKilled += playerDead;
+        Actions.OnLevelStart += StartMusic;
     }
     private void OnDisable()
     {
         Actions.OnPlayerKilled -= playerDead;
+        Actions.OnLevelStart -= StartMusic;
     }
-    // Start is called before the first frame update
     void Start()
     {
-        audioSource.GetComponent<AudioSource>().clip = levelMusic;
+        thisSource = audioSource.GetComponent<AudioSource>();
+        thisSource.clip = levelMusic;
         Actions.OnSongChanged?.Invoke(audioSource.GetComponent<AudioSource>().clip.length);
     }
 
@@ -35,4 +38,9 @@ public class GameController : MonoBehaviour
 	{
 
 	}
+    void StartMusic()
+    {
+        Debug.Log("Starting music");
+        thisSource.Play();
+    }
 }

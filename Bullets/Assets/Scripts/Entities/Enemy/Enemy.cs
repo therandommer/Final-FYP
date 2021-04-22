@@ -25,13 +25,4 @@ public class Enemy : Entity
         Debug.Log($"Setting Direction to {_direction}");
         thisDirection = _direction;
     }
-    void Start()
-    {
-		
-    }
-    void Update()
-    {
-        
-    }
-    
 }
