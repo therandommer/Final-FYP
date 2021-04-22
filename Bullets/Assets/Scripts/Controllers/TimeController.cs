@@ -16,17 +16,19 @@ public class TimeController : MonoBehaviour
     float previousTimeScale = 1.0f;
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI nextSpawnTimerText;
-    public TextMeshProUGUI endOfSongTimeText;
-
     void OnEnable()
     {
         Actions.OnPause += TogglePause;
         Actions.OnSongChanged += UpdateSongLength;
+        Actions.OnPlayerKilled += PlayerDead;
+        Actions.OnLevelRestart += ResetTime;
     }
     void OnDisable()
     {
         Actions.OnPause -= TogglePause;
         Actions.OnSongChanged -= UpdateSongLength;
+        Actions.OnPlayerKilled -= PlayerDead;
+        Actions.OnLevelRestart -= ResetTime;
     }
     void Start()
     {
@@ -54,7 +56,6 @@ public class TimeController : MonoBehaviour
            
         }
     }
-
     void TogglePause()
     {
         if(Time.timeScale > 0)
@@ -69,10 +70,15 @@ public class TimeController : MonoBehaviour
         isPaused = !isPaused;
         Debug.Log($"Toggling pause for {this.name}");
     }
-    public void SendPauseAction()
+    void PlayerDead(Player thisPlayer)
 	{
-        Actions.OnPause?.Invoke();
+        Time.timeScale = 0;
     }
+    void ResetTime()
+	{
+        timePassed = -startDelay;
+        Time.timeScale = 1;
+	}
     public void UpdateSongLength(float _time)
 	{
         maxTime = _time;

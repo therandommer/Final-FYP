@@ -12,12 +12,6 @@ public class EnemyGameplay : AIGameplay
     protected Vector2 defaultDirection;
     protected Quaternion fireDirection;
     protected float timeAlive = 0.0f;
-    
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         if(!hasInitialised)

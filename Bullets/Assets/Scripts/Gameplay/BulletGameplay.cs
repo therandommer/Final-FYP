@@ -23,7 +23,6 @@ public class BulletGameplay : AIGameplay
             thisRenderer = gameObject.GetComponent<SpriteRenderer>();
 		}
     }
-    // Update is called once per frame
     void Update()
 	{
         if(!hasInitialised)
@@ -98,7 +97,6 @@ public class BulletGameplay : AIGameplay
             rb.velocity = Vector2.zero;
 		}
     }
-
     void OnTriggerEnter2D(Collider2D col)
 	{
         if(!hasCollided)
@@ -116,7 +114,6 @@ public class BulletGameplay : AIGameplay
                 Hide();
             }
         }
-        
     }
     void Hide()
 	{

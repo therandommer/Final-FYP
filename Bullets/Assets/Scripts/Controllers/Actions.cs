@@ -13,6 +13,7 @@ public static class Actions
     public static Action OnPause;
     public static Action OnLevelStart;
     public static Action OnLevelComplete;
+    public static Action OnLevelRestart;
     public static Action<float> OnSongChanged;
     public static Action<TimeController> OnTimeReached;
     public static Action<Drop> OnCollectableAcquired;

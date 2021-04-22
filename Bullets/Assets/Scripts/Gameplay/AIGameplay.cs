@@ -15,11 +15,13 @@ public abstract class AIGameplay : MonoBehaviour
     void OnEnable()
     {
         Actions.OnPause += TogglePause;
+        Actions.OnLevelRestart += Reset;
     }
     void OnDisable()
 	{
         Actions.OnPause -= TogglePause;
-	}
+        Actions.OnLevelRestart -= Reset;
+    }
     protected void Initialise(Enemy _thisEnemy)
 	{
         health = _thisEnemy.health;
@@ -85,5 +87,9 @@ public abstract class AIGameplay : MonoBehaviour
 	{
         isPaused = !isPaused;
         Debug.Log($"Toggling pause for {this.name}");
+	}
+    void Reset()
+	{
+        Destroy(gameObject);
 	}
 }
