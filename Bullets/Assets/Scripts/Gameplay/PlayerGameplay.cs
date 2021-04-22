@@ -187,6 +187,8 @@ public class PlayerGameplay : MonoBehaviour
 		Actions.OnWeaponGot?.Invoke(thisWeaponLevel);
 		Actions.OnShieldGot?.Invoke(thisShieldLevel);
 		Actions.OnPlayerHit?.Invoke(thisHealth);
+		isPaused = false;
+		rb.velocity = Vector2.zero;
 		transform.position = Vector2.zero;
 	}
 	void TogglePause()
