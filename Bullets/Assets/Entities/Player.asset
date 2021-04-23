@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisSprite: {fileID: 0}
   health: 100
-  moveSpeed: 10
-  isPaused: 1
-  boostMult: 1.5
+  moveSpeed: 5
+  isPaused: 0
+  boostMult: 2
   bullets:
   - {fileID: 5168859238285828049, guid: 5aad15175856c574380cad99d3bcb204, type: 3}
   - {fileID: 5168859238285828049, guid: 7c0fcdf3af266c241bd7695d35c275cd, type: 3}
