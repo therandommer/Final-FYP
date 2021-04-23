@@ -110,7 +110,7 @@ public class BulletGameplay : AIGameplay
             }
             if (col.gameObject.tag == "Player" && thisBullet.thisFaction == Bullet.BulletFaction.enemy)
             {
-                Debug.Log($"Dealing {thisBullet.damage} damage to player");
+                //Debug.Log($"Dealing {thisBullet.damage} damage to player");
                 col.gameObject.SendMessage("Damage", thisBullet.damage);
                 Hide();
             }

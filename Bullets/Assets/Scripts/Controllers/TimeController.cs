@@ -13,6 +13,7 @@ public class TimeController : MonoBehaviour
     public float maxTime = 0.0f;
     public float timeToNextSpawn = 0.0f;
     public float startDelay = 3.0f;
+    public float endDelay = 5.0f;
     float previousTimeScale = 1.0f;
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI nextSpawnTimerText;
@@ -88,6 +89,6 @@ public class TimeController : MonoBehaviour
 	}
     public void UpdateSongLength(float _time)
 	{
-        maxTime = _time;
+        maxTime = _time + endDelay;
 	}
 }

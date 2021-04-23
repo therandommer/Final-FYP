@@ -18,3 +18,5 @@ Music: Neverland - Hatsune Miku
 	source: https://soundcloud.com/aya-hoshino/hatsune-miku-neverland (All credits go to original composers)
 Folder: BubbleFont (Created by Almarkhatype)
 	source: https://www.fontspace.com/bubble-bobble-font-f44703
+Folder: Unity-Beat-Detection-Master: 
+	source: https://github.com/allanpichardo/Unity-Beat-Detection

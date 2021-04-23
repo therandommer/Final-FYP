@@ -50,7 +50,7 @@ public class Drop : MonoBehaviour
 	}
     void StartDrop()
 	{
-        Debug.Log("Powerup leaving");
+        //Debug.Log("Powerup leaving");
         isDropping = true;
         dropSpeed = thisDropSpeed;
 	}
