@@ -38,7 +38,7 @@ public class TimeController : MonoBehaviour
     {
         if(!isPaused)
 		{
-            if(timePassed<maxTime)
+            if(timePassed<maxTime && timePassed >=0.0f)
 			{
                 timePassed += Time.deltaTime;
                 timerText.text = $"Time: {(Mathf.FloorToInt(timePassed / 60).ToString())} : {(Mathf.FloorToInt(timePassed % 60).ToString())}/{(Mathf.FloorToInt(maxTime / 60).ToString())} : {(Mathf.FloorToInt(maxTime % 60).ToString())}";
@@ -49,6 +49,11 @@ public class TimeController : MonoBehaviour
                     musicStarted = true;
                 }
             }
+            if(timePassed<0) //overwrite previous
+			{
+                timePassed += Time.deltaTime;
+                timerText.text = $"Get Ready: {(Mathf.FloorToInt(-timePassed % 60).ToString())}";
+			}
             if(timePassed>=maxTime)
 			{
                 Actions.OnLevelComplete?.Invoke();
@@ -77,6 +82,8 @@ public class TimeController : MonoBehaviour
     void ResetTime()
 	{
         timePassed = -startDelay;
+        isPaused = false;
+        musicStarted = false;
         Time.timeScale = 1;
 	}
     public void UpdateSongLength(float _time)

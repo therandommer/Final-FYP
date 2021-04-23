@@ -14,6 +14,9 @@ public class GameUIController : MonoBehaviour
 	public TextMeshProUGUI finalScoreText;
 	public GameObject levelFailedUI;
 	public TextMeshProUGUI timeRemainingText;
+	public TextMeshProUGUI retryText;
+	public float textHideTime = 3.0f;
+	int retrys = 0;
     void OnEnable()
 	{
 		Actions.OnPlayerHit += UpdateHealthText;
@@ -21,6 +24,7 @@ public class GameUIController : MonoBehaviour
 		Actions.OnShieldGot += UpdateShieldText;
 		Actions.OnLevelComplete += DisplayCompleteUI;
 		Actions.OnPlayerKilled += DisplayFailedUI;
+		Actions.OnLevelRestart += UpdateRetryUI;
 	}
     void OnDisable()
 	{
@@ -29,6 +33,7 @@ public class GameUIController : MonoBehaviour
 		Actions.OnShieldGot -= UpdateShieldText;
 		Actions.OnLevelComplete -= DisplayCompleteUI;
 		Actions.OnPlayerKilled -= DisplayFailedUI;
+		Actions.OnLevelRestart -= UpdateRetryUI;
 	}
 	
     void UpdateHealthText(int _newHealth)
@@ -42,6 +47,18 @@ public class GameUIController : MonoBehaviour
 	void UpdateShieldText(int _newShield)
 	{
 		shieldBoostText.text = $"Shield: {_newShield}";
+	}
+	void UpdateRetryUI()
+	{
+		retrys++;
+		retryText.enabled = true;
+		retryText.text = $"Attempts: {retrys}";
+		StartCoroutine("HideText", retryText);
+	}
+	IEnumerator HideText(TextMeshProUGUI _thisText)
+	{
+		yield return new WaitForSeconds(textHideTime);
+		_thisText.enabled = !_thisText.enabled;
 	}
 	void DisplayCompleteUI()
 	{

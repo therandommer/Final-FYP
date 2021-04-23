@@ -21,7 +21,7 @@ public class ClampToCamera : MonoBehaviour
         Vector3 pos = mainCamera.WorldToViewportPoint(transform.position);
         pos.x = Mathf.Clamp01(pos.x);
         pos.y = Mathf.Clamp01(pos.y);
-        Debug.Log($"Camera clamping poses= {pos}");
+        //Debug.Log($"Camera clamping poses= {pos}");
         if(pos.x < 0.02f)
 		{
             pos.x = 0.02f;

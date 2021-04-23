@@ -86,7 +86,7 @@ public abstract class AIGameplay : MonoBehaviour
     void TogglePause()
 	{
         isPaused = !isPaused;
-        Debug.Log($"Toggling pause for {this.name}");
+        //Debug.Log($"Toggling pause for {this.name}");
 	}
     void Reset()
 	{

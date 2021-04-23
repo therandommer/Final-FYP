@@ -198,6 +198,7 @@ public class PlayerGameplay : MonoBehaviour
 		thisHealth = playerStats.health;
 		thisShieldLevel = playerStats.shieldLevel;
 		thisWeaponLevel = playerStats.weaponLevel;
+		equippedBullet = playerStats.bullets[thisWeaponLevel-1];
 		Actions.OnWeaponGot?.Invoke(thisWeaponLevel);
 		Actions.OnShieldGot?.Invoke(thisShieldLevel);
 		Actions.OnPlayerHit?.Invoke(thisHealth);
