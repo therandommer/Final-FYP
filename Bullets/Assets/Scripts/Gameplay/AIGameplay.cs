@@ -6,6 +6,8 @@ public abstract class AIGameplay : MonoBehaviour
 {
     protected Rigidbody2D rb;
     protected float speed;
+    [SerializeField]
+    protected float projectileSpeedScalar = 1.0f;
     protected SpriteRenderer sr;
     [SerializeField]
     protected int health;
@@ -16,11 +18,13 @@ public abstract class AIGameplay : MonoBehaviour
     {
         Actions.OnPause += TogglePause;
         Actions.OnLevelRestart += Reset;
+        Actions.OnNewBPMSpeed += GetProjScalar;
     }
     void OnDisable()
 	{
         Actions.OnPause -= TogglePause;
         Actions.OnLevelRestart -= Reset;
+        Actions.OnNewBPMSpeed -= GetProjScalar;
     }
     protected void Initialise(Enemy _thisEnemy)
 	{
@@ -82,7 +86,6 @@ public abstract class AIGameplay : MonoBehaviour
         health -= _damage;
         Debug.Log($"Damaged{this.name} for {_damage} damage");
 	}
-    
     void TogglePause()
 	{
         isPaused = !isPaused;
@@ -91,5 +94,17 @@ public abstract class AIGameplay : MonoBehaviour
     void Reset()
 	{
         Destroy(gameObject);
+	}
+    void GetProjScalar(int _index) //gets and sets the projectile scalar, only called on the bpm update ticks
+	{
+        projectileSpeedScalar = FindObjectOfType<GameController>().GetExistingIntensity(_index);
+    }
+    protected void SetProjectileSpeedScalar(float _newScalar)
+	{
+        projectileSpeedScalar = _newScalar;
+	}
+    public float GetProjectileSpeedScalar()
+	{
+        return projectileSpeedScalar;
 	}
 }

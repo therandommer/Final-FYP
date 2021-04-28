@@ -92,7 +92,7 @@ public class AudioVisualised : MonoBehaviour
             averageBpm += songAverageBpm[i];
 		}
         averageBpm /= songAverageBpm.Count;
-        Debug.Log("Song average is " + averageBpm);
+        //Debug.Log("Song average is " + averageBpm);
 	}
     void Update()
     {
@@ -139,6 +139,7 @@ public class AudioVisualised : MonoBehaviour
         //Debug.Log("Size of beatAverage is" + beatAverage.Count);
         AddToTotalAverage(averageBpm);
         Actions.OnNewBPMAverage?.Invoke(averageBpm);
+        Actions.OnNewBPMSpeed?.Invoke(songAverageBpm.Count); //sends the current index for the song progression to other objects to update their movement speed. 
         beatAverage.Clear();
     }
     public List<float> GetBPMAverages()

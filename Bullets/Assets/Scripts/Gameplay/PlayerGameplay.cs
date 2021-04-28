@@ -11,6 +11,7 @@ public class PlayerGameplay : MonoBehaviour
 	int thisShieldLevel;
 	int thisWeaponLevel;
 	int thisMaxWeaponLevel;
+	float projectileSpeedScalar = 1;
 	bool updateWeapon;
 	bool isFiring = false; //controls full auto
 	[SerializeField]
@@ -34,12 +35,14 @@ public class PlayerGameplay : MonoBehaviour
 		Actions.OnCollectableAcquired += DropCollected;
 		Actions.OnLevelRestart += Reset;
 		Actions.OnPause += TogglePause;
+		Actions.OnNewBPMSpeed += NewProjectileSpeedScalar;
 	}
 	void OnDisable()
 	{
 		Actions.OnCollectableAcquired -= DropCollected;
 		Actions.OnLevelRestart -= Reset;
 		Actions.OnPause -= TogglePause;
+		Actions.OnNewBPMSpeed -= NewProjectileSpeedScalar;
 	}
 	void Start()
 	{
@@ -68,6 +71,7 @@ public class PlayerGameplay : MonoBehaviour
 	protected virtual void SpawnBullet()
 	{
 		GameObject cloneBullet = Instantiate(equippedBullet, bulletSpawnPoint.transform.position, this.transform.rotation);
+		cloneBullet.GetComponent<BulletGameplay>().SendMessage("SetProjectileSpeedScalar", projectileSpeedScalar);
 		cloneBullet.transform.parent = spawnParent.transform;
 	}
 	void Update()
@@ -199,6 +203,7 @@ public class PlayerGameplay : MonoBehaviour
 		thisShieldLevel = playerStats.shieldLevel;
 		thisWeaponLevel = playerStats.weaponLevel;
 		equippedBullet = playerStats.bullets[thisWeaponLevel-1];
+		projectileSpeedScalar = 1;
 		Actions.OnWeaponGot?.Invoke(thisWeaponLevel);
 		Actions.OnShieldGot?.Invoke(thisShieldLevel);
 		Actions.OnPlayerHit?.Invoke(thisHealth);
@@ -212,5 +217,9 @@ public class PlayerGameplay : MonoBehaviour
 			isPaused = true;
 		else
 			isPaused = false;
+	}
+	void NewProjectileSpeedScalar(int _index)
+	{
+		projectileSpeedScalar = FindObjectOfType<GameController>().GetExistingIntensity(_index);
 	}
 }

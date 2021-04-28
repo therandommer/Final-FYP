@@ -16,6 +16,19 @@ public class SongInfo
 		intensity = _intensitys;
 	}
 }
+[System.Serializable]
+public class ScoreListing
+{
+	public string songName;
+	int score;
+	int attempts;
+	public ScoreListing(string _songName, int _score, int _attempts)
+	{
+		songName = _songName;
+		score = _score;
+		attempts = _attempts;
+	}
+}
 //save class to start saving a variety of things, currently saves basic song info
 public class SaveThings : MonoBehaviour
 {
@@ -34,13 +47,16 @@ public class SaveThings : MonoBehaviour
 	}
 	void SaveSong() //can adapt these functions to include scores, etc. 
 	{
-		string destination = Directory.GetCurrentDirectory() + "/SongData/" + thisIntensity.GetSongName() + ".dat"; ;
+		string destination = Directory.GetCurrentDirectory() + "/SongData/" + thisIntensity.GetSongName() + ".dat";
 		//destination + " "
 		//string destination = Application.persistentDataPath + "/SongData/" + thisIntensity.GetSongName() + ".dat";
 		FileStream file;
-
-		if (File.Exists(destination)) file = File.OpenWrite(destination);
-		else file = File.Create(destination);
+		if (!Directory.Exists(Directory.GetCurrentDirectory() + "/SongData/"))
+			Directory.CreateDirectory(Directory.GetCurrentDirectory() + "/SongData/");
+		if (File.Exists(destination)) 
+			file = File.OpenWrite(destination);
+		else 
+			file = File.Create(destination);
 
 		SongInfo info = new SongInfo(thisIntensity.GetSongName(), thisAudio.GetBPMAverages(), thisIntensity.GetIntensitySpeeds());
 		BinaryFormatter bf = new BinaryFormatter();
@@ -55,7 +71,8 @@ public class SaveThings : MonoBehaviour
 		Debug.Log($"Loading song through file: {Directory.GetCurrentDirectory() + "/SongData/" + thisIntensity.GetSongName() + ".dat"}");
 		FileStream file;
 
-		if (File.Exists(destination)) file = File.OpenRead(destination);
+		if (File.Exists(destination)) 
+			file = File.OpenRead(destination);
 		else
 		{
 			Debug.LogError("File Not Found"); //will be caused on first run of song, until song data is created

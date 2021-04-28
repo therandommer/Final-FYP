@@ -12,6 +12,8 @@ public class GameController : MonoBehaviour
     List<float> intensitySpeeds = new List<float>();
     AudioSource thisSource;
     bool canPause = false;
+
+    List<float> existingIntensitySpeeds = new List<float>();
     private void OnEnable()
     {
         Actions.OnPlayerKilled += PlayerDead;
@@ -20,6 +22,7 @@ public class GameController : MonoBehaviour
         Actions.OnLevelComplete += DisablePause;
         Actions.OnPause += PauseMusic;
         Actions.OnNewBPMAverage += CalculateIntensity;
+        Actions.OnLoadedSongInfo += LoadIntensity;
     }
     private void OnDisable()
     {
@@ -29,6 +32,7 @@ public class GameController : MonoBehaviour
         Actions.OnLevelComplete -= DisablePause;
         Actions.OnPause -= PauseMusic;
         Actions.OnNewBPMAverage -= CalculateIntensity;
+        Actions.OnLoadedSongInfo -= LoadIntensity;
     }
     void Start()
     {
@@ -51,6 +55,14 @@ public class GameController : MonoBehaviour
         speedScalar = _thisBeat / baseBpm;
         intensitySpeeds.Add(speedScalar);
         Debug.Log($"Intensity of the song is {speedScalar}");
+	}
+    void LoadIntensity(SongInfo _thisSong)
+	{
+        existingIntensitySpeeds = _thisSong.intensity;
+	}
+    public float GetExistingIntensity(int _index)
+	{
+        return existingIntensitySpeeds[_index];
 	}
     private void PlayerDead(Player playerRef)
 	{

@@ -21,16 +21,19 @@ public class Spawner : MonoBehaviour
 	TimeController timeC;
 	bool isSpawning = false;
 	GameObject spawnParent;
+	public float speedScalar = 1; //sends this to the object it spawns
 	void OnEnable()
 	{
 		spawnParent = GameObject.Find("SpawnParent");
 		Actions.OnLevelRestart += Reset;
 		Actions.OnLevelComplete += Stop;
+		Actions.OnNewBPMSpeed += UpdateSpeedScalar;
 	}
 	void OnDisable()
 	{
 		Actions.OnLevelRestart -= Reset;
 		Actions.OnLevelComplete -= Stop;
+		Actions.OnNewBPMSpeed -= UpdateSpeedScalar;
 	}
 	void Start()
 	{
@@ -40,6 +43,7 @@ public class Spawner : MonoBehaviour
 
 	IEnumerator SpawnObject()
 	{
+		currentSpawn++;
 		for (int i = 0; i < spawnReq[currentSpawn].spawnNumber; ++i)
 		{
 			if (spawnReq[currentSpawn].usesThisPos)
@@ -76,7 +80,6 @@ public class Spawner : MonoBehaviour
 			}
 			yield return new WaitForSeconds(spawnReq[currentSpawn].spawnDelay);
 		}
-		currentSpawn++;
 		isSpawning = false;
 		StopCoroutine(SpawnObject());
 		/*if(timeC.isPaused)
@@ -96,10 +99,15 @@ public class Spawner : MonoBehaviour
 			timeC.timeToNextSpawn = spawnReq[currentSpawn].activateTimer - timeC.timePassed;
 		}
 	}
+	void UpdateSpeedScalar(int _index)
+	{
+		speedScalar = FindObjectOfType<GameController>().GetExistingIntensity(_index);
+	}
 	void Reset()
 	{
 		StopAllCoroutines();
 		currentSpawn = 0;
+		speedScalar = 1;
 	}
 	void Stop()
 	{
