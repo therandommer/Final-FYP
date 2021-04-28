@@ -15,6 +15,8 @@ public static class Actions
     public static Action OnLevelComplete;
     public static Action OnLevelRestart;
     public static Action<float> OnSongChanged;
+    public static Action<float> OnNewBPMAverage;
+    public static Action<SongInfo> OnLoadedSongInfo;
     public static Action<TimeController> OnTimeReached;
     public static Action<Drop> OnCollectableAcquired;
     public static Action<int> OnWeaponGot;

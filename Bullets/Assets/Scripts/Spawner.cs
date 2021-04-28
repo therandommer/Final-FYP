@@ -86,7 +86,7 @@ public class Spawner : MonoBehaviour
 	}
 	void Update()
 	{
-		if (currentSpawn < spawnReq.Count)
+		if (currentSpawn < spawnReq.Count && spawnReq.Count > 0)
 		{
 			if (timeC.timePassed >= spawnReq[currentSpawn].activateTimer && !isSpawning)
 			{

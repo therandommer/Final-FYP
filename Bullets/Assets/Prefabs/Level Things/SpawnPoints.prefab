@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3463389512884172154}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.4, y: -9, z: 0}
+  m_LocalPosition: {x: -2.4, y: -8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 460232481027344239}
@@ -95,7 +95,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3463389514025788721}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.4, y: 4, z: 0}
+  m_LocalPosition: {x: -2.4, y: 3.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 460232481734292109}
@@ -132,7 +132,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3463389514137822593}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3463389514436572852}
@@ -168,7 +168,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3463389514726625822}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -25, y: 0, z: 0}
+  m_LocalPosition: {x: -22.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 460232481232024230}
@@ -1946,6 +1946,26 @@ PrefabInstance:
     - target: {fileID: 3923617590577842777, guid: a32dc0b4bfd6fea409b5cab923b27592, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3923617590577842778, guid: a32dc0b4bfd6fea409b5cab923b27592, type: 3}
+      propertyPath: spawnReq.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3923617590577842778, guid: a32dc0b4bfd6fea409b5cab923b27592, type: 3}
+      propertyPath: spawnReq.Array.data[0].spawnDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3923617590577842778, guid: a32dc0b4bfd6fea409b5cab923b27592, type: 3}
+      propertyPath: spawnReq.Array.data[0].spawnNumber
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3923617590577842778, guid: a32dc0b4bfd6fea409b5cab923b27592, type: 3}
+      propertyPath: spawnReq.Array.data[0].spawnObject
+      value: 
+      objectReference: {fileID: 7681800708665743581, guid: 3ac88b253e1e8d2478ee5b764e66ffec, type: 3}
+    - target: {fileID: 3923617590577842778, guid: a32dc0b4bfd6fea409b5cab923b27592, type: 3}
+      propertyPath: spawnReq.Array.data[0].activateTimer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3923617590577842779, guid: a32dc0b4bfd6fea409b5cab923b27592, type: 3}
       propertyPath: m_Name

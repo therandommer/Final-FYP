@@ -7,6 +7,9 @@ public class GameController : MonoBehaviour
     public static GameObject spawnHolder;
     public AudioClip levelMusic;
     public GameObject audioSource;
+    public int baseBpm = 190; //used to compare for speed/intensity calcs
+    float speedScalar = 1.0f; //the more the average is different to the base, the higher. If its lower than average its lower
+    List<float> intensitySpeeds = new List<float>();
     AudioSource thisSource;
     bool canPause = false;
     private void OnEnable()
@@ -16,6 +19,7 @@ public class GameController : MonoBehaviour
         Actions.OnLevelRestart += StopMusic;
         Actions.OnLevelComplete += DisablePause;
         Actions.OnPause += PauseMusic;
+        Actions.OnNewBPMAverage += CalculateIntensity;
     }
     private void OnDisable()
     {
@@ -24,6 +28,7 @@ public class GameController : MonoBehaviour
         Actions.OnLevelRestart -= StopMusic;
         Actions.OnLevelComplete -= DisablePause;
         Actions.OnPause -= PauseMusic;
+        Actions.OnNewBPMAverage -= CalculateIntensity;
     }
     void Start()
     {
@@ -31,6 +36,7 @@ public class GameController : MonoBehaviour
         thisSource.clip = levelMusic;
         Actions.OnSongChanged?.Invoke(audioSource.GetComponent<AudioSource>().clip.length);
     }
+
     void Update()
     {
         if(Input.GetButtonDown("Pause") && canPause)
@@ -39,6 +45,13 @@ public class GameController : MonoBehaviour
             Debug.Log("Pausing");
 		}
     }
+    void CalculateIntensity(float _thisBeat)
+	{
+        Debug.Log("Received bpm of: " + _thisBeat);
+        speedScalar = _thisBeat / baseBpm;
+        intensitySpeeds.Add(speedScalar);
+        Debug.Log($"Intensity of the song is {speedScalar}");
+	}
     private void PlayerDead(Player playerRef)
 	{
         thisSource.Stop();
@@ -73,5 +86,13 @@ public class GameController : MonoBehaviour
 	{
         Actions.OnLevelRestart?.Invoke();
         Debug.Log("Level restarting");
+	}
+    public List<float> GetIntensitySpeeds()
+	{
+        return intensitySpeeds;
+	}
+    public string GetSongName()
+	{
+        return levelMusic.name;
 	}
 }
