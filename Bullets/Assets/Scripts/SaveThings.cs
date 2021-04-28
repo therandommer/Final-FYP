@@ -34,7 +34,9 @@ public class SaveThings : MonoBehaviour
 	}
 	void SaveSong() //can adapt these functions to include scores, etc. 
 	{
-		string destination = Application.dataPath + "/SongData/" + thisIntensity.GetSongName() + ".dat";
+		string destination = Directory.GetCurrentDirectory() + "/SongData/" + thisIntensity.GetSongName() + ".dat"; ;
+		//destination + " "
+		//string destination = Application.persistentDataPath + "/SongData/" + thisIntensity.GetSongName() + ".dat";
 		FileStream file;
 
 		if (File.Exists(destination)) file = File.OpenWrite(destination);
@@ -48,8 +50,9 @@ public class SaveThings : MonoBehaviour
 	}
 	void LoadSong()
 	{
-		string destination = Application.dataPath + "/songData/" + thisIntensity.GetSongName() + ".dat";
-		Debug.Log($"Loading song through file: {Application.dataPath + "/songData/" + thisIntensity.GetSongName() + ".dat"}");
+		//string destination = Application.persistentDataPath + "/songData/" + thisIntensity.GetSongName() + ".dat";
+		string destination = Directory.GetCurrentDirectory() + "/SongData/" + thisIntensity.GetSongName() + ".dat";
+		Debug.Log($"Loading song through file: {Directory.GetCurrentDirectory() + "/SongData/" + thisIntensity.GetSongName() + ".dat"}");
 		FileStream file;
 
 		if (File.Exists(destination)) file = File.OpenRead(destination);
