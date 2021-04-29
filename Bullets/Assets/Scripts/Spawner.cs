@@ -11,6 +11,7 @@ public class SpawnRequirements
 	public int spawnNumber;//number of objects to spawn
 	public float spawnDelay;//delay between each entity spawning
 	public bool usesThisPos = false;
+	public bool isSpawned = false;
 	public Vector2 actualSpawnPoint;//if not using the default position of this spawn point
 	public Enemy.StartDirection startDirection;
 }
@@ -19,7 +20,6 @@ public class Spawner : MonoBehaviour
 	public List<SpawnRequirements> spawnReq;
 	int currentSpawn = 0; //index number
 	TimeController timeC;
-	bool isSpawning = false;
 	GameObject spawnParent;
 	public float speedScalar = 1; //sends this to the object it spawns
 	void OnEnable()
@@ -43,7 +43,7 @@ public class Spawner : MonoBehaviour
 
 	IEnumerator SpawnObject()
 	{
-		currentSpawn++;
+		Debug.Log("Spawning number: " + (currentSpawn+1) + "/" + spawnReq.Count);
 		for (int i = 0; i < spawnReq[currentSpawn].spawnNumber; ++i)
 		{
 			if (spawnReq[currentSpawn].usesThisPos)
@@ -59,6 +59,7 @@ public class Spawner : MonoBehaviour
 						spawnParent = GameObject.Find("SpawnParent");
 					}
 					spawnedObject.transform.parent = spawnParent.transform;
+					spawnedObject.GetComponent<AIGameplay>().SendMessage("SetProjectileSpeedScalar", speedScalar);
 					//Debug.Log($"Created enemy has {enemyScript.thisEnemy.thisDirection} as a default direction");
 				}
 			}
@@ -77,10 +78,11 @@ public class Spawner : MonoBehaviour
 					spawnParent = GameObject.Find("SpawnParent");
 				}
 				spawnedObject.transform.parent = spawnParent.transform;
+				spawnedObject.GetComponent<AIGameplay>().SendMessage("SetProjectileSpeedScalar", speedScalar);
 			}
 			yield return new WaitForSeconds(spawnReq[currentSpawn].spawnDelay);
 		}
-		isSpawning = false;
+		currentSpawn++;
 		StopCoroutine(SpawnObject());
 		/*if(timeC.isPaused)
 		{
@@ -89,11 +91,11 @@ public class Spawner : MonoBehaviour
 	}
 	void Update()
 	{
-		if (currentSpawn < spawnReq.Count && spawnReq.Count > 0)
+		if (currentSpawn+1 <= spawnReq.Count && spawnReq.Count > 0)
 		{
-			if (timeC.timePassed >= spawnReq[currentSpawn].activateTimer && !isSpawning)
+			if (timeC.timePassed >= spawnReq[currentSpawn].activateTimer && spawnReq[currentSpawn].isSpawned == false)
 			{
-				isSpawning = true;
+				spawnReq[currentSpawn].isSpawned = true;
 				StartCoroutine(SpawnObject());
 			}
 			timeC.timeToNextSpawn = spawnReq[currentSpawn].activateTimer - timeC.timePassed;
@@ -107,6 +109,10 @@ public class Spawner : MonoBehaviour
 	{
 		StopAllCoroutines();
 		currentSpawn = 0;
+		foreach (SpawnRequirements sR in spawnReq)
+		{
+			sR.isSpawned = false;
+		}
 		speedScalar = 1;
 	}
 	void Stop()

@@ -114,6 +114,7 @@ public class AudioVisualised : MonoBehaviour
         beats.Clear();
         beatAverage.Clear();
         songAverageBpm.Clear();
+        Actions.ResetBars?.Invoke(defaultWidth);
         InitialiseBase();
 	}
     void InitialiseBase()

@@ -15,6 +15,8 @@ public class TimeController : MonoBehaviour
     public float startDelay = 3.0f;
     public float endDelay = 5.0f;
     float previousTimeScale = 1.0f;
+    public int totalSongSegments = 10;
+    int songSegment = 1; 
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI nextSpawnTimerText;
     void OnEnable()
@@ -59,7 +61,12 @@ public class TimeController : MonoBehaviour
 			{
                 Actions.OnLevelComplete?.Invoke();
 			}
-           
+            Debug.Log($"Requirement for bar update = {maxTime / totalSongSegments * songSegment}");
+           if (timePassed>= maxTime / totalSongSegments * songSegment)
+            {
+                Actions.OnNewSongSegment?.Invoke(songSegment-1);
+                songSegment++;
+			}
         }
     }
     void TogglePause()
@@ -85,6 +92,7 @@ public class TimeController : MonoBehaviour
         timePassed = -startDelay;
         isPaused = false;
         musicStarted = false;
+        songSegment = 1;
         Time.timeScale = 1;
 	}
     public void UpdateSongLength(float _time)

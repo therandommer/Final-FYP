@@ -16,6 +16,10 @@ public class GameUIController : MonoBehaviour
 	public TextMeshProUGUI timeRemainingText;
 	public TextMeshProUGUI retryText;
 	public float textHideTime = 3.0f;
+	//will update each bar each x% of the way through the song
+	public List<GameObject> progressBars;
+	public Color defaultColour;
+	public Color completeColour;
 	int retrys = 0;
     void OnEnable()
 	{
@@ -24,16 +28,24 @@ public class GameUIController : MonoBehaviour
 		Actions.OnShieldGot += UpdateShieldText;
 		Actions.OnLevelComplete += DisplayCompleteUI;
 		Actions.OnPlayerKilled += DisplayFailedUI;
-		Actions.OnLevelRestart += UpdateRetryUI;
+		Actions.OnLevelRestart += UpdateRestartUI;
+		Actions.ResetBars += ResetBars;
+		Actions.OnLevelStart += SetInitialUI;
+		Actions.OnNewSongSegment += UpdateProgressUI;
 	}
-    void OnDisable()
+	
+
+	void OnDisable()
 	{
 		Actions.OnPlayerHit -= UpdateHealthText;
 		Actions.OnWeaponGot -= UpdateWeaponText;
 		Actions.OnShieldGot -= UpdateShieldText;
 		Actions.OnLevelComplete -= DisplayCompleteUI;
 		Actions.OnPlayerKilled -= DisplayFailedUI;
-		Actions.OnLevelRestart -= UpdateRetryUI;
+		Actions.OnLevelRestart -= UpdateRestartUI;
+		Actions.ResetBars -= ResetBars;
+		Actions.OnLevelStart -= SetInitialUI;
+		Actions.OnNewSongSegment -= UpdateProgressUI;
 	}
 	
     void UpdateHealthText(int _newHealth)
@@ -48,12 +60,30 @@ public class GameUIController : MonoBehaviour
 	{
 		shieldBoostText.text = $"Shield: {_newShield}";
 	}
-	void UpdateRetryUI()
+	void SetInitialUI()
+	{
+		Debug.Log("Ready to initialise UI");
+		//progressBars[0].GetComponent<Image>().color = completeColour;
+	}
+	void UpdateProgressUI(int _newSegment)
+	{
+		Debug.Log("Updating " + _newSegment + " progress");
+		progressBars[_newSegment].GetComponent<Image>().color = completeColour;
+	}
+	void UpdateRestartUI()
 	{
 		retrys++;
 		retryText.enabled = true;
 		retryText.text = $"Attempts: {retrys}";
 		StartCoroutine("HideText", retryText);
+	}
+	void ResetBars(float _width)
+	{
+		for(int i = 0; i < progressBars.Count; ++i)
+		{
+			progressBars[i].GetComponent<Image>().color = defaultColour;
+			progressBars[i].GetComponent<RectTransform>().sizeDelta = new Vector2(_width, 0);
+		}
 	}
 	IEnumerator HideText(TextMeshProUGUI _thisText)
 	{
