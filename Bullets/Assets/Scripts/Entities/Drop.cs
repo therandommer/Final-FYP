@@ -7,7 +7,8 @@ public enum DropType
     eScore,
     eWeapon,
     eShield,
-    eHealth
+    eHealth,
+    eMultiplier //might implement this later, currently works with score drops mostly
 }
 public class Drop : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class Drop : MonoBehaviour
     public DropType type;
     public int dropStrength = 1;
     public int scoreValue = 100;
+    public int multiplierIncrease = 1; //higher for more multiBoost
     public float thisDropSpeed = 2;
     float dropSpeed = 0;
     bool isDropping = false;

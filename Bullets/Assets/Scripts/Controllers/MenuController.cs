@@ -14,23 +14,17 @@ public class MenuController : MonoBehaviour
 	{
         Actions.OnPause -= TogglePause;
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     void TogglePause()
 	{
         if (!pauseMenu.activeInHierarchy)
+		{
             pauseMenu.SetActive(true);
+        }
         else
+		{
             pauseMenu.SetActive(false);
+        }  
 	}
     public void SendPauseAction()
 	{

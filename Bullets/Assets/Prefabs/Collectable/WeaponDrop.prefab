@@ -102,6 +102,7 @@ MonoBehaviour:
   type: 1
   dropStrength: 1
   scoreValue: 150
+  multiplierIncrease: 1
   thisDropSpeed: 1.5
 --- !u!61 &1460748338647194686
 BoxCollider2D:
@@ -127,7 +128,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.239954, y: 2.69}
+  m_Size: {x: 8, y: 4}
   m_EdgeRadius: 0
 --- !u!50 &1460748338647194687
 Rigidbody2D:

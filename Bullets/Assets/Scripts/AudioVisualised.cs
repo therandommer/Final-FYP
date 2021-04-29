@@ -18,7 +18,7 @@ public class AudioVisualised : MonoBehaviour
     public List<RectTransform> barTransforms = new List<RectTransform>();
     public List<RectTransform> staticBarTransforms = new List<RectTransform>();
     //apply to both bars
-    float defaultWidth = 30.0f;
+    float defaultWidth = 35.0f;
     public float maxBarHeight = 100.0f;
     //bar = updated at runtime, static is loaded from file. Might need to move static functionality elsewhere as its mostly a UI thing. Fine here for now
     public float barScalar = 1000.0f; //amount to be multiplied by

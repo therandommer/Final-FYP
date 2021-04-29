@@ -15,7 +15,7 @@ MonoBehaviour:
   thisSprite: {fileID: 0}
   health: 100
   moveSpeed: 5
-  isPaused: 0
+  isPaused: 1
   boostMult: 2
   bullets:
   - {fileID: 5168859238285828049, guid: 5aad15175856c574380cad99d3bcb204, type: 3}
@@ -26,4 +26,4 @@ MonoBehaviour:
   shieldLevel: 1
   maxShieldLevel: 5
   weaponLevel: 1
-  startFireRate: 0.3
+  startFireRate: 0.14

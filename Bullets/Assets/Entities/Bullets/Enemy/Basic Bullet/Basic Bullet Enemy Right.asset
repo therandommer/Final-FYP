@@ -15,9 +15,10 @@ MonoBehaviour:
   thisSprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   health: 0
   moveSpeed: 10
-  isPaused: 1
+  isPaused: 0
   lifetime: 0
-  damage: 1
+  damage: 3
+  scoreValue: 1
   thisFaction: 1
   thisType: 0
   thisFireDirection: 6

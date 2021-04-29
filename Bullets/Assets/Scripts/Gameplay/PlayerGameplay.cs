@@ -11,6 +11,7 @@ public class PlayerGameplay : MonoBehaviour
 	int thisShieldLevel;
 	int thisWeaponLevel;
 	int thisMaxWeaponLevel;
+	float thisFireRate;
 	float projectileSpeedScalar = 1;
 	bool updateWeapon;
 	bool isFiring = false; //controls full auto
@@ -50,6 +51,7 @@ public class PlayerGameplay : MonoBehaviour
 		thisWeaponLevel = playerStats.weaponLevel;
 		thisShieldLevel = playerStats.shieldLevel;
 		thisMaxWeaponLevel = playerStats.bullets.Count;
+		thisFireRate = playerStats.startFireRate;
 		rb = gameObject.GetComponent<Rigidbody2D>();
 		if (rb == null)
 		{
@@ -81,17 +83,15 @@ public class PlayerGameplay : MonoBehaviour
 			if (updateWeapon)
 			{
 				equippedBullet = playerStats.bullets[thisWeaponLevel - 1];
+				if(thisWeaponLevel>4)
+				{
+					float newFireRate = playerStats.startFireRate / (1.5f * thisWeaponLevel - 4);
+					thisFireRate = newFireRate;
+				}
 				if (isFiring)
 				{
 					CancelInvoke("SpawnBullet");
-					if(thisWeaponLevel<3)
-					{
-						InvokeRepeating("SpawnBullet", 0, playerStats.startFireRate / thisWeaponLevel);
-					}
-					else
-					{
-						InvokeRepeating("SpawnBullet", 0, playerStats.startFireRate / thisWeaponLevel);
-					}
+					InvokeRepeating("SpawnBullet", 0, thisFireRate); //continues invoke but with new bullets/speed
 				}
 				updateWeapon = false;
 			}
@@ -111,14 +111,7 @@ public class PlayerGameplay : MonoBehaviour
 			if (Input.GetButtonDown("Fire1") && !isFiring)
 			{
 				isFiring = true;
-				if (thisWeaponLevel < 3)
-				{
-					InvokeRepeating("SpawnBullet", 0, playerStats.startFireRate / thisWeaponLevel);
-				}
-				else
-				{
-					InvokeRepeating("SpawnBullet", 0, playerStats.startFireRate / 3);
-				}
+				InvokeRepeating("SpawnBullet", 0, thisFireRate);
 			}
 			if (Input.GetButtonUp("Fire1") && isFiring)
 			{

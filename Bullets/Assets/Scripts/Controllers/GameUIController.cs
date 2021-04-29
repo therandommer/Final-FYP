@@ -18,6 +18,7 @@ public class GameUIController : MonoBehaviour
 	public float textHideTime = 3.0f;
 	//will update each bar each x% of the way through the song
 	public List<GameObject> progressBars;
+	public Texture2D cursorTexture;
 	public Color defaultColour;
 	public Color completeColour;
 	int retrys = 0;
@@ -33,8 +34,6 @@ public class GameUIController : MonoBehaviour
 		Actions.OnLevelStart += SetInitialUI;
 		Actions.OnNewSongSegment += UpdateProgressUI;
 	}
-	
-
 	void OnDisable()
 	{
 		Actions.OnPlayerHit -= UpdateHealthText;
@@ -47,7 +46,12 @@ public class GameUIController : MonoBehaviour
 		Actions.OnLevelStart -= SetInitialUI;
 		Actions.OnNewSongSegment -= UpdateProgressUI;
 	}
-	
+	void Awake()
+	{
+		Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.ForceSoftware);
+		Cursor.lockState = CursorLockMode.Confined;
+		Cursor.visible = true;
+	}
     void UpdateHealthText(int _newHealth)
 	{
 		healthText.text = $"Health: {_newHealth} / 100";
