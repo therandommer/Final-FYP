@@ -17,11 +17,6 @@ public enum Mods //added soon(tm)
 }
 public class ModController : MonoBehaviour
 {
-
-    void Awake()
-	{
-        DontDestroyOnLoad(this.gameObject);
-	}
     void Start()
     {
         

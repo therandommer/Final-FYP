@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3319301276062362753}
   - component: {fileID: 3319301276062362766}
-  - component: {fileID: 3319301276062362767}
   - component: {fileID: 3319301276062362764}
   - component: {fileID: 3319301276062362752}
   - component: {fileID: 3319301276062362755}
@@ -48,22 +47,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c622a163fb02d9f469e44da4b6d9b25f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelMusic: {fileID: 8300000, guid: 136c4b2bf53259d409501399c3e9903f, type: 3}
+  levelMusic: {fileID: 0}
+  thisSource: {fileID: 0}
   audioSource: {fileID: 0}
   baseBpm: 190
---- !u!114 &3319301276062362767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3319301276062362765}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca2245c9e625d21418050e8edffc2218, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 0}
 --- !u!114 &3319301276062362764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,22 +110,13 @@ MonoBehaviour:
   levelFinishedUI: {fileID: 0}
   songNameText: {fileID: 0}
   finalScoreText: {fileID: 0}
+  speedText: {fileID: 0}
   levelFailedUI: {fileID: 0}
   timeRemainingText: {fileID: 0}
   retryText: {fileID: 0}
   textHideTime: 3
-  progressBars:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  cursorTexture: {fileID: 2800000, guid: 64c09dbe2d7c06c4f86904b82d71bad0, type: 3}
+  maxSegmentBars: 10
+  progressBars: []
   defaultColour: {r: 0.92549026, g: 0.09019608, b: 0.09019608, a: 1}
   completeColour: {r: 0, g: 0.7830189, b: 0.17129229, a: 1}
 --- !u!114 &601911640
@@ -155,3 +133,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisAudio: {fileID: 0}
   thisIntensity: {fileID: 3319301276062362766}
+  thisMusic: {fileID: 0}

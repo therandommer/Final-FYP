@@ -18,7 +18,7 @@ public static class Actions
     public static Action<float> OnSongChanged;
     public static Action<float> OnNewBPMAverage;
     public static Action<int> OnNewBPMSpeed; //needs to be called on spawners, enemies, players and bullets. 
-    public static Action<AudioClip> OnSceneChanged;
+    public static Action<int> OnSceneChanged;
     public static Action<SongInfo> OnLoadedSongInfo;
     public static Action<int> OnNewSongSegment;
     public static Action<TimeController> OnTimeReached;

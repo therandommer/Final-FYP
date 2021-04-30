@@ -36,6 +36,7 @@ public class AudioVisualised : MonoBehaviour
         Actions.OnLevelStart += SetRefreshRate;
         Actions.ResetBars += ResetBars; //only for the dynamic bars
         Actions.OnLoadedSongInfo += CalculateStaticBars;
+        Actions.OnSceneChanged += InitialiseScene;
 	}
     void OnDisable()
     {
@@ -44,14 +45,21 @@ public class AudioVisualised : MonoBehaviour
         Actions.OnLevelStart -= SetRefreshRate;
         Actions.ResetBars -= ResetBars;
         Actions.OnLoadedSongInfo -= CalculateStaticBars;
+        Actions.OnSceneChanged -= InitialiseScene;
     }
     void Start()
     {
         processor = FindObjectOfType<AudioProcessor>();
-        thisTime = FindObjectOfType<TimeController>();
         processor.onBeat.AddListener(OnBeatDetected);
         processor.onSpectrum.AddListener(OnSpectrum);
         Invoke("InitialiseBase", 2.0f);
+    }
+    void InitialiseScene(int _songIndex)
+	{
+        if(!thisTime)
+		{
+            thisTime = FindObjectOfType<TimeController>();
+        }
     }
     void OnBeatDetected()
     {
@@ -145,6 +153,8 @@ public class AudioVisualised : MonoBehaviour
     }
     void SetRefreshRate()
 	{
+        if (!thisTime)
+            thisTime = FindObjectOfType<TimeController>();
         refreshTime = thisTime.maxTime / (segments);
         isStopped = false;
 	}
@@ -171,6 +181,7 @@ public class AudioVisualised : MonoBehaviour
     void CalculateStaticBars(SongInfo _thisSong)
 	{
         songName.text = _thisSong.songName;
+        Debug.Log("Received Song Info for Song: " + _thisSong.songName);
         float elementsPerLoop = Mathf.CeilToInt(_thisSong.bpm.Count / staticBarTransforms.Count);
         Debug.Log("Elements per loop: " + elementsPerLoop);
         for(int i = 0; i < staticBarTransforms.Count; ++i)

@@ -43,7 +43,7 @@ public class Spawner : MonoBehaviour
 
 	IEnumerator SpawnObject()
 	{
-		Debug.Log("Spawning number: " + (currentSpawn+1) + "/" + spawnReq.Count);
+		//Debug.Log("Spawning number: " + (currentSpawn+1) + "/" + spawnReq.Count);
 		for (int i = 0; i < spawnReq[currentSpawn].spawnNumber; ++i)
 		{
 			if (spawnReq[currentSpawn].usesThisPos)

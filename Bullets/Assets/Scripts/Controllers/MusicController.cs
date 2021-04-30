@@ -9,7 +9,7 @@ using System.IO;
 public class MusicController : MonoBehaviour
 {
     string[] allSongsList; //directories
-    List<string> allSongNames = new List<string>(); //visible names of songs
+    public List<string> allSongNames = new List<string>(); //visible names of songs
     
     [SerializeField]
     AudioClip levelMusic;
@@ -26,19 +26,17 @@ public class MusicController : MonoBehaviour
         if(Directory.Exists(songDirectory))
             allSongsList = Directory.GetFiles(songDirectory, "*.wav");
         int i = 0;
-        foreach(string song in allSongsList)
+        foreach(string song in allSongsList) //removes excess characters after final / in file name and before the extension
 		{
             string tmpString = song;
-            Debug.Log($"Tmp before / cull {tmpString}");
             tmpString = tmpString.Substring(tmpString.LastIndexOf('/') + 1);
-            Debug.Log($"Tmp after / cull {tmpString}");
-            int location = tmpString.IndexOf(".", System.StringComparison.Ordinal);
+            int location = tmpString.IndexOf(".wav", System.StringComparison.Ordinal);
             if (location > 0)
                 tmpString = tmpString.Substring(0, location);
             allSongNames.Add(tmpString);
 		}
         //StartCoroutine(LoadSong(Random.Range(0, allSongs.Length - 1))); // loads a random song to play in the main menu from the directory provided
-        StartCoroutine(LoadSong(0));
+        StartCoroutine(LoadSong(Random.Range(0, allSongNames.Count)));
     }
     void OnEnable()
 	{
@@ -83,9 +81,9 @@ public class MusicController : MonoBehaviour
     {
         return levelMusic;
     }
-    public void SetSong(AudioClip _levelSong)
+    public void SetSong(int _index)
     {
-        levelMusic = _levelSong;
+        LoadSong(_index);
     }
     public AudioSource GetSource()
     {

@@ -9,6 +9,7 @@ public class MenuController : MonoBehaviour
     private void OnEnable()
 	{
         Actions.OnPause += TogglePause;
+        
 	}
     private void OnDisable()
 	{
@@ -17,6 +18,8 @@ public class MenuController : MonoBehaviour
 
     void TogglePause()
 	{
+        if(pauseMenu == null)
+            pauseMenu = GameObject.Find("Pause UI");
         if (!pauseMenu.activeInHierarchy)
 		{
             pauseMenu.SetActive(true);
@@ -29,5 +32,9 @@ public class MenuController : MonoBehaviour
     public void SendPauseAction()
 	{
         Actions.OnPause?.Invoke();
+	}
+    public void SendRestartAction()
+	{
+        Actions.OnLevelRestart?.Invoke();
 	}
 }

@@ -34,12 +34,12 @@ public class SaveThings : MonoBehaviour
 {
 	public AudioVisualised thisAudio;
 	public GameController thisIntensity;
-	public MusicController thisMusic; 
-	SongInfo thisInfo; 
-    void OnEnable()
+	public MusicController thisMusic;
+	SongInfo thisInfo;
+	void OnEnable()
 	{
 		Actions.OnLevelComplete += SaveSong;
-		Actions.OnLevelStart += LoadSong; //might need to change this
+		Actions.OnLevelStart += LoadSong;
 	}
 	void OnDisable()
 	{
@@ -54,7 +54,7 @@ public class SaveThings : MonoBehaviour
 	}
 	void SaveSong() //can adapt these functions to include scores, etc. 
 	{
-		if(!thisMusic)
+		if (!thisMusic)
 		{
 			thisMusic = FindObjectOfType<MusicController>();
 		}
@@ -70,7 +70,7 @@ public class SaveThings : MonoBehaviour
 				file = File.OpenWrite(destination);
 			else
 				file = File.Create(destination);
-
+			Debug.Log($"Saving song {thisMusic.GetSongName()} to directory: {thisMusic.GetSongDirectory()}");
 			SongInfo info = new SongInfo(thisMusic.GetSongName(), thisAudio.GetBPMAverages(), thisIntensity.GetIntensitySpeeds());
 			BinaryFormatter bf = new BinaryFormatter();
 			bf.Serialize(file, info);
@@ -84,31 +84,70 @@ public class SaveThings : MonoBehaviour
 		{
 			thisMusic = FindObjectOfType<MusicController>();
 		}
+		//string destination = Application.persistentDataPath + "/songData/" + thisIntensity.GetSongName() + ".dat";
+		string destination = thisMusic.GetSongDirectory() + "/SongData" + thisMusic.GetSongName() + ".dat";
+		FileStream file;
+
+		if (File.Exists(destination))
+			file = File.OpenRead(destination);
 		else
 		{
-			//string destination = Application.persistentDataPath + "/songData/" + thisIntensity.GetSongName() + ".dat";
-			string destination = thisMusic.GetSongDirectory() + "/SongData/" + thisMusic.GetSongName() + ".dat";
-			Debug.Log($"Loading song through file: {thisMusic.GetSongDirectory() + "/SongData/" + thisMusic.GetSongName() + ".dat"}");
-			FileStream file;
-
-			if (File.Exists(destination))
-				file = File.OpenRead(destination);
-			else
-			{
-				Debug.LogError("File Not Found"); //will be caused on first run of song, until song data is created
-				return;
-			}
-
-			BinaryFormatter bf = new BinaryFormatter();
-			thisInfo = (SongInfo)bf.Deserialize(file);
-			file.Close();
-			/*for(int i = 0; i < thisInfo.bpm.Count; ++i)
-			{
-				Debug.Log("Bpms for song: " + thisInfo.songName + " = " + thisInfo.bpm[i]);
-			}*/
-
-			Actions.OnLoadedSongInfo?.Invoke(thisInfo);
-			Debug.Log($"Loaded song, {thisInfo.songName}");
+			SaveAndLoadDefault(); //will be caused on first runs of song, until song data is created
+			return;
 		}
+		Debug.Log($"Loading song through file: {thisMusic.GetSongDirectory() + "/SongData" + thisMusic.GetSongName() + ".dat"}");
+		BinaryFormatter bf = new BinaryFormatter();
+		thisInfo = (SongInfo)bf.Deserialize(file);
+		file.Close();
+		/*for(int i = 0; i < thisInfo.bpm.Count; ++i)
+		{
+			Debug.Log("Bpms for song: " + thisInfo.songName + " = " + thisInfo.bpm[i]);
+		}*/
+
+		Actions.OnLoadedSongInfo?.Invoke(thisInfo);
+		Debug.Log($"Loaded song, {thisInfo.songName}");
+	}
+	void SaveAndLoadDefault()
+	{
+		if (!thisMusic)
+		{
+			thisMusic = FindObjectOfType<MusicController>();
+		}
+		string destination = thisMusic.GetSongDirectory() + "/SongData/Default.dat";
+		FileStream file;
+		if (!Directory.Exists(thisMusic.GetSongDirectory() + "/SongData"))
+			Directory.CreateDirectory(thisMusic.GetSongDirectory() + "/SongData");
+		if (File.Exists(destination))
+			file = File.OpenWrite(destination);
+		else
+			file = File.Create(destination);
+		List<float> defaultBpms = new List<float>();
+		for(int i = 0; i < 20; ++i)
+		{
+			defaultBpms.Add(Random.Range(140.0f,240.0f));
+		}
+		List<float> defaultIntesnity = new List<float>();
+		for(int i = 0; i< 10; ++i)
+		{
+			defaultIntesnity.Add(Random.Range(0.0f,1.0f));
+		}
+		SongInfo info = new SongInfo("Default", defaultBpms, defaultIntesnity);
+		BinaryFormatter bf = new BinaryFormatter();
+		bf.Serialize(file, info);
+		file.Close();
+		Debug.Log("Saved Default Data");
+
+		Debug.Log($"Loading default through file: {thisMusic.GetSongDirectory() + "/SongData/default.dat"}");
+
+		if (File.Exists(destination))
+			file = File.OpenRead(destination);
+		else
+		{
+			Debug.LogError("File Not Found"); //will be caused on first run of song, until song data is created
+			return;
+		}
+		thisInfo = (SongInfo)bf.Deserialize(file);
+		file.Close();
+		Actions.OnLoadedSongInfo?.Invoke(thisInfo);
 	}
 }

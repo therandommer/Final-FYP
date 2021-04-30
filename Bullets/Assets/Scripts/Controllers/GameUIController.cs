@@ -18,6 +18,7 @@ public class GameUIController : MonoBehaviour
 	public TextMeshProUGUI retryText;
 	public float textHideTime = 3.0f;
 	//will update each bar each x% of the way through the song
+	public int maxSegmentBars = 10;
 	public List<GameObject> progressBars;
 	public Color defaultColour;
 	public Color completeColour;
@@ -47,6 +48,13 @@ public class GameUIController : MonoBehaviour
 		Actions.OnLevelStart -= SetInitialUI;
 		Actions.OnNewSongSegment -= UpdateProgressUI;
 		Actions.OnNewBPMSpeed -= UpdateSpeedUI;
+	}
+	void Start()
+	{
+		for(int i = 0; i < maxSegmentBars; ++i)
+		{
+			progressBars.Add(GameObject.Find("Bar " + i));
+		}
 	}
     void UpdateHealthText(int _newHealth)
 	{
