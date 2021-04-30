@@ -6,11 +6,12 @@ public class GameController : MonoBehaviour
 {
     public static GameObject spawnHolder;
     public AudioClip levelMusic;
+    public AudioSource thisSource;
     public GameObject audioSource;
-    public int baseBpm = 190; //used to compare for speed/intensity calcs
+    public int baseBpm = 180; //used to compare for speed/intensity calcs
     float speedScalar = 1.0f; //the more the average is different to the base, the higher. If its lower than average its lower
     List<float> intensitySpeeds = new List<float>();
-    AudioSource thisSource;
+    
     bool canPause = false;
 
     List<float> existingIntensitySpeeds = new List<float>();
@@ -34,10 +35,16 @@ public class GameController : MonoBehaviour
         Actions.OnNewBPMAverage -= CalculateIntensity;
         Actions.OnLoadedSongInfo -= LoadIntensity;
     }
-    void Start()
+    void Start() //initialises music for the level using the data provided from MusicController
     {
-        thisSource = audioSource.GetComponent<AudioSource>();
-        thisSource.clip = levelMusic;
+        audioSource = FindObjectOfType<MusicController>().gameObject;
+        levelMusic = audioSource.GetComponent<MusicController>().GetSongClip();
+        if(levelMusic)
+		{
+            thisSource = audioSource.GetComponent<MusicController>().GetSource();
+            thisSource.clip = levelMusic;
+        }
+        
         Actions.OnSongChanged?.Invoke(audioSource.GetComponent<AudioSource>().clip.length);
     }
 
@@ -104,8 +111,5 @@ public class GameController : MonoBehaviour
 	{
         return intensitySpeeds;
 	}
-    public string GetSongName()
-	{
-        return levelMusic.name;
-	}
+    
 }

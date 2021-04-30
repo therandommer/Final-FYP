@@ -11,6 +11,7 @@ public class ClampToCamera : MonoBehaviour
 
     void Start()
     {
+        mainCamera = FindObjectOfType<Camera>();
         //screenBounds = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, mainCamera.transform.position.z));
         //objectWidth = transform.GetComponent<SpriteRenderer>().bounds.extents.x / 2;
         //objectHeight = transform.GetComponent<SpriteRenderer>().bounds.extents.y / 2;

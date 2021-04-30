@@ -101,6 +101,10 @@ public class AudioProcessor : MonoBehaviour
 	{
 		Actions.OnLevelStart -= Initialise;
 	}
+	void Start()
+	{
+		audioSource = FindObjectOfType<AudioSource>(); // find the main camera on scene loads
+	}
 	// Use this for initialization
 	void Initialise () ///changed start to work with other systems
 	{

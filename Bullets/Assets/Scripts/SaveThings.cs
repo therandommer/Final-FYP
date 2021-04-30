@@ -34,6 +34,7 @@ public class SaveThings : MonoBehaviour
 {
 	public AudioVisualised thisAudio;
 	public GameController thisIntensity;
+	public MusicController thisMusic; 
 	SongInfo thisInfo; 
     void OnEnable()
 	{
@@ -45,49 +46,69 @@ public class SaveThings : MonoBehaviour
 		Actions.OnLevelComplete -= SaveSong;
 		Actions.OnLevelStart -= LoadSong;
 	}
+	void Start()
+	{
+		thisMusic = FindObjectOfType<MusicController>();
+		thisIntensity = FindObjectOfType<GameController>();
+		thisAudio = FindObjectOfType<AudioVisualised>();
+	}
 	void SaveSong() //can adapt these functions to include scores, etc. 
 	{
-		string destination = Directory.GetCurrentDirectory() + "/SongData/" + thisIntensity.GetSongName() + ".dat";
-		//destination + " "
-		//string destination = Application.persistentDataPath + "/SongData/" + thisIntensity.GetSongName() + ".dat";
-		FileStream file;
-		if (!Directory.Exists(Directory.GetCurrentDirectory() + "/SongData/"))
-			Directory.CreateDirectory(Directory.GetCurrentDirectory() + "/SongData/");
-		if (File.Exists(destination)) 
-			file = File.OpenWrite(destination);
-		else 
-			file = File.Create(destination);
+		if(!thisMusic)
+		{
+			thisMusic = FindObjectOfType<MusicController>();
+		}
+		else
+		{
+			string destination = thisMusic.GetSongDirectory() + "/SongData/" + thisMusic.GetSongName() + ".dat";
+			//destination + " "
+			//string destination = Application.persistentDataPath + "/SongData/" + thisIntensity.GetSongName() + ".dat";
+			FileStream file;
+			if (!Directory.Exists(thisMusic.GetSongDirectory() + "/SongData/"))
+				Directory.CreateDirectory(thisMusic.GetSongDirectory() + "/SongData/");
+			if (File.Exists(destination))
+				file = File.OpenWrite(destination);
+			else
+				file = File.Create(destination);
 
-		SongInfo info = new SongInfo(thisIntensity.GetSongName(), thisAudio.GetBPMAverages(), thisIntensity.GetIntensitySpeeds());
-		BinaryFormatter bf = new BinaryFormatter();
-		bf.Serialize(file, info);
-		file.Close();
-		Debug.Log("Saved Data");
+			SongInfo info = new SongInfo(thisMusic.GetSongName(), thisAudio.GetBPMAverages(), thisIntensity.GetIntensitySpeeds());
+			BinaryFormatter bf = new BinaryFormatter();
+			bf.Serialize(file, info);
+			file.Close();
+			Debug.Log("Saved Data");
+		}
 	}
 	void LoadSong()
 	{
-		//string destination = Application.persistentDataPath + "/songData/" + thisIntensity.GetSongName() + ".dat";
-		string destination = Directory.GetCurrentDirectory() + "/SongData/" + thisIntensity.GetSongName() + ".dat";
-		Debug.Log($"Loading song through file: {Directory.GetCurrentDirectory() + "/SongData/" + thisIntensity.GetSongName() + ".dat"}");
-		FileStream file;
-
-		if (File.Exists(destination)) 
-			file = File.OpenRead(destination);
+		if (!thisMusic)
+		{
+			thisMusic = FindObjectOfType<MusicController>();
+		}
 		else
 		{
-			Debug.LogError("File Not Found"); //will be caused on first run of song, until song data is created
-			return;
-		}
+			//string destination = Application.persistentDataPath + "/songData/" + thisIntensity.GetSongName() + ".dat";
+			string destination = thisMusic.GetSongDirectory() + "/SongData/" + thisMusic.GetSongName() + ".dat";
+			Debug.Log($"Loading song through file: {thisMusic.GetSongDirectory() + "/SongData/" + thisMusic.GetSongName() + ".dat"}");
+			FileStream file;
 
-		BinaryFormatter bf = new BinaryFormatter();
-		thisInfo = (SongInfo) bf.Deserialize(file);
-		file.Close();
-		/*for(int i = 0; i < thisInfo.bpm.Count; ++i)
-		{
-			Debug.Log("Bpms for song: " + thisInfo.songName + " = " + thisInfo.bpm[i]);
-		}*/
-		
-		Actions.OnLoadedSongInfo?.Invoke(thisInfo);
-		Debug.Log($"Loaded song, {thisInfo.songName}");
+			if (File.Exists(destination))
+				file = File.OpenRead(destination);
+			else
+			{
+				Debug.LogError("File Not Found"); //will be caused on first run of song, until song data is created
+				return;
+			}
+
+			BinaryFormatter bf = new BinaryFormatter();
+			thisInfo = (SongInfo)bf.Deserialize(file);
+			file.Close();
+			/*for(int i = 0; i < thisInfo.bpm.Count; ++i)
+			{
+				Debug.Log("Bpms for song: " + thisInfo.songName + " = " + thisInfo.bpm[i]);
+			}*/
+
+			Actions.OnLoadedSongInfo?.Invoke(thisInfo);
+			Debug.Log($"Loaded song, {thisInfo.songName}");
+		}
 	}
 }

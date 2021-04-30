@@ -23,11 +23,11 @@ public class AudioVisualised : MonoBehaviour
     //bar = updated at runtime, static is loaded from file. Might need to move static functionality elsewhere as its mostly a UI thing. Fine here for now
     public float barScalar = 1000.0f; //amount to be multiplied by
     public float staticBarScalar = 3.0f; //amount to be divided by
-    
+
+    bool isStopped = true; // set to false during level gameplay, set to true during main mneu and end of level
 
     TimeController thisTime;
     AudioProcessor processor;
-    [SerializeField]
     GameController gC;
     void OnEnable()
 	{
@@ -99,16 +99,26 @@ public class AudioVisualised : MonoBehaviour
     void Update()
     {
         //Debug.Log(thisTime.timePassed % refreshTime);
-        if (thisTime.timePassed % refreshTime <= 0.2f && beatAverage.Count > 0 &&thisTime.timePassed > 0)
-        {
-            CalculateBeatAverageUpdate();
+        if(thisTime)
+		{
+            if (thisTime.timePassed % refreshTime <= 0.2f && beatAverage.Count > 0 && thisTime.timePassed > 0 && !isStopped)
+            {
+                CalculateBeatAverageUpdate();
+            }
         }
+        else if(!thisTime && !isStopped)
+		{
+            thisTime = FindObjectOfType<TimeController>();
+            gC = FindObjectOfType<GameController>();
+		}
     }
+        
     void FinishBpm()
 	{
         if(beatAverage.Count > 0)
 		{
             CalculateBeatAverageUpdate();
+            isStopped = true;
         }
 	}
     void ResetBpm()
@@ -125,14 +135,18 @@ public class AudioVisualised : MonoBehaviour
 	}
     void InitialiseBase()
 	{
-        for (int i = 0; i < normalWeighting; ++i)
-        {
-            beatAverage.Add(gC.baseBpm);
+        if(gC)
+		{
+            for (int i = 0; i < normalWeighting; ++i)
+            {
+                beatAverage.Add(gC.baseBpm);
+            }
         }
     }
     void SetRefreshRate()
 	{
         refreshTime = thisTime.maxTime / (segments);
+        isStopped = false;
 	}
     void CalculateBeatAverageUpdate()
 	{
@@ -187,5 +201,9 @@ public class AudioVisualised : MonoBehaviour
                 staticBarTransforms[i].sizeDelta = new Vector2(defaultWidth, _tmpBpmAverage / processed / staticBarScalar);
             }
         }
+	}
+    public void SetIsStopped(bool _state)
+	{
+        isStopped = _state;
 	}
 }

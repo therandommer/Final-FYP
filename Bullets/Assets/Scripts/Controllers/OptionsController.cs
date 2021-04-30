@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 //global options and settings for everything to reference on game/scene start, alongside handling game quit
 public class OptionsController : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class OptionsController : MonoBehaviour
 		Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.ForceSoftware);
 		Cursor.lockState = CursorLockMode.Confined;
 		Cursor.visible = true;
+	}
+	void Start()
+	{
+		
 	}
     public float getMusicVolume()
 	{
