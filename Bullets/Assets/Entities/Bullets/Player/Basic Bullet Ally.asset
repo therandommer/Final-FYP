@@ -15,8 +15,8 @@ MonoBehaviour:
   thisSprite: {fileID: 21300000, guid: 6ba19a156469a9a49b6e3862d7057ac4, type: 3}
   health: 0
   moveSpeed: 10
-  isPaused: 0
-  lifetime: 3
+  isPaused: 1
+  lifetime: 5
   damage: 1
   scoreValue: 1
   thisFaction: 0

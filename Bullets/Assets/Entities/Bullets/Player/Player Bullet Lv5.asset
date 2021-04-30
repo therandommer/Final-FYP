@@ -16,7 +16,7 @@ MonoBehaviour:
   health: 0
   moveSpeed: 15
   isPaused: 0
-  lifetime: 3
+  lifetime: 5
   damage: 2
   scoreValue: 1
   thisFaction: 0

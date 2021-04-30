@@ -51,14 +51,15 @@ public class GameController : MonoBehaviour
     }
     void CalculateIntensity(float _thisBeat)
 	{
-        Debug.Log("Received bpm of: " + _thisBeat);
+        //Debug.Log("Received bpm of: " + _thisBeat);
         speedScalar = _thisBeat / baseBpm;
         intensitySpeeds.Add(speedScalar);
-        Debug.Log($"Intensity of the song is {speedScalar}");
+        //Debug.Log($"Intensity of the song is {speedScalar}");
 	}
     void LoadIntensity(SongInfo _thisSong)
 	{
         existingIntensitySpeeds = _thisSong.intensity;
+        existingIntensitySpeeds.Add(existingIntensitySpeeds[existingIntensitySpeeds.Count - 1]); //adds an extra of the final intensity
 	}
     public float GetExistingIntensity(int _index)
 	{

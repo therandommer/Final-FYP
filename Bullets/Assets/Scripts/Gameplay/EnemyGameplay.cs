@@ -23,7 +23,7 @@ public class EnemyGameplay : AIGameplay
         timeAlive += Time.deltaTime;
         if (health <=0)
         {
-            Debug.Log($"The enemy: {this.name} is dying with {health} remaining");
+            //Debug.Log($"The enemy: {this.name} is dying with {health} remaining");
             Die(thisEnemy);
 		}
        
