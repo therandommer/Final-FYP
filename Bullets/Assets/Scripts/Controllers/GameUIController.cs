@@ -105,7 +105,7 @@ public class GameUIController : MonoBehaviour
 	void DisplayCompleteUI()
 	{
 		levelFinishedUI.SetActive(true);
-		songNameText.text = Camera.main.GetComponent<AudioSource>().clip.name;
+		songNameText.text = GameObject.FindObjectOfType<Camera>().GetComponent<AudioSource>().clip.name;
 		finalScoreText.text = GetComponent<ScoreController>().scoreText.text;
 		if(GameObject.Find("Player").activeInHierarchy)
 		{
