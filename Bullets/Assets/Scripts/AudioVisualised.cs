@@ -34,6 +34,7 @@ public class AudioVisualised : MonoBehaviour
         Actions.OnLevelComplete += FinishBpm;
         Actions.OnLevelRestart += ResetBpm;
         Actions.OnLevelStart += SetRefreshRate;
+        Actions.ResetBars += ResetBars; //only for the dynamic bars
         Actions.OnLoadedSongInfo += CalculateStaticBars;
 	}
     void OnDisable()
@@ -41,6 +42,7 @@ public class AudioVisualised : MonoBehaviour
         Actions.OnLevelComplete -= FinishBpm;
         Actions.OnLevelRestart -= ResetBpm;
         Actions.OnLevelStart -= SetRefreshRate;
+        Actions.ResetBars -= ResetBars;
         Actions.OnLoadedSongInfo -= CalculateStaticBars;
     }
     void Start()
@@ -116,6 +118,10 @@ public class AudioVisualised : MonoBehaviour
         songAverageBpm.Clear();
         Actions.ResetBars?.Invoke(defaultWidth);
         InitialiseBase();
+	}
+    void ResetBars(float _defaultWidth) //resetting the dynamic bars to 0 for when the song initialises
+	{
+
 	}
     void InitialiseBase()
 	{

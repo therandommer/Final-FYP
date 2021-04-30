@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 3319301276062362764}
   - component: {fileID: 3319301276062362752}
   - component: {fileID: 3319301276062362755}
-  - component: {fileID: 4808163095295447328}
   - component: {fileID: 601911640}
   m_Layer: 0
   m_Name: Controllers
@@ -78,7 +77,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreDropMultiplier: 2
+  scoreMultiplier: 1
+  playerHitPenalty: 0.66
+  maximumScoreMultiplier: 20
   scoreText: {fileID: 0}
+  multiplierText: {fileID: 0}
+  defaultScoreColours: {r: 1, g: 1, b: 1, a: 1}
+  boostedScoreColours: {r: 1, g: 0, b: 1, a: 1}
 --- !u!114 &3319301276062362752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,6 +102,7 @@ MonoBehaviour:
   timeToNextSpawn: 0
   startDelay: 3
   endDelay: 5
+  totalSongSegments: 10
   timerText: {fileID: 0}
   nextSpawnTimerText: {fileID: 0}
 --- !u!114 &3319301276062362755
@@ -121,18 +127,20 @@ MonoBehaviour:
   timeRemainingText: {fileID: 0}
   retryText: {fileID: 0}
   textHideTime: 3
---- !u!114 &4808163095295447328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3319301276062362765}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cfd7cccd3cba30418e335e9e32c7d88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  progressBars:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  cursorTexture: {fileID: 2800000, guid: 64c09dbe2d7c06c4f86904b82d71bad0, type: 3}
+  defaultColour: {r: 0.92549026, g: 0.09019608, b: 0.09019608, a: 1}
+  completeColour: {r: 0, g: 0.7830189, b: 0.17129229, a: 1}
 --- !u!114 &601911640
 MonoBehaviour:
   m_ObjectHideFlags: 0
