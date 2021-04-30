@@ -132,7 +132,7 @@ public class AudioVisualised : MonoBehaviour
     }
     void SetRefreshRate()
 	{
-        refreshTime = thisTime.maxTime / (segments * 2);
+        refreshTime = thisTime.maxTime / (segments);
 	}
     void CalculateBeatAverageUpdate()
 	{
@@ -146,7 +146,7 @@ public class AudioVisualised : MonoBehaviour
         //Debug.Log("Size of beatAverage is" + beatAverage.Count);
         AddToTotalAverage(averageBpm);
         Actions.OnNewBPMAverage?.Invoke(averageBpm);
-        Actions.OnNewBPMSpeed?.Invoke(songAverageBpm.Count); //sends the current index for the song progression to other objects to update their movement speed. 
+        Actions.OnNewBPMSpeed?.Invoke(songAverageBpm.Count-1); //sends the current index for the song progression to other objects to update their movement speed. 
         beatAverage.Clear();
     }
     public List<float> GetBPMAverages()

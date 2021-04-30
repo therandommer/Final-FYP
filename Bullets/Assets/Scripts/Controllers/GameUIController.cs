@@ -12,6 +12,7 @@ public class GameUIController : MonoBehaviour
 	public GameObject levelFinishedUI;
 	public TextMeshProUGUI songNameText;
 	public TextMeshProUGUI finalScoreText;
+	public TextMeshProUGUI speedText;
 	public GameObject levelFailedUI;
 	public TextMeshProUGUI timeRemainingText;
 	public TextMeshProUGUI retryText;
@@ -32,6 +33,7 @@ public class GameUIController : MonoBehaviour
 		Actions.ResetBars += ResetBars;
 		Actions.OnLevelStart += SetInitialUI;
 		Actions.OnNewSongSegment += UpdateProgressUI;
+		Actions.OnNewBPMSpeed += UpdateSpeedUI;
 	}
 	void OnDisable()
 	{
@@ -44,6 +46,7 @@ public class GameUIController : MonoBehaviour
 		Actions.ResetBars -= ResetBars;
 		Actions.OnLevelStart -= SetInitialUI;
 		Actions.OnNewSongSegment -= UpdateProgressUI;
+		Actions.OnNewBPMSpeed -= UpdateSpeedUI;
 	}
     void UpdateHealthText(int _newHealth)
 	{
@@ -73,6 +76,10 @@ public class GameUIController : MonoBehaviour
 		retryText.enabled = true;
 		retryText.text = $"Attempts: {retrys}";
 		StartCoroutine("HideText", retryText);
+	}
+	void UpdateSpeedUI(int _index)
+	{
+		speedText.text = $"Speed: {FindObjectOfType<GameController>().GetExistingIntensity(_index)}";
 	}
 	void ResetBars(float _width)
 	{
