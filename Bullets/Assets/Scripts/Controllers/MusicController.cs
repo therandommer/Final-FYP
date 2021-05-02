@@ -25,7 +25,6 @@ public class MusicController : MonoBehaviour
         directoryText.text = songDirectory;
         if(Directory.Exists(songDirectory))
             allSongsList = Directory.GetFiles(songDirectory, "*.wav");
-        int i = 0;
         foreach(string song in allSongsList) //removes excess characters after final / in file name and before the extension
 		{
             string tmpString = song;
