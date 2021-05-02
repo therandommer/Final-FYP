@@ -9,11 +9,13 @@ public class SongInfo
 	public string songName;
 	public List<float> bpm;
 	public List<float> intensity;
-	public SongInfo(string _songName, List<float> _bpms, List<float> _intensitys)
+	public int seed;//used for randomisation, unique to each song imported
+	public SongInfo(string _songName, List<float> _bpms, List<float> _intensitys, int _newSeed)
 	{
 		songName = _songName;
 		bpm = _bpms;
 		intensity = _intensitys;
+		seed = _newSeed;
 	}
 }
 [System.Serializable]
@@ -67,8 +69,6 @@ public class SaveThings : MonoBehaviour
 		else
 		{
 			string destination = thisMusic.GetSongDirectory() + "SongData/" + thisMusic.GetSongName() + ".dat";
-			//destination + " "
-			//string destination = Application.persistentDataPath + "/SongData/" + thisIntensity.GetSongName() + ".dat";
 			FileStream file;
 			if (!Directory.Exists(thisMusic.GetSongDirectory() + "SongData/"))
 				Directory.CreateDirectory(thisMusic.GetSongDirectory() + "SongData/");
@@ -78,7 +78,18 @@ public class SaveThings : MonoBehaviour
 				file = File.Create(destination);
 			Debug.Log($"Saving song {thisMusic.GetSongName()} to directory: {thisMusic.GetSongDirectory()}");
 			Debug.Log($"Data saved: {thisMusic.GetSongName()}||{thisAudio.GetBPMAverages()}||{thisIntensity.GetIntensitySpeeds()}");
-			SongInfo info = new SongInfo(thisMusic.GetSongName(), thisAudio.GetBPMAverages(), thisIntensity.GetIntensitySpeeds());
+			List<float> tmpBpm = thisAudio.GetBPMAverages();
+			List<float> tmpIntensity = thisIntensity.GetIntensitySpeeds();
+			foreach (float i in tmpBpm)
+			{
+				Debug.Log("Bpm average: " + i);
+			}
+			foreach (float i in tmpIntensity)
+			{
+				Debug.Log("Bpm average: " + i);
+			}
+			//adds song info gathered from the first run to the file, along with a randomised seed for future use and to keep it consistent
+			SongInfo info = new SongInfo(thisMusic.GetSongName(), thisAudio.GetBPMAverages(), thisIntensity.GetIntensitySpeeds(), Random.Range(0,int.MaxValue));
 			BinaryFormatter bf = new BinaryFormatter();
 			bf.Serialize(file, info);
 			file.Close();
@@ -96,7 +107,6 @@ public class SaveThings : MonoBehaviour
 		{
 			thisMusic = FindObjectOfType<MusicController>();
 		}
-		//string destination = Application.persistentDataPath + "/songData/" + thisIntensity.GetSongName() + ".dat";
 		string destination = thisMusic.GetSongDirectory() + "SongData/" + thisMusic.GetSongName() + ".dat";
 		Debug.Log("Attempting to load data for song at: " + destination);
 		FileStream file;
@@ -112,11 +122,6 @@ public class SaveThings : MonoBehaviour
 		BinaryFormatter bf = new BinaryFormatter();
 		thisInfo = (SongInfo)bf.Deserialize(file);
 		file.Close();
-		/*for(int i = 0; i < thisInfo.bpm.Count; ++i)
-		{
-			Debug.Log("Bpms for song: " + thisInfo.songName + " = " + thisInfo.bpm[i]);
-		}*/
-
 		Actions.OnLoadedSongInfo?.Invoke(thisInfo);
 		Debug.Log($"Loaded song, {thisInfo.songName}");
 	}
@@ -139,16 +144,19 @@ public class SaveThings : MonoBehaviour
 		else
 			file = File.Create(destination);
 		List<float> defaultBpms = new List<float>();
-		for(int i = 0; i < 20; ++i)
+		//provides some spoofed data for the first run so it feels dynamic, albeit random
+		for(int i = 0; i < Mathf.RoundToInt((thisMusic.GetMusicLength()/120) * (thisAudio.GetSegments() * Mathf.CeilToInt(thisMusic.GetMusicLength() / 120))); ++i)
 		{
-			defaultBpms.Add(Random.Range(140.0f,240.0f));
+			defaultBpms.Add(Random.Range(80.0f,220.0f));
+			//Debug.Log("Generated bpm: " + defaultBpms[i]);
 		}
 		List<float> defaultIntesnity = new List<float>();
-		for(int i = 0; i< 10; ++i)
+		for(int i = 0; i < Mathf.RoundToInt((thisMusic.GetMusicLength()/120) * (thisAudio.GetSegments() * Mathf.CeilToInt(thisMusic.GetMusicLength() / 120))); ++i)
 		{
-			defaultIntesnity.Add(Random.Range(0.0f,1.0f));
+			defaultIntesnity.Add(Random.Range(0.35f,1.25f));
+			//Debug.Log("Generated bpm: " + defaultIntesnity[i]);
 		}
-		SongInfo info = new SongInfo(thisMusic.GetSongName() + " D", defaultBpms, defaultIntesnity);
+		SongInfo info = new SongInfo(thisMusic.GetSongName() + " ||D||", defaultBpms, defaultIntesnity, Random.Range(0, int.MaxValue));
 		BinaryFormatter bf = new BinaryFormatter();
 		bf.Serialize(file, info);
 		file.Close();

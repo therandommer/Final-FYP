@@ -91,6 +91,7 @@ public abstract class AIGameplay : MonoBehaviour
         isPaused = !isPaused;
         //Debug.Log($"Toggling pause for {this.name}");
 	}
+    
     void Reset()
 	{
         Destroy(gameObject);

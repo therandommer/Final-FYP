@@ -8,6 +8,7 @@ using TMPro;
 public class TimeController : MonoBehaviour
 {
     public bool isPaused = false;
+    bool levelComplete = false;
     bool musicStarted = false;
     public float timePassed = 0.0f;
     public float maxTime = 0.0f;
@@ -16,7 +17,7 @@ public class TimeController : MonoBehaviour
     public float endDelay = 5.0f;
     float previousTimeScale = 1.0f;
     public int totalSongSegments = 10;
-    int songSegment = 1; 
+    int songSegment = 1;
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI nextSpawnTimerText;
     void OnEnable()
@@ -25,6 +26,7 @@ public class TimeController : MonoBehaviour
         Actions.OnSongChanged += UpdateSongLength;
         Actions.OnPlayerKilled += PlayerDead;
         Actions.OnLevelRestart += ResetTime;
+        Actions.OnLevelComplete += StopTime;
     }
     void OnDisable()
     {
@@ -32,6 +34,7 @@ public class TimeController : MonoBehaviour
         Actions.OnSongChanged -= UpdateSongLength;
         Actions.OnPlayerKilled -= PlayerDead;
         Actions.OnLevelRestart -= ResetTime;
+        Actions.OnLevelComplete -= StopTime;
     }
     void Start()
     {
@@ -39,7 +42,11 @@ public class TimeController : MonoBehaviour
     }
     void Update()
     {
-        if(!isPaused)
+        if(timePassed<0 && Time.timeScale<1)
+		{
+            Time.timeScale = 1;
+		}
+        if (!isPaused)
 		{
             if(timePassed<maxTime && timePassed >=0.0f)
 			{
@@ -57,11 +64,11 @@ public class TimeController : MonoBehaviour
                 timePassed += Time.deltaTime;
                 timerText.text = $"Get Ready: {(Mathf.FloorToInt(-timePassed % 60).ToString())}";
 			}
-            if(timePassed>=maxTime)
+            if(timePassed>=maxTime &&!levelComplete)
 			{
                 Actions.OnLevelComplete?.Invoke();
 			}
-            Debug.Log($"Requirement for bar update = {maxTime / totalSongSegments * songSegment}");
+            //Debug.Log($"Requirement for bar update = {maxTime / totalSongSegments * songSegment}");
            if (timePassed>= maxTime / totalSongSegments * songSegment)
             {
                 Actions.OnNewSongSegment?.Invoke(songSegment-1);
@@ -92,11 +99,16 @@ public class TimeController : MonoBehaviour
         timePassed = -startDelay;
         isPaused = false;
         musicStarted = false;
+        levelComplete = false;
         songSegment = 1;
         Time.timeScale = 1;
 	}
     public void UpdateSongLength(float _time)
 	{
         maxTime = _time + endDelay;
+	}
+    void StopTime()
+	{
+        levelComplete = true;
 	}
 }

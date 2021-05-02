@@ -8,7 +8,7 @@ public class GameController : MonoBehaviour
     public AudioClip levelMusic;
     public AudioSource thisSource;
     public GameObject audioSource;
-    public int baseBpm = 180; //used to compare for speed/intensity calcs
+    public int baseBpm = 120; //used to compare for speed/intensity calcs
     float speedScalar = 1.0f; //the more the average is different to the base, the higher. If its lower than average its lower
     List<float> intensitySpeeds = new List<float>();
     
@@ -66,7 +66,7 @@ public class GameController : MonoBehaviour
     void LoadIntensity(SongInfo _thisSong)
 	{
         existingIntensitySpeeds = _thisSong.intensity;
-        existingIntensitySpeeds.Add(existingIntensitySpeeds[existingIntensitySpeeds.Count - 1]); //adds an extra of the final intensity
+        existingIntensitySpeeds.Add(existingIntensitySpeeds[existingIntensitySpeeds.Count-1]); //adds an extra of the final intensity
 	}
     public float GetExistingIntensity(int _index)
 	{
@@ -111,5 +111,8 @@ public class GameController : MonoBehaviour
 	{
         return intensitySpeeds;
 	}
-    
+    public int GetIntensityCount()
+	{
+        return intensitySpeeds.Count;
+	}
 }

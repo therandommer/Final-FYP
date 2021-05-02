@@ -75,7 +75,7 @@ public class GameUIController : MonoBehaviour
 	}
 	void UpdateProgressUI(int _newSegment)
 	{
-		Debug.Log("Updating " + _newSegment + " progress");
+		//Debug.Log("Updating " + _newSegment + " progress");
 		progressBars[_newSegment].GetComponent<Image>().color = completeColour;
 	}
 	void UpdateRestartUI()

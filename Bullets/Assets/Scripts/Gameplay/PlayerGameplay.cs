@@ -78,7 +78,7 @@ public class PlayerGameplay : MonoBehaviour
 	}
 	void Update()
 	{
-		if(!isPaused)
+		if (!isPaused)
 		{
 			if (updateWeapon)
 			{

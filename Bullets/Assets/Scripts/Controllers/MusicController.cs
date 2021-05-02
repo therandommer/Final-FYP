@@ -17,6 +17,7 @@ public class MusicController : MonoBehaviour
     AudioSource thisSource;
     string songDirectory;
     public TextMeshProUGUI directoryText;
+    int randomIndex = 0;
     void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
@@ -34,8 +35,9 @@ public class MusicController : MonoBehaviour
                 tmpString = tmpString.Substring(0, location);
             allSongNames.Add(tmpString);
 		}
+        randomIndex = Random.Range(0, allSongNames.Count);
         //StartCoroutine(LoadSong(Random.Range(0, allSongs.Length - 1))); // loads a random song to play in the main menu from the directory provided
-        StartCoroutine(LoadSong(Random.Range(0, allSongNames.Count)));
+        StartCoroutine(LoadSong(randomIndex));
     }
     void OnEnable()
 	{
@@ -116,6 +118,10 @@ public class MusicController : MonoBehaviour
     {
         return levelMusic;
     }
+    public float GetMusicLength()
+	{
+        return thisSource.clip.length;
+	}
     public void SetMusicList(string[] _newList)
 	{
         allSongsList = _newList;

@@ -103,7 +103,11 @@ public class Spawner : MonoBehaviour
 	}
 	void UpdateSpeedScalar(int _index)
 	{
-		speedScalar = FindObjectOfType<GameController>().GetExistingIntensity(_index);
+		if(_index < FindObjectOfType<GameController>().GetIntensityCount())
+		{
+			speedScalar = FindObjectOfType<GameController>().GetExistingIntensity(_index);
+		}
+		//Debug.LogError($"Index for speed scalar update out of range, received index: {_index}, max allowed: {FindObjectOfType<GameController>().GetIntensityCount()}");
 	}
 	void Reset()
 	{

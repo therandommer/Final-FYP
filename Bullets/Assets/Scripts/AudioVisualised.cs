@@ -10,7 +10,7 @@ public class AudioVisualised : MonoBehaviour
     List<float> beatAverage = new List<float>();
     List<float> songAverageBpm = new List<float>();
     float averageBpm = 0.0f;
-    public int normalWeighting = 10; //number of average bpms filled with the default bpm for the song
+    public int normalWeighting = 0; //number of average bpms filled with the default bpm for the song
     public int segments = 20; //how many times to check for average bpm and display
     float refreshTime; //time before refresh
 
@@ -154,7 +154,8 @@ public class AudioVisualised : MonoBehaviour
 	{
         if (!thisTime)
             thisTime = FindObjectOfType<TimeController>();
-        refreshTime = thisTime.maxTime / (segments);
+        refreshTime = thisTime.maxTime / (segments * Mathf.CeilToInt((thisTime.maxTime / 120))); //every 2 minutes more segements are required for the song
+        Debug.Log("Refresh time now has:" + refreshTime);
         isStopped = false;
 	}
     void CalculateBeatAverageUpdate()
@@ -165,11 +166,10 @@ public class AudioVisualised : MonoBehaviour
             totalBeats += beatAverage[i];
         }
         float averageBpm = totalBeats / beatAverage.Count;
-        //Debug.Log($"AverageBPM = {averageBpm} Total beats this time = {beatAverage.Count}");
-        //Debug.Log("Size of beatAverage is" + beatAverage.Count);
         AddToTotalAverage(averageBpm);
         Actions.OnNewBPMAverage?.Invoke(averageBpm);
-        Actions.OnNewBPMSpeed?.Invoke(songAverageBpm.Count-1); //sends the current index for the song progression to other objects to update their movement speed. 
+        //Debug.Log("New bpm and the index is: " + songAverageBpm.Count);
+        Actions.OnNewBPMSpeed?.Invoke(songAverageBpm.Count); //sends the current index for the song progression to other objects to update their movement speed. 
         beatAverage.Clear();
     }
     public List<float> GetBPMAverages()
@@ -181,7 +181,7 @@ public class AudioVisualised : MonoBehaviour
         songName.text = _thisSong.songName;
         Debug.Log("Received Song Info for Song: " + _thisSong.songName);
         float elementsPerLoop = Mathf.CeilToInt(_thisSong.bpm.Count / staticBarTransforms.Count);
-        Debug.Log("Elements per loop: " + elementsPerLoop);
+        //Debug.Log("Elements per loop: " + elementsPerLoop);
         
         for(int i = 0; i < staticBarTransforms.Count; ++i)
 		{
@@ -192,7 +192,7 @@ public class AudioVisualised : MonoBehaviour
 			{
                 if(j + iOffset <= _thisSong.bpm.Count)
 				{
-                    Debug.Log("Elements/loop = " + elementsPerLoop);
+                    //Debug.Log("Elements/loop = " + elementsPerLoop);
                     processed = j;
                     _tmpBpmAverage += _thisSong.bpm[j + iOffset];
                 }
@@ -215,5 +215,10 @@ public class AudioVisualised : MonoBehaviour
     public void SetIsStopped(bool _state)
 	{
         isStopped = _state;
+	}
+
+    public int GetSegments()
+	{
+        return segments;
 	}
 }
