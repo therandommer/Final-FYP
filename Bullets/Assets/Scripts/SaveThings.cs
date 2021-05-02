@@ -77,6 +77,7 @@ public class SaveThings : MonoBehaviour
 			else
 				file = File.Create(destination);
 			Debug.Log($"Saving song {thisMusic.GetSongName()} to directory: {thisMusic.GetSongDirectory()}");
+			Debug.Log($"Data saved: {thisMusic.GetSongName()}||{thisAudio.GetBPMAverages()}||{thisIntensity.GetIntensitySpeeds()}");
 			SongInfo info = new SongInfo(thisMusic.GetSongName(), thisAudio.GetBPMAverages(), thisIntensity.GetIntensitySpeeds());
 			BinaryFormatter bf = new BinaryFormatter();
 			bf.Serialize(file, info);

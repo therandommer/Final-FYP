@@ -39,11 +39,11 @@ public class MusicController : MonoBehaviour
     }
     void OnEnable()
 	{
-        Actions.OnSceneChanged += SetSong;
+        Actions.OnSceneChanged += RestartSong;
 	}
     void OnDisable()
     {
-        Actions.OnSceneChanged -= SetSong;
+        Actions.OnSceneChanged -= RestartSong;
     }
     void Start()
     {
@@ -94,6 +94,19 @@ public class MusicController : MonoBehaviour
     {
         Debug.Log("Starting song: " + _index);
         StartCoroutine(LoadSong(_index));
+    }
+    public void RestartSong(int _index) //same as above but stops for scene start
+	{
+        Debug.Log("Starting song: " + _index);
+        if(_index == 0) //restart song on main menu
+		{
+            thisSource.Stop();
+            thisSource.Play();
+		}
+        else //else stop it
+		{
+            thisSource.Stop();
+		}            
     }
     public AudioSource GetSource()
     {

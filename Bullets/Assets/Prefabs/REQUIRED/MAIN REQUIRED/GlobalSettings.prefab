@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2835198714853595094}
   - component: {fileID: 2835198714853595095}
   - component: {fileID: 1279103244}
+  - component: {fileID: 523732422}
   m_Layer: 0
   m_Name: GlobalSettings
   m_TagString: Untagged
@@ -84,3 +85,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 0}
+  mainUi: {fileID: 0}
+--- !u!114 &523732422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2835198714853594923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c2f1fcc6ed5ca640a9493a65be137d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisAudio: {fileID: 0}
+  thisIntensity: {fileID: 0}
+  thisMusic: {fileID: 0}

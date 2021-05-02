@@ -6,16 +6,30 @@ public class MenuController : MonoBehaviour
 {
     [SerializeField]
     GameObject pauseMenu = null;
+    [SerializeField]
+    GameObject mainUi = null;
     private void OnEnable()
 	{
         Actions.OnPause += TogglePause;
-        
+        Actions.OnSceneChanged += ToggleMain;
 	}
     private void OnDisable()
 	{
         Actions.OnPause -= TogglePause;
+        Actions.OnSceneChanged -= ToggleMain;
     }
 
+    void ToggleMain(int _scene)
+	{
+        if(_scene != 0 && mainUi.activeInHierarchy)
+		{
+            mainUi.SetActive(false);
+		}
+        if(_scene == 0 && !mainUi.activeInHierarchy)
+		{
+            mainUi.SetActive(true);
+		}
+	}
     void TogglePause()
 	{
         if(pauseMenu == null)

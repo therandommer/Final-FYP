@@ -17,10 +17,11 @@ public class MoveOnSceneChange : MonoBehaviour
 	}
     void MoveThis(int _index)
 	{
+        Debug.Log("Moving bars");
         isMainMenu = !isMainMenu;
         if (isMainMenu)
-            this.transform.position = menuPos;
+            GetComponent<RectTransform>().anchoredPosition = menuPos;
         else
-            this.transform.position = gamePos;
+            GetComponent<RectTransform>().anchoredPosition = gamePos;
     }
 }
