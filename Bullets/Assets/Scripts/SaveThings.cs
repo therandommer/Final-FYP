@@ -40,11 +40,13 @@ public class SaveThings : MonoBehaviour
 	{
 		Actions.OnLevelComplete += SaveSong;
 		Actions.OnLevelStart += LoadSong;
+		Actions.OnLoadNewSongData += LoadNewSong;
 	}
 	void OnDisable()
 	{
 		Actions.OnLevelComplete -= SaveSong;
 		Actions.OnLevelStart -= LoadSong;
+		Actions.OnLoadNewSongData -= LoadNewSong;
 	}
 	void Start()
 	{
@@ -58,14 +60,18 @@ public class SaveThings : MonoBehaviour
 		{
 			thisMusic = FindObjectOfType<MusicController>();
 		}
+		if (!thisIntensity)
+		{
+			thisIntensity = FindObjectOfType<GameController>();
+		}
 		else
 		{
-			string destination = thisMusic.GetSongDirectory() + "/SongData/" + thisMusic.GetSongName() + ".dat";
+			string destination = thisMusic.GetSongDirectory() + "SongData/" + thisMusic.GetSongName() + ".dat";
 			//destination + " "
 			//string destination = Application.persistentDataPath + "/SongData/" + thisIntensity.GetSongName() + ".dat";
 			FileStream file;
-			if (!Directory.Exists(thisMusic.GetSongDirectory() + "/SongData/"))
-				Directory.CreateDirectory(thisMusic.GetSongDirectory() + "/SongData/");
+			if (!Directory.Exists(thisMusic.GetSongDirectory() + "SongData/"))
+				Directory.CreateDirectory(thisMusic.GetSongDirectory() + "SongData/");
 			if (File.Exists(destination))
 				file = File.OpenWrite(destination);
 			else
@@ -78,6 +84,11 @@ public class SaveThings : MonoBehaviour
 			Debug.Log("Saved Data");
 		}
 	}
+	void LoadNewSong(string _songName)
+	{
+		Debug.Log("Loading song data");
+		LoadSong();
+	}
 	void LoadSong()
 	{
 		if (!thisMusic)
@@ -85,7 +96,8 @@ public class SaveThings : MonoBehaviour
 			thisMusic = FindObjectOfType<MusicController>();
 		}
 		//string destination = Application.persistentDataPath + "/songData/" + thisIntensity.GetSongName() + ".dat";
-		string destination = thisMusic.GetSongDirectory() + "/SongData" + thisMusic.GetSongName() + ".dat";
+		string destination = thisMusic.GetSongDirectory() + "SongData/" + thisMusic.GetSongName() + ".dat";
+		Debug.Log("Attempting to load data for song at: " + destination);
 		FileStream file;
 
 		if (File.Exists(destination))
@@ -95,7 +107,7 @@ public class SaveThings : MonoBehaviour
 			SaveAndLoadDefault(); //will be caused on first runs of song, until song data is created
 			return;
 		}
-		Debug.Log($"Loading song through file: {thisMusic.GetSongDirectory() + "/SongData" + thisMusic.GetSongName() + ".dat"}");
+		Debug.Log($"Loading song through file: {thisMusic.GetSongDirectory() + "SongData/" + thisMusic.GetSongName() + ".dat"}");
 		BinaryFormatter bf = new BinaryFormatter();
 		thisInfo = (SongInfo)bf.Deserialize(file);
 		file.Close();
@@ -113,10 +125,14 @@ public class SaveThings : MonoBehaviour
 		{
 			thisMusic = FindObjectOfType<MusicController>();
 		}
-		string destination = thisMusic.GetSongDirectory() + "/SongData/Default.dat";
+		if(!thisIntensity)
+		{
+			thisIntensity = FindObjectOfType<GameController>();
+		}
+		string destination = thisMusic.GetSongDirectory() + $"SongData/{thisMusic.GetSongName()} D.dat";
 		FileStream file;
-		if (!Directory.Exists(thisMusic.GetSongDirectory() + "/SongData"))
-			Directory.CreateDirectory(thisMusic.GetSongDirectory() + "/SongData");
+		if (!Directory.Exists(thisMusic.GetSongDirectory() + "SongData/"))
+			Directory.CreateDirectory(thisMusic.GetSongDirectory() + "SongData/");
 		if (File.Exists(destination))
 			file = File.OpenWrite(destination);
 		else
@@ -131,13 +147,13 @@ public class SaveThings : MonoBehaviour
 		{
 			defaultIntesnity.Add(Random.Range(0.0f,1.0f));
 		}
-		SongInfo info = new SongInfo("Default", defaultBpms, defaultIntesnity);
+		SongInfo info = new SongInfo(thisMusic.GetSongName() + " D", defaultBpms, defaultIntesnity);
 		BinaryFormatter bf = new BinaryFormatter();
 		bf.Serialize(file, info);
 		file.Close();
 		Debug.Log("Saved Default Data");
 
-		Debug.Log($"Loading default through file: {thisMusic.GetSongDirectory() + "/SongData/default.dat"}");
+		Debug.Log($"Loading default through file: {destination}");
 
 		if (File.Exists(destination))
 			file = File.OpenRead(destination);

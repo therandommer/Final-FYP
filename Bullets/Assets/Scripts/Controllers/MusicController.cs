@@ -25,10 +25,10 @@ public class MusicController : MonoBehaviour
         directoryText.text = songDirectory;
         if(Directory.Exists(songDirectory))
             allSongsList = Directory.GetFiles(songDirectory, "*.wav");
-        foreach(string song in allSongsList) //removes excess characters after final / in file name and before the extension
+        foreach(string song in allSongsList) //adds all song names to a list for later use with loading song data/sound
 		{
             string tmpString = song;
-            tmpString = tmpString.Substring(tmpString.LastIndexOf('/') + 1);
+            tmpString = tmpString.Substring(tmpString.LastIndexOf('/') + 1); //removes excess characters after final / in file name and before the extension
             int location = tmpString.IndexOf(".wav", System.StringComparison.Ordinal);
             if (location > 0)
                 tmpString = tmpString.Substring(0, location);
@@ -60,7 +60,8 @@ public class MusicController : MonoBehaviour
         levelMusic.name = allSongNames[_index];
         levelMusic.LoadAudioData();
         PlayAudioFile();
-	}
+        Actions.OnLoadNewSongData?.Invoke(levelMusic.name);
+    }
     private WWW GetAudioFromFile(int _index) //downloading the data from the file provided
 	{
         string audioToLoad = string.Format(allSongsList[_index]);
@@ -69,6 +70,7 @@ public class MusicController : MonoBehaviour
 	}
     private void PlayAudioFile()
 	{
+        thisSource.Stop();
         thisSource.clip = levelMusic;
         thisSource.Play();
 	}
@@ -76,13 +78,22 @@ public class MusicController : MonoBehaviour
     {
         return levelMusic.name;
     }
+    public string GetSpecificSongName(int _index)
+	{
+        return allSongNames[_index];
+	}
+    public int GetSongNumber()
+	{
+        return allSongNames.Count;
+	}
     public AudioClip GetSongClip()
     {
         return levelMusic;
     }
     public void SetSong(int _index)
     {
-        LoadSong(_index);
+        Debug.Log("Starting song: " + _index);
+        StartCoroutine(LoadSong(_index));
     }
     public AudioSource GetSource()
     {

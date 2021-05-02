@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3319301276062362764}
   - component: {fileID: 3319301276062362752}
   - component: {fileID: 3319301276062362755}
-  - component: {fileID: 601911640}
   m_Layer: 0
   m_Name: Controllers
   m_TagString: Untagged
@@ -119,18 +118,3 @@ MonoBehaviour:
   progressBars: []
   defaultColour: {r: 0.92549026, g: 0.09019608, b: 0.09019608, a: 1}
   completeColour: {r: 0, g: 0.7830189, b: 0.17129229, a: 1}
---- !u!114 &601911640
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3319301276062362765}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c2f1fcc6ed5ca640a9493a65be137d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisAudio: {fileID: 0}
-  thisIntensity: {fileID: 3319301276062362766}
-  thisMusic: {fileID: 0}

@@ -23,7 +23,6 @@ public class AudioVisualised : MonoBehaviour
     //bar = updated at runtime, static is loaded from file. Might need to move static functionality elsewhere as its mostly a UI thing. Fine here for now
     public float barScalar = 1000.0f; //amount to be multiplied by
     public float staticBarScalar = 3.0f; //amount to be divided by
-
     bool isStopped = true; // set to false during level gameplay, set to true during main mneu and end of level
 
     TimeController thisTime;
@@ -177,13 +176,13 @@ public class AudioVisualised : MonoBehaviour
 	{
         return songAverageBpm;
 	}
-
     void CalculateStaticBars(SongInfo _thisSong)
 	{
         songName.text = _thisSong.songName;
         Debug.Log("Received Song Info for Song: " + _thisSong.songName);
         float elementsPerLoop = Mathf.CeilToInt(_thisSong.bpm.Count / staticBarTransforms.Count);
         Debug.Log("Elements per loop: " + elementsPerLoop);
+        
         for(int i = 0; i < staticBarTransforms.Count; ++i)
 		{
             float _tmpBpmAverage = 0.0f;
