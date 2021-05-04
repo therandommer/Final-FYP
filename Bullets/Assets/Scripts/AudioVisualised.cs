@@ -61,6 +61,7 @@ public class AudioVisualised : MonoBehaviour
         {
             thisTime = FindObjectOfType<TimeController>();
         }
+        ResetBarColour(_songIndex);
     }
     void OnBeatDetected()
     {
