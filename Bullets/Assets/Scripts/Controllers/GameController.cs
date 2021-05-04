@@ -73,7 +73,7 @@ public class GameController : MonoBehaviour
 	}
     public float GetExistingIntensity(int _index)
 	{
-        Debug.Log("Requesting intensity: " + _index);
+        //Debug.Log("Requesting intensity: " + _index);
         if (_index < existingIntensitySpeeds.Count)
         {
             return existingIntensitySpeeds[_index];

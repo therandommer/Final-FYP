@@ -1071,6 +1071,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3319301276062362752, guid: 6bb86d3d7c7e0b24e9f586d4b566d0c6, type: 3}
+      propertyPath: endDelay
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3319301276062362752, guid: 6bb86d3d7c7e0b24e9f586d4b566d0c6, type: 3}
       propertyPath: timerText
       value: 
       objectReference: {fileID: 1932191322671620870}
@@ -1210,11 +1214,11 @@ MonoBehaviour:
   thisSpeed: {fileID: 0}
   thisMod: {fileID: 0}
   thisTime: {fileID: 0}
-  defaultSpawnInterval: 5
-  minimumSpawnInterval: 1
-  maximumSpawnInterval: 8
-  offsetScalar: 2
-  startSpawnTimer: 2
+  defaultSpawnInterval: 6
+  minimumSpawnInterval: 1.5
+  maximumSpawnInterval: 6
+  offsetScalar: 1.5
+  startSpawnTimer: 2.2
 --- !u!1001 &3367526308068456731
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1338,6 +1342,10 @@ PrefabInstance:
     - target: {fileID: 460232480156827696, guid: 3a483272d802536439298d2915664a9f, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 460232480156827697, guid: 3a483272d802536439298d2915664a9f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 460232480156827699, guid: 3a483272d802536439298d2915664a9f, type: 3}
       propertyPath: potentialEnemiesLate.Array.size
@@ -1463,6 +1471,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.02
       objectReference: {fileID: 0}
+    - target: {fileID: 460232480735069777, guid: 3a483272d802536439298d2915664a9f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 460232480735069779, guid: 3a483272d802536439298d2915664a9f, type: 3}
       propertyPath: potentialEnemiesLate.Array.size
       value: 4
@@ -1543,6 +1555,10 @@ PrefabInstance:
       propertyPath: potentialEnemiesLate.Array.data[3]
       value: 
       objectReference: {fileID: 7681800708665743581, guid: e62873a07da8c1a45bd8ae2044517704, type: 3}
+    - target: {fileID: 460232480911362690, guid: 3a483272d802536439298d2915664a9f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 460232480911362691, guid: 3a483272d802536439298d2915664a9f, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.02
@@ -1627,6 +1643,10 @@ PrefabInstance:
       propertyPath: potentialEnemiesLate.Array.data[3]
       value: 
       objectReference: {fileID: 7681800708665743581, guid: e62873a07da8c1a45bd8ae2044517704, type: 3}
+    - target: {fileID: 460232481411660114, guid: 3a483272d802536439298d2915664a9f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 460232481411660115, guid: 3a483272d802536439298d2915664a9f, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.02
@@ -1671,6 +1691,10 @@ PrefabInstance:
       propertyPath: potentialEnemiesLate.Array.data[3]
       value: 
       objectReference: {fileID: 7681800708665743581, guid: e62873a07da8c1a45bd8ae2044517704, type: 3}
+    - target: {fileID: 460232481653134896, guid: 3a483272d802536439298d2915664a9f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 460232481653134897, guid: 3a483272d802536439298d2915664a9f, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.02

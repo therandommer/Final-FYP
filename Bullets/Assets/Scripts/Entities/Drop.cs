@@ -25,7 +25,17 @@ public class Drop : MonoBehaviour
     void OnEnable()
 	{
         Actions.OnPause += UpdatePause;
+        Actions.OnPlayerKilled += DestroyThis;
+        Actions.OnLevelRestart += DestroyThis2;
+        Actions.OnLevelComplete += DestroyThis3;
 	}
+    void OnDisable()
+    {
+        Actions.OnPause -= UpdatePause;
+        Actions.OnPlayerKilled -= DestroyThis;
+        Actions.OnLevelRestart -= DestroyThis2;
+        Actions.OnLevelComplete -= DestroyThis3;
+    }
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -64,4 +74,17 @@ public class Drop : MonoBehaviour
 	{
         Destroy(gameObject);
 	}
+    //yup, all do the same thing from each trigger, ensures they aren't left over between respawns.
+    void DestroyThis(GameObject _reference)
+	{
+        Die();
+	}
+    void DestroyThis2()
+    {
+        Die();
+    }
+    void DestroyThis3()
+    {
+        Die();
+    }
 }
