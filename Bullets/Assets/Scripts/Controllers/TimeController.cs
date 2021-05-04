@@ -7,6 +7,7 @@ using TMPro;
 //controls overall timeline and spawning events, etc. 
 public class TimeController : MonoBehaviour
 {
+    //song playing and manual spawning system
     public bool isPaused = false;
     bool levelComplete = false;
     bool musicStarted = false;
@@ -18,8 +19,11 @@ public class TimeController : MonoBehaviour
     float previousTimeScale = 1.0f;
     public int totalSongSegments = 10;
     int songSegment = 1;
+
+    
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI nextSpawnTimerText;
+    
     void OnEnable()
     {
         Actions.OnPause += TogglePause;
@@ -90,7 +94,7 @@ public class TimeController : MonoBehaviour
         isPaused = !isPaused;
         Debug.Log($"Toggling pause for {this.name}");
     }
-    void PlayerDead(Player thisPlayer)
+    void PlayerDead(GameObject thisPlayer)
 	{
         Time.timeScale = 0;
     }
@@ -109,6 +113,7 @@ public class TimeController : MonoBehaviour
 	}
     void StopTime()
 	{
+        Time.timeScale = 0;
         levelComplete = true;
 	}
 }

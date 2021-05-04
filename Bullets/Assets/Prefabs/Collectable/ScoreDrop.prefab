@@ -102,7 +102,7 @@ MonoBehaviour:
   type: 0
   dropStrength: 0
   scoreValue: 250
-  multiplierIncrease: 1
+  multiplierIncrease: 2
   thisDropSpeed: 1
 --- !u!61 &1460748338647194686
 BoxCollider2D:

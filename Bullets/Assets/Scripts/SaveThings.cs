@@ -80,14 +80,14 @@ public class SaveThings : MonoBehaviour
 			Debug.Log($"Data saved: {thisMusic.GetSongName()}||{thisAudio.GetBPMAverages()}||{thisIntensity.GetIntensitySpeeds()}");
 			List<float> tmpBpm = thisAudio.GetBPMAverages();
 			List<float> tmpIntensity = thisIntensity.GetIntensitySpeeds();
-			foreach (float i in tmpBpm)
+			/*foreach (float i in tmpBpm)
 			{
 				Debug.Log("Bpm average: " + i);
 			}
 			foreach (float i in tmpIntensity)
 			{
 				Debug.Log("Bpm average: " + i);
-			}
+			}*/
 			//adds song info gathered from the first run to the file, along with a randomised seed for future use and to keep it consistent
 			SongInfo info = new SongInfo(thisMusic.GetSongName(), thisAudio.GetBPMAverages(), thisIntensity.GetIntensitySpeeds(), Random.Range(0,int.MaxValue));
 			BinaryFormatter bf = new BinaryFormatter();

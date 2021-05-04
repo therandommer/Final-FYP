@@ -13,7 +13,10 @@ public class GameUIController : MonoBehaviour
 	public TextMeshProUGUI songNameText;
 	public TextMeshProUGUI finalScoreText;
 	public TextMeshProUGUI speedText;
+	float speedNumber;
 	public GameObject levelFailedUI;
+	public TextMeshProUGUI failedSongNameText;
+	public TextMeshProUGUI failedFinalScoreText;
 	public TextMeshProUGUI timeRemainingText;
 	public TextMeshProUGUI retryText;
 	public float textHideTime = 3.0f;
@@ -22,10 +25,12 @@ public class GameUIController : MonoBehaviour
 	public List<GameObject> progressBars;
 	public Color defaultColour;
 	public Color completeColour;
+	bool isFinished = false;
 	int retrys = 0;
     void OnEnable()
 	{
 		Actions.OnPlayerHit += UpdateHealthText;
+		Actions.UpdatePlayerHealth += UpdateHealthText2;
 		Actions.OnWeaponGot += UpdateWeaponText;
 		Actions.OnShieldGot += UpdateShieldText;
 		Actions.OnLevelComplete += DisplayCompleteUI;
@@ -39,6 +44,7 @@ public class GameUIController : MonoBehaviour
 	void OnDisable()
 	{
 		Actions.OnPlayerHit -= UpdateHealthText;
+		Actions.UpdatePlayerHealth -= UpdateHealthText2;
 		Actions.OnWeaponGot -= UpdateWeaponText;
 		Actions.OnShieldGot -= UpdateShieldText;
 		Actions.OnLevelComplete -= DisplayCompleteUI;
@@ -58,7 +64,11 @@ public class GameUIController : MonoBehaviour
 	}
     void UpdateHealthText(int _newHealth)
 	{
-		healthText.text = $"Health: {_newHealth} / 100";
+		healthText.text = $"Health: {_newHealth}";
+	}
+	void UpdateHealthText2(int _newHealth)
+	{
+		UpdateHealthText(_newHealth);
 	}
 	void UpdateWeaponText(int _newWeapon)
 	{
@@ -70,6 +80,7 @@ public class GameUIController : MonoBehaviour
 	}
 	void SetInitialUI()
 	{
+		isFinished = false;
 		Debug.Log("Ready to initialise UI");
 		//progressBars[0].GetComponent<Image>().color = completeColour;
 	}
@@ -87,7 +98,15 @@ public class GameUIController : MonoBehaviour
 	}
 	void UpdateSpeedUI(int _index)
 	{
-		speedText.text = $"Speed: {FindObjectOfType<GameController>().GetExistingIntensity(_index)}";
+		if(!isFinished)
+		{
+			speedNumber = FindObjectOfType<GameController>().GetExistingIntensity(_index - 1);
+			speedText.text = $"Speed: {speedNumber}";
+		}
+	}
+	public float GetSpeedNumber()
+	{
+		return speedNumber;
 	}
 	void ResetBars(float _width)
 	{
@@ -104,20 +123,16 @@ public class GameUIController : MonoBehaviour
 	}
 	void DisplayCompleteUI()
 	{
+		isFinished = true;
 		levelFinishedUI.SetActive(true);
 		songNameText.text = GameObject.FindObjectOfType<MusicController>().GetSongName();
 		finalScoreText.text = GetComponent<ScoreController>().scoreText.text;
-		if(GameObject.Find("Player").activeInHierarchy)
-		{
-			GameObject.Find("Player").SetActive(false);
-		}
-		
 	}
-	void DisplayFailedUI(Player thisPlayer)
+	void DisplayFailedUI(GameObject _player)
 	{
-		levelFinishedUI.SetActive(true);
-		songNameText.text = GameObject.FindObjectOfType<MusicController>().GetSongName();
-		finalScoreText.text = GetComponent<ScoreController>().scoreText.text;
-		GameObject.Find("Player").SetActive(false);
+		isFinished = true;
+		levelFailedUI.SetActive(true);
+		failedSongNameText.text = GameObject.FindObjectOfType<MusicController>().GetSongName();
+		failedFinalScoreText.text = GetComponent<ScoreController>().scoreText.text;
 	}
 }

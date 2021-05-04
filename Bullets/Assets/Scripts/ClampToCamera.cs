@@ -31,9 +31,9 @@ public class ClampToCamera : MonoBehaviour
 		{
             pos.x = 0.98f;
 		}
-        if(pos.y < 0.05f)
+        if(pos.y < 0.18f)
 		{
-            pos.y = 0.05f;
+            pos.y = 0.18f;
 		}
         if(pos.y > 0.95f)
 		{

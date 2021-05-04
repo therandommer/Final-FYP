@@ -7,8 +7,6 @@ using TMPro;
 public class ScoreController : MonoBehaviour
 {
     int totalScore = 0;
-    public int scoreDropMultiplier = 2;
-    int defaultScoreDropMultiplier = 2; 
     public int scoreMultiplier = 1;
     public float playerHitPenalty = 0.66f;
     int defaultScoreMultiplier = 1; //will be altered by mods, etc. in the future, will increase the maximum multipliers, etc. 
@@ -17,6 +15,8 @@ public class ScoreController : MonoBehaviour
     public TextMeshProUGUI multiplierText;
     public Color defaultScoreColours = Color.white;
     public Color boostedScoreColours = Color.magenta;
+    ModController thisModMultiplier;
+    public float modMultiplier = 1.0f;
     //subscribing to entitykilled actions 
     private void OnEnable()
     {
@@ -36,8 +36,9 @@ public class ScoreController : MonoBehaviour
     }
     void Start()
 	{
-        defaultScoreDropMultiplier = scoreDropMultiplier;
         scoreMultiplier = defaultScoreMultiplier;
+        if (thisModMultiplier == null)
+            thisModMultiplier = FindObjectOfType<ModController>();
 	}
     void Update()
 	{
@@ -56,23 +57,12 @@ public class ScoreController : MonoBehaviour
 	{
         if(scoreText && multiplierText)
 		{
-            if(_thisDrop.type != DropType.eScore)
-			{
-                scoreText.text = $"Score: {totalScore += _thisDrop.scoreValue * scoreMultiplier}";
-            }
-            else
-			{
-                scoreText.text = $"Score: {totalScore += (_thisDrop.scoreValue * scoreDropMultiplier) * scoreMultiplier}"; //score drops worth way more points
-            }
-            
-            if(scoreMultiplier+_thisDrop.multiplierIncrease > maximumScoreMultiplier)
+            scoreText.text = $"Score: {totalScore += Mathf.RoundToInt(_thisDrop.scoreValue * (scoreMultiplier * thisModMultiplier.GetModScoreMultiplier()))}";
+            multiplierText.text = $"X {scoreMultiplier += _thisDrop.multiplierIncrease}";
+            if (scoreMultiplier > maximumScoreMultiplier)
 			{
                 scoreMultiplier = maximumScoreMultiplier;
                 multiplierText.text = $"X {scoreMultiplier}";
-            }
-            else
-			{
-                multiplierText.text = $"X {scoreMultiplier += _thisDrop.multiplierIncrease}";
             }
         }
 	}
@@ -89,20 +79,20 @@ public class ScoreController : MonoBehaviour
 	{
         if(scoreText && multiplierText)
 		{
-            scoreText.text = $"Score: {totalScore += _bulletRef.scoreValue * scoreMultiplier}";
+            scoreText.text = $"Score: {totalScore += Mathf.RoundToInt(_bulletRef.scoreValue * (scoreMultiplier * thisModMultiplier.GetModScoreMultiplier()))}";
+            //Debug.Log("Current Multiplier is: " + scoreMultiplier * thisModMultiplier.GetModScoreMultiplier());
 		}
 	}
     void EnemyDead(Enemy _enemyRef)
 	{
         if(scoreText && multiplierText)
 		{
-            scoreText.text = $"Score: {totalScore += _enemyRef.scoreValue * scoreMultiplier}";
+            scoreText.text = $"Score: {totalScore += Mathf.RoundToInt(_enemyRef.scoreValue * (scoreMultiplier * thisModMultiplier.GetModScoreMultiplier()))}";
         }
 	}
     void Reset()
 	{
         totalScore = 0;
-        scoreDropMultiplier = defaultScoreDropMultiplier;
         scoreMultiplier = defaultScoreMultiplier;
         scoreText.text = "Score: 0";
         multiplierText.text = $"X: {defaultScoreMultiplier}";

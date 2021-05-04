@@ -9,9 +9,17 @@ public class ButtonList : MonoBehaviour
 	[SerializeField]
 	private GameObject buttonTemplate;
 	private List<GameObject> buttons = new List<GameObject>();
+	void OnEnable()
+	{
+		if (!thisMusic)
+		{
+			thisMusic = FindObjectOfType<MusicController>();
+		}
+		RemakeList();
+	}
 	void Start()
 	{
-		if(!thisMusic)
+		if (!thisMusic)
 		{
 			thisMusic = FindObjectOfType<MusicController>();
 		}

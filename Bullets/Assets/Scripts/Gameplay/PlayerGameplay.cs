@@ -37,6 +37,7 @@ public class PlayerGameplay : MonoBehaviour
 		Actions.OnLevelRestart += Reset;
 		Actions.OnPause += TogglePause;
 		Actions.OnNewBPMSpeed += NewProjectileSpeedScalar;
+		Actions.OnLevelComplete += HideThis;
 	}
 	void OnDisable()
 	{
@@ -44,6 +45,7 @@ public class PlayerGameplay : MonoBehaviour
 		Actions.OnLevelRestart -= Reset;
 		Actions.OnPause -= TogglePause;
 		Actions.OnNewBPMSpeed -= NewProjectileSpeedScalar;
+		Actions.OnLevelComplete -= HideThis;
 	}
 	void Start()
 	{
@@ -85,7 +87,7 @@ public class PlayerGameplay : MonoBehaviour
 				equippedBullet = playerStats.bullets[thisWeaponLevel - 1];
 				if(thisWeaponLevel>4)
 				{
-					float newFireRate = playerStats.startFireRate / (1.5f * thisWeaponLevel - 4);
+					float newFireRate = playerStats.startFireRate * 0.8f;
 					thisFireRate = newFireRate;
 				}
 				if (isFiring)
@@ -126,6 +128,10 @@ public class PlayerGameplay : MonoBehaviour
 			{
 				isBoosting = false;
 			}
+			if(thisHealth<=0)
+			{
+				Actions.OnPlayerKilled?.Invoke(this.gameObject);
+			}
 		}
 	}
 
@@ -149,7 +155,8 @@ public class PlayerGameplay : MonoBehaviour
 				thisHealth += _thisDrop.dropStrength;
 				if (thisHealth > playerStats.health)
 					thisHealth = playerStats.health;
-				Actions.OnPlayerHit?.Invoke(thisHealth); //reuse this action, just to update UI
+				Actions.UpdatePlayerHealth(thisHealth);
+				//Actions.OnPlayerHit?.Invoke(thisHealth); //reuse this action, just to update UI
 				break;
 			case DropType.eShield:
 				thisShieldLevel += _thisDrop.dropStrength;
@@ -180,7 +187,7 @@ public class PlayerGameplay : MonoBehaviour
 	}
 	void Die(Player thisPlayer)
 	{
-		Actions.OnPlayerKilled?.Invoke(playerStats); //triggered if not null
+		Actions.OnPlayerKilled?.Invoke(this.gameObject); //triggered if not null
 	}
 	void Damage(int _Damage)
 	{
@@ -197,12 +204,14 @@ public class PlayerGameplay : MonoBehaviour
 		thisWeaponLevel = playerStats.weaponLevel;
 		equippedBullet = playerStats.bullets[thisWeaponLevel-1];
 		projectileSpeedScalar = 1;
+		CancelInvoke("SpawnBullet");
 		Actions.OnWeaponGot?.Invoke(thisWeaponLevel);
 		Actions.OnShieldGot?.Invoke(thisShieldLevel);
 		Actions.OnPlayerHit?.Invoke(thisHealth);
 		isPaused = false;
 		rb.velocity = Vector2.zero;
 		transform.position = Vector2.zero;
+		
 	}
 	void TogglePause()
 	{
@@ -214,5 +223,9 @@ public class PlayerGameplay : MonoBehaviour
 	void NewProjectileSpeedScalar(int _index)
 	{
 		projectileSpeedScalar = FindObjectOfType<GameController>().GetExistingIntensity(_index);
+	}
+	void HideThis()
+	{
+		gameObject.SetActive(false);
 	}
 }

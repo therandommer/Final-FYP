@@ -22,6 +22,7 @@ public class GameController : MonoBehaviour
         Actions.OnLevelRestart += StopMusic;
         Actions.OnLevelComplete += DisablePause;
         Actions.OnPause += PauseMusic;
+        Actions.OnPlayerKilled += StopMusic2;
         Actions.OnNewBPMAverage += CalculateIntensity;
         Actions.OnLoadedSongInfo += LoadIntensity;
     }
@@ -32,6 +33,7 @@ public class GameController : MonoBehaviour
         Actions.OnLevelRestart -= StopMusic;
         Actions.OnLevelComplete -= DisablePause;
         Actions.OnPause -= PauseMusic;
+        Actions.OnPlayerKilled -= StopMusic2;
         Actions.OnNewBPMAverage -= CalculateIntensity;
         Actions.OnLoadedSongInfo -= LoadIntensity;
     }
@@ -72,7 +74,7 @@ public class GameController : MonoBehaviour
 	{
         return existingIntensitySpeeds[_index];
 	}
-    private void PlayerDead(Player playerRef)
+    private void PlayerDead(GameObject playerRef)
 	{
         thisSource.Stop();
         canPause = false;
@@ -97,6 +99,10 @@ public class GameController : MonoBehaviour
         thisSource.clip = levelMusic;
         Actions.OnSongChanged?.Invoke(audioSource.GetComponent<AudioSource>().clip.length);
     }
+    void StopMusic2(GameObject playerRef)
+	{
+        StopMusic();
+	}
     void DisablePause()
 	{
         thisSource.Stop();
@@ -114,5 +120,9 @@ public class GameController : MonoBehaviour
     public int GetIntensityCount()
 	{
         return intensitySpeeds.Count;
+	}
+    public void SendSceneRequest(int _scene)
+	{
+        Actions.OnSceneRequest?.Invoke(_scene);
 	}
 }

@@ -84,7 +84,7 @@ public abstract class AIGameplay : MonoBehaviour
     protected void Damage(int _damage)
 	{
         health -= _damage;
-        Debug.Log($"Damaged{this.name} for {_damage} damage");
+        //Debug.Log($"Damaged{this.name} for {_damage} damage");
 	}
     void TogglePause()
 	{

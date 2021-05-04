@@ -14,14 +14,19 @@ public class MoveOnSceneChange : MonoBehaviour
     void OnDisable()
 	{
         Actions.OnSceneChanged -= MoveThis;
-	}
+    }
     void MoveThis(int _index)
 	{
-        Debug.Log("Moving bars");
+        //Debug.Log("Moving bars");
         isMainMenu = !isMainMenu;
         if (isMainMenu)
+		{
             GetComponent<RectTransform>().anchoredPosition = menuPos;
+            gameObject.SetActive(false);
+        }
         else
+		{
             GetComponent<RectTransform>().anchoredPosition = gamePos;
+        }
     }
 }

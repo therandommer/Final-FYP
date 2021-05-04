@@ -17,11 +17,18 @@ public class SpawnRequirements
 }
 public class Spawner : MonoBehaviour
 {
+	
 	public List<SpawnRequirements> spawnReq;
 	int currentSpawn = 0; //index number
 	TimeController timeC;
 	GameObject spawnParent;
 	public float speedScalar = 1; //sends this to the object it spawns
+	//used with random spawning
+	public List<GameObject> potentialEnemies = new List<GameObject>();
+	public List<GameObject> potentialEnemiesLate = new List<GameObject>();
+	int thisSeed = 123456789;
+	int spawnNumber = 1;
+	public Enemy.StartDirection defaultStartDirection;
 	void OnEnable()
 	{
 		spawnParent = GameObject.Find("SpawnParent");
@@ -39,8 +46,52 @@ public class Spawner : MonoBehaviour
 	{
 		timeC = FindObjectOfType<TimeController>();
 		spawnReq = spawnReq.OrderBy(w => w.activateTimer).ToList(); //sort list by activation timer
+		thisSeed = FindObjectOfType<ModController>().GetSeed();
+		Random.InitState(thisSeed);
 	}
-
+	IEnumerator SpawnEnemies(int neededSpawns) //spawn enemies every 0.4, repeat each time passed from GameSpawnController
+	{
+		int tmpSpawns = neededSpawns;
+		
+		if(timeC.timePassed<=60.0f)
+		{
+			int tmpI = Random.Range(0, potentialEnemies.Count);
+			for (int i = 0; i < neededSpawns; ++i)
+			{
+				GameObject spawnedObject = Instantiate(potentialEnemies[tmpI], gameObject.transform, false);
+				EnemyGameplay enemyScript = spawnedObject.GetComponent<EnemyGameplay>();
+				enemyScript.thisEnemy.thisDirection = defaultStartDirection;
+				if (!spawnParent)
+				{
+					spawnParent = GameObject.Find("SpawnParent");
+				}
+				spawnedObject.transform.parent = spawnParent.transform;
+				spawnedObject.GetComponent<AIGameplay>().SendMessage("SetProjectileSpeedScalar", speedScalar);
+				//Debug.Log("Waiting");
+				yield return new WaitForSeconds(0.4f);
+			}
+		}
+		else if(timeC.timePassed>60.0f) //gets tougher after 1 minute
+		{
+			int tmpI = Random.Range(0, potentialEnemiesLate.Count);
+			Debug.Log("Spawning tougher");
+			for (int i = 0; i < neededSpawns; ++i)
+			{
+				GameObject spawnedObject = Instantiate(potentialEnemiesLate[tmpI], gameObject.transform, false);
+				EnemyGameplay enemyScript = spawnedObject.GetComponent<EnemyGameplay>();
+				enemyScript.thisEnemy.thisDirection = defaultStartDirection;
+				if (!spawnParent)
+				{
+					spawnParent = GameObject.Find("SpawnParent");
+				}
+				spawnedObject.transform.parent = spawnParent.transform;
+				spawnedObject.GetComponent<AIGameplay>().SendMessage("SetProjectileSpeedScalar", speedScalar);
+				//Debug.Log("Waiting");
+				yield return new WaitForSeconds(0.4f);
+			}
+		}
+		StopCoroutine(SpawnEnemies(tmpSpawns));
+	}
 	IEnumerator SpawnObject()
 	{
 		//Debug.Log("Spawning number: " + (currentSpawn+1) + "/" + spawnReq.Count);
@@ -91,7 +142,8 @@ public class Spawner : MonoBehaviour
 	}
 	void Update()
 	{
-		if (currentSpawn+1 < spawnReq.Count && spawnReq.Count > 0)
+		///Old Spawning System
+		/*if (currentSpawn+1 < spawnReq.Count && spawnReq.Count > 0)
 		{
 			if (timeC.timePassed >= spawnReq[currentSpawn].activateTimer && spawnReq[currentSpawn].isSpawned == false)
 			{
@@ -99,7 +151,7 @@ public class Spawner : MonoBehaviour
 				StartCoroutine(SpawnObject());
 			}
 			timeC.timeToNextSpawn = spawnReq[currentSpawn].activateTimer - timeC.timePassed;
-		}
+		}*/
 	}
 	void UpdateSpeedScalar(int _index)
 	{
@@ -122,5 +174,11 @@ public class Spawner : MonoBehaviour
 	void Stop()
 	{
 		StopAllCoroutines();
+	}
+	public void SpawnEnemy(int _numberSpawned)
+	{
+		spawnNumber = _numberSpawned;
+		StopCoroutine(SpawnEnemies(_numberSpawned)); //should prevent the spam
+		StartCoroutine(SpawnEnemies(_numberSpawned));
 	}
 }
