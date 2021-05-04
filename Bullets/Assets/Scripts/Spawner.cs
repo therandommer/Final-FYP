@@ -26,6 +26,7 @@ public class Spawner : MonoBehaviour
 	//used with random spawning
 	public List<GameObject> potentialEnemies = new List<GameObject>();
 	public List<GameObject> potentialEnemiesLate = new List<GameObject>();
+	bool isLateSpawn = false;
 	int thisSeed = 123456789;
 	int spawnNumber = 1;
 	public Enemy.StartDirection defaultStartDirection;
@@ -53,7 +54,7 @@ public class Spawner : MonoBehaviour
 	{
 		int tmpSpawns = neededSpawns;
 		
-		if(timeC.timePassed<=60.0f)
+		if(!isLateSpawn)
 		{
 			int tmpI = Random.Range(0, potentialEnemies.Count);
 			for (int i = 0; i < neededSpawns; ++i)
@@ -71,7 +72,7 @@ public class Spawner : MonoBehaviour
 				yield return new WaitForSeconds(0.4f);
 			}
 		}
-		else if(timeC.timePassed>60.0f) //gets tougher after 1 minute
+		else //gets tougher after 1/3 of the song
 		{
 			int tmpI = Random.Range(0, potentialEnemiesLate.Count);
 			Debug.Log("Spawning tougher");
@@ -177,6 +178,14 @@ public class Spawner : MonoBehaviour
 	}
 	public void SpawnEnemy(int _numberSpawned)
 	{
+		if(timeC.timePassed < timeC.maxTime/3 && isLateSpawn)
+		{
+			isLateSpawn = false;
+		}
+		else if(timeC.timePassed>=timeC.maxTime/3 && !isLateSpawn)
+		{
+			isLateSpawn = true;
+		}
 		spawnNumber = _numberSpawned;
 		StopCoroutine(SpawnEnemies(_numberSpawned)); //should prevent the spam
 		StartCoroutine(SpawnEnemies(_numberSpawned));

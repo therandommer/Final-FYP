@@ -64,17 +64,20 @@ public class AudioVisualised : MonoBehaviour
     }
     void OnBeatDetected()
     {
-        beats.Add(thisTime.timePassed);
-        for (int i = 0; i < beats.Count; ++i)
-        {
-            if (beats[i] <= thisTime.timePassed - 1)
+        if(thisTime != null)
+		{
+            beats.Add(thisTime.timePassed);
+            for (int i = 0; i < beats.Count; ++i)
             {
-                beats.RemoveAt(i);
+                if (beats[i] <= thisTime.timePassed - 1)
+                {
+                    beats.RemoveAt(i);
+                }
             }
+            averageBeatsPerSecond = beats.Count;
+            //Debug.Log($"BPM = {averageBeatsPerSecond * 30}");
+            beatAverage.Add(averageBeatsPerSecond * 20);
         }
-        averageBeatsPerSecond = beats.Count;
-        //Debug.Log($"BPM = {averageBeatsPerSecond * 30}");
-        beatAverage.Add(averageBeatsPerSecond * 20);
     }
     void OnSpectrum(float[] spectrum)
     {
@@ -136,6 +139,7 @@ public class AudioVisualised : MonoBehaviour
         {
             CalculateBeatAverageUpdate();
             isStopped = true;
+            ResetBpm();
         }
     }
     void ResetBpm()

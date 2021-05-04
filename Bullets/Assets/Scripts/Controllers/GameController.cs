@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class GameController : MonoBehaviour
 {
@@ -72,7 +73,13 @@ public class GameController : MonoBehaviour
 	}
     public float GetExistingIntensity(int _index)
 	{
-        return existingIntensitySpeeds[_index];
+        Debug.Log("Requesting intensity: " + _index);
+        if (_index < existingIntensitySpeeds.Count)
+        {
+            return existingIntensitySpeeds[_index];
+        }
+        else
+            return existingIntensitySpeeds.LastOrDefault();
 	}
     private void PlayerDead(GameObject playerRef)
 	{

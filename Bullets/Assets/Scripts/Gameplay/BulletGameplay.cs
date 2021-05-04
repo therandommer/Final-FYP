@@ -20,7 +20,6 @@ public class BulletGameplay : AIGameplay
         thisRenderer = gameObject.GetComponent<SpriteRenderer>();
         if(!thisRenderer)
 		{
-            Debug.LogError($"No sprite renderer for bullet: {this.name}. Adding fake sprite renderer");
             gameObject.AddComponent<SpriteRenderer>();
             thisRenderer = gameObject.GetComponent<SpriteRenderer>();
 		}

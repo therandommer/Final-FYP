@@ -30,6 +30,7 @@ public class TimeController : MonoBehaviour
         Actions.OnSongChanged += UpdateSongLength;
         Actions.OnPlayerKilled += PlayerDead;
         Actions.OnLevelRestart += ResetTime;
+        Actions.OnLevelStart += SetDefault;
         Actions.OnLevelComplete += StopTime;
     }
     void OnDisable()
@@ -38,6 +39,7 @@ public class TimeController : MonoBehaviour
         Actions.OnSongChanged -= UpdateSongLength;
         Actions.OnPlayerKilled -= PlayerDead;
         Actions.OnLevelRestart -= ResetTime;
+        Actions.OnLevelStart -= SetDefault;
         Actions.OnLevelComplete -= StopTime;
     }
     void Start()
@@ -70,6 +72,7 @@ public class TimeController : MonoBehaviour
 			}
             if(timePassed>=maxTime &&!levelComplete)
 			{
+                Debug.LogWarning("Level Complete");
                 Actions.OnLevelComplete?.Invoke();
 			}
             //Debug.Log($"Requirement for bar update = {maxTime / totalSongSegments * songSegment}");
@@ -106,6 +109,10 @@ public class TimeController : MonoBehaviour
         levelComplete = false;
         songSegment = 1;
         Time.timeScale = 1;
+	}
+    void SetDefault()
+	{
+        levelComplete = false;
 	}
     public void UpdateSongLength(float _time)
 	{

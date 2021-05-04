@@ -18,13 +18,13 @@ MonoBehaviour:
   isPaused: 0
   scoreValue: 40
   bullets:
-  - {fileID: 9049166375193089590, guid: 0a5e4c387803a9c41969e978a52fb9c3, type: 3}
+  - {fileID: 9049166375193089590, guid: 173a981649b141b47875fdf604c596a2, type: 3}
   - {fileID: 5168859238285828049, guid: 91fd67f5f957cb249919c1360e3a4bfa, type: 3}
   - {fileID: 5168859238285828049, guid: 9626d33aaa7147c4d829dc1da35fc63e, type: 3}
   - {fileID: 5168859238285828049, guid: e5085e9b6ef3ae649b26855c9792fb39, type: 3}
   - {fileID: 5168859238285828049, guid: 5750b32fe6ef98f49898903bfedc49c2, type: 3}
   - {fileID: 5168859238285828049, guid: 04b90cf0917713e4c83ef1b97fd1b71c, type: 3}
-  - {fileID: 9049166375193089590, guid: 75c24ee767a4936429e5e86532fa5613, type: 3}
+  - {fileID: 9049166375193089590, guid: 6e02402f39b71324d80884783e61a41b, type: 3}
   - {fileID: 5168859238285828049, guid: 83211ba35f3e90e45b7a82d6fe1267d0, type: 3}
   - {fileID: 696151262608964079, guid: 2a108f107930ac54bb18a68a04425601, type: 3}
   availableDrops:
@@ -40,4 +40,4 @@ MonoBehaviour:
   - {fileID: 1460748338647194658, guid: 7a7444dae0ea56f4aa650e3584bc7838, type: 3}
   dropChance: 25
   fireRate: 1.8
-  thisDirection: 1
+  thisDirection: 2

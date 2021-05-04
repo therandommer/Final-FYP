@@ -8,6 +8,7 @@ public class MenuController : MonoBehaviour
     GameObject pauseMenu = null;
     [SerializeField]
     GameObject mainUi = null;
+    GameObject debugUi = null;
     private void OnEnable()
 	{
         Actions.OnPause += TogglePause;
@@ -42,6 +43,14 @@ public class MenuController : MonoBehaviour
 		{
             pauseMenu.SetActive(false);
         }  
+	}
+    public void ToggleDebug(bool _state)
+	{
+        if(!debugUi)
+		{
+            debugUi = GameObject.Find("Debug");
+        }
+        debugUi.SetActive(_state);
 	}
     public void SendPauseAction()
 	{

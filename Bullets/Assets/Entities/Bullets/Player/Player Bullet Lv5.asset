@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisSprite: {fileID: 21300000, guid: 24880658ac0948048ab602868d0fdc30, type: 3}
   health: 0
-  moveSpeed: 13
+  moveSpeed: 8
   isPaused: 0
   lifetime: 8
   damage: 2

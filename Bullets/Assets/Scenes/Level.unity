@@ -662,7 +662,7 @@ PrefabInstance:
       objectReference: {fileID: 2037106583}
     - target: {fileID: 1505248075, guid: 8ce709b11a3ee634784bb689a017bebc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1505248076, guid: 8ce709b11a3ee634784bb689a017bebc, type: 3}
       propertyPath: m_fontSize
@@ -686,7 +686,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1505248078, guid: 8ce709b11a3ee634784bb689a017bebc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 276
+      value: 408
       objectReference: {fileID: 0}
     - target: {fileID: 1659295632, guid: 8ce709b11a3ee634784bb689a017bebc, type: 3}
       propertyPath: m_Color.a
@@ -818,7 +818,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 542555410074636754, guid: 8ce709b11a3ee634784bb689a017bebc, type: 3}
       propertyPath: m_text
-      value: 'Score: 214758964'
+      value: 'Score: 0'
       objectReference: {fileID: 0}
     - target: {fileID: 542555410074636765, guid: 8ce709b11a3ee634784bb689a017bebc, type: 3}
       propertyPath: m_Pivot.x
@@ -894,7 +894,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2114174493921579276, guid: 8ce709b11a3ee634784bb689a017bebc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 357
+      value: 489
       objectReference: {fileID: 0}
     - target: {fileID: 2114174493921579277, guid: 8ce709b11a3ee634784bb689a017bebc, type: 3}
       propertyPath: m_fontSize
@@ -906,7 +906,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2114174493921579279, guid: 8ce709b11a3ee634784bb689a017bebc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ce709b11a3ee634784bb689a017bebc, type: 3}
@@ -1184,7 +1184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3319301276062362766, guid: 6bb86d3d7c7e0b24e9f586d4b566d0c6, type: 3}
       propertyPath: baseBpm
-      value: 120
+      value: 170
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bb86d3d7c7e0b24e9f586d4b566d0c6, type: 3}
