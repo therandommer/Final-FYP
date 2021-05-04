@@ -6,34 +6,58 @@ public class MenuController : MonoBehaviour
 {
     [SerializeField]
     GameObject pauseMenu = null;
+    [SerializeField]
+    GameObject mainUi = null;
+    GameObject debugUi = null;
     private void OnEnable()
 	{
         Actions.OnPause += TogglePause;
+        Actions.OnSceneChanged += ToggleMain;
 	}
     private void OnDisable()
 	{
         Actions.OnPause -= TogglePause;
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+        Actions.OnSceneChanged -= ToggleMain;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    void ToggleMain(int _scene)
+	{
+        if(_scene != 0 && mainUi.activeInHierarchy)
+		{
+            mainUi.SetActive(false);
+		}
+        if(_scene == 0 && !mainUi.activeInHierarchy)
+		{
+            mainUi.SetActive(true);
+		}
+	}
     void TogglePause()
 	{
+        if(pauseMenu == null)
+            pauseMenu = GameObject.Find("Pause UI");
         if (!pauseMenu.activeInHierarchy)
+		{
             pauseMenu.SetActive(true);
+        }
         else
+		{
             pauseMenu.SetActive(false);
+        }  
+	}
+    public void ToggleDebug(bool _state)
+	{
+        if(!debugUi)
+		{
+            debugUi = GameObject.Find("Debug");
+        }
+        debugUi.SetActive(_state);
 	}
     public void SendPauseAction()
 	{
         Actions.OnPause?.Invoke();
+	}
+    public void SendRestartAction()
+	{
+        Actions.OnLevelRestart?.Invoke();
 	}
 }

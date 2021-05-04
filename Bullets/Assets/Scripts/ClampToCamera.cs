@@ -11,6 +11,7 @@ public class ClampToCamera : MonoBehaviour
 
     void Start()
     {
+        mainCamera = FindObjectOfType<Camera>();
         //screenBounds = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, mainCamera.transform.position.z));
         //objectWidth = transform.GetComponent<SpriteRenderer>().bounds.extents.x / 2;
         //objectHeight = transform.GetComponent<SpriteRenderer>().bounds.extents.y / 2;
@@ -21,7 +22,7 @@ public class ClampToCamera : MonoBehaviour
         Vector3 pos = mainCamera.WorldToViewportPoint(transform.position);
         pos.x = Mathf.Clamp01(pos.x);
         pos.y = Mathf.Clamp01(pos.y);
-        Debug.Log($"Camera clamping poses= {pos}");
+        //Debug.Log($"Camera clamping poses= {pos}");
         if(pos.x < 0.02f)
 		{
             pos.x = 0.02f;
@@ -30,9 +31,9 @@ public class ClampToCamera : MonoBehaviour
 		{
             pos.x = 0.98f;
 		}
-        if(pos.y < 0.05f)
+        if(pos.y < 0.18f)
 		{
-            pos.y = 0.05f;
+            pos.y = 0.18f;
 		}
         if(pos.y > 0.95f)
 		{

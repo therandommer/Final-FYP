@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Basic Enemy
   m_EditorClassIdentifier: 
   thisSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  health: 3
-  moveSpeed: 2
+  health: 4
+  moveSpeed: 0.9
   isPaused: 0
   scoreValue: 20
   bullets:
@@ -26,12 +26,18 @@ MonoBehaviour:
   - {fileID: 5168859238285828049, guid: 04b90cf0917713e4c83ef1b97fd1b71c, type: 3}
   - {fileID: 5168859238285828049, guid: 19ff92b0847096d488fbbee044abee47, type: 3}
   - {fileID: 5168859238285828049, guid: 83211ba35f3e90e45b7a82d6fe1267d0, type: 3}
-  - {fileID: 696151262608964079, guid: 2a108f107930ac54bb18a68a04425601, type: 3}
+  - {fileID: 5168859238285828049, guid: 64ea547464d3f62408ef1b5690464721, type: 3}
   availableDrops:
-  - {fileID: 1460748338647194658, guid: 7a7444dae0ea56f4aa650e3584bc7838, type: 3}
+  - {fileID: 1460748338647194658, guid: 7db47c49578a48d48af2a306a2eb4fac, type: 3}
+  - {fileID: 1460748338647194658, guid: 7db47c49578a48d48af2a306a2eb4fac, type: 3}
   - {fileID: 1460748338647194658, guid: 7db47c49578a48d48af2a306a2eb4fac, type: 3}
   - {fileID: 1460748338647194658, guid: 7a7444dae0ea56f4aa650e3584bc7838, type: 3}
+  - {fileID: 1460748338647194658, guid: 0208b51c9ca0b3d4d9efc1b14bfca654, type: 3}
   - {fileID: 1460748338647194658, guid: 7a7444dae0ea56f4aa650e3584bc7838, type: 3}
-  dropChance: 10
+  - {fileID: 1460748338647194658, guid: 4ee69904ac3977f4388f8c997982b981, type: 3}
+  - {fileID: 1460748338647194658, guid: 0208b51c9ca0b3d4d9efc1b14bfca654, type: 3}
+  - {fileID: 1460748338647194658, guid: 4ee69904ac3977f4388f8c997982b981, type: 3}
+  - {fileID: 1460748338647194658, guid: 4ee69904ac3977f4388f8c997982b981, type: 3}
+  dropChance: 20
   fireRate: 2
   thisDirection: 1

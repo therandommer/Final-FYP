@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7116329a026a724ca03d27c831539ca, type: 3}
+  m_Name: Basic Enemy Strong
+  m_EditorClassIdentifier: 
+  thisSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  health: 10
+  moveSpeed: 1
+  isPaused: 0
+  scoreValue: 40
+  bullets:
+  - {fileID: 9049166375193089590, guid: 173a981649b141b47875fdf604c596a2, type: 3}
+  - {fileID: 5168859238285828049, guid: 91fd67f5f957cb249919c1360e3a4bfa, type: 3}
+  - {fileID: 5168859238285828049, guid: 9626d33aaa7147c4d829dc1da35fc63e, type: 3}
+  - {fileID: 5168859238285828049, guid: e5085e9b6ef3ae649b26855c9792fb39, type: 3}
+  - {fileID: 5168859238285828049, guid: 5750b32fe6ef98f49898903bfedc49c2, type: 3}
+  - {fileID: 5168859238285828049, guid: 04b90cf0917713e4c83ef1b97fd1b71c, type: 3}
+  - {fileID: 9049166375193089590, guid: 6e02402f39b71324d80884783e61a41b, type: 3}
+  - {fileID: 5168859238285828049, guid: 83211ba35f3e90e45b7a82d6fe1267d0, type: 3}
+  - {fileID: 696151262608964079, guid: 2a108f107930ac54bb18a68a04425601, type: 3}
+  availableDrops:
+  - {fileID: 1460748338647194658, guid: 7a7444dae0ea56f4aa650e3584bc7838, type: 3}
+  - {fileID: 1460748338647194658, guid: 7db47c49578a48d48af2a306a2eb4fac, type: 3}
+  - {fileID: 1460748338647194658, guid: 7a7444dae0ea56f4aa650e3584bc7838, type: 3}
+  - {fileID: 1460748338647194658, guid: 7a7444dae0ea56f4aa650e3584bc7838, type: 3}
+  - {fileID: 1460748338647194658, guid: 7a7444dae0ea56f4aa650e3584bc7838, type: 3}
+  - {fileID: 1460748338647194658, guid: 7a7444dae0ea56f4aa650e3584bc7838, type: 3}
+  - {fileID: 1460748338647194658, guid: 7a7444dae0ea56f4aa650e3584bc7838, type: 3}
+  - {fileID: 1460748338647194658, guid: 0208b51c9ca0b3d4d9efc1b14bfca654, type: 3}
+  - {fileID: 1460748338647194658, guid: 7db47c49578a48d48af2a306a2eb4fac, type: 3}
+  - {fileID: 1460748338647194658, guid: 7a7444dae0ea56f4aa650e3584bc7838, type: 3}
+  dropChance: 25
+  fireRate: 1.8
+  thisDirection: 2

@@ -5,6 +5,8 @@ using UnityEngine;
 public class BulletGameplay : AIGameplay
 {
     public Bullet thisBullet;
+    public GameObject childObj;
+    BulletGameplay[] children;
     float timeLeft;
     Vector2 targetDestination = Vector2.zero;
     Vector2 targetDirection = Vector2.zero;
@@ -13,15 +15,25 @@ public class BulletGameplay : AIGameplay
     float curveTimer = 0f;
     bool hasCollided = false;
     SpriteRenderer thisRenderer;
-    void Start()
+    void Awake()
     {
         thisRenderer = gameObject.GetComponent<SpriteRenderer>();
         if(!thisRenderer)
 		{
-            Debug.LogError($"No sprite renderer for bullet: {this.name}. Adding fake sprite renderer");
             gameObject.AddComponent<SpriteRenderer>();
             thisRenderer = gameObject.GetComponent<SpriteRenderer>();
 		}
+    }
+    void Start()
+	{
+        if(childObj != null)
+		{
+            children = GetComponentsInChildren<BulletGameplay>();
+            foreach (BulletGameplay _children in children)
+            {
+                _children.SetProjectileSpeedScalar(projectileSpeedScalar);
+            }
+        }
     }
     void Update()
 	{
@@ -65,7 +77,8 @@ public class BulletGameplay : AIGameplay
 			{
                 rb = gameObject.GetComponent<Rigidbody2D>();
 			}
-            switch(thisBullet.thisType)
+            
+            switch (thisBullet.thisType)
 			{
                 case Bullet.BulletType.basic:
                     rb.velocity = transform.up * speed;
@@ -91,6 +104,7 @@ public class BulletGameplay : AIGameplay
                     Debug.LogError($"Bullet {this.name} is not assigned a valid type");
                     break;
 			}
+            rb.velocity= rb.velocity * projectileSpeedScalar; //finally updates the projectile speed as needed in accordance to the song
         }
         if(isPaused && rb.velocity != Vector2.zero)
 		{
@@ -109,7 +123,7 @@ public class BulletGameplay : AIGameplay
             }
             if (col.gameObject.tag == "Player" && thisBullet.thisFaction == Bullet.BulletFaction.enemy)
             {
-                Debug.Log($"Dealing {thisBullet.damage} damage to player");
+                //Debug.Log($"Dealing {thisBullet.damage} damage to player");
                 col.gameObject.SendMessage("Damage", thisBullet.damage);
                 Hide();
             }
@@ -119,6 +133,10 @@ public class BulletGameplay : AIGameplay
 	{
         hasCollided = true;
         thisRenderer.enabled = !thisRenderer.enabled;
+        if(childObj)
+		{
+            childObj.SetActive(false);
+		}
 	}
     void Die()
 	{

@@ -7,21 +7,31 @@ using TMPro;
 //controls overall timeline and spawning events, etc. 
 public class TimeController : MonoBehaviour
 {
+    //song playing and manual spawning system
     public bool isPaused = false;
+    bool levelComplete = false;
     bool musicStarted = false;
     public float timePassed = 0.0f;
     public float maxTime = 0.0f;
     public float timeToNextSpawn = 0.0f;
     public float startDelay = 3.0f;
+    public float endDelay = 5.0f;
     float previousTimeScale = 1.0f;
+    public int totalSongSegments = 10;
+    int songSegment = 1;
+
+    
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI nextSpawnTimerText;
+    
     void OnEnable()
     {
         Actions.OnPause += TogglePause;
         Actions.OnSongChanged += UpdateSongLength;
         Actions.OnPlayerKilled += PlayerDead;
         Actions.OnLevelRestart += ResetTime;
+        Actions.OnLevelStart += SetDefault;
+        Actions.OnLevelComplete += StopTime;
     }
     void OnDisable()
     {
@@ -29,6 +39,8 @@ public class TimeController : MonoBehaviour
         Actions.OnSongChanged -= UpdateSongLength;
         Actions.OnPlayerKilled -= PlayerDead;
         Actions.OnLevelRestart -= ResetTime;
+        Actions.OnLevelStart -= SetDefault;
+        Actions.OnLevelComplete -= StopTime;
     }
     void Start()
     {
@@ -36,9 +48,13 @@ public class TimeController : MonoBehaviour
     }
     void Update()
     {
-        if(!isPaused)
+        if(timePassed<0 && Time.timeScale<1)
 		{
-            if(timePassed<maxTime)
+            Time.timeScale = 1;
+		}
+        if (!isPaused)
+		{
+            if(timePassed<maxTime && timePassed >=0.0f)
 			{
                 timePassed += Time.deltaTime;
                 timerText.text = $"Time: {(Mathf.FloorToInt(timePassed / 60).ToString())} : {(Mathf.FloorToInt(timePassed % 60).ToString())}/{(Mathf.FloorToInt(maxTime / 60).ToString())} : {(Mathf.FloorToInt(maxTime % 60).ToString())}";
@@ -49,11 +65,22 @@ public class TimeController : MonoBehaviour
                     musicStarted = true;
                 }
             }
-            if(timePassed>=maxTime)
+            if(timePassed<0) //overwrite previous
 			{
+                timePassed += Time.deltaTime;
+                timerText.text = $"Get Ready: {(Mathf.FloorToInt(-timePassed % 60).ToString())}";
+			}
+            if(timePassed>=maxTime &&!levelComplete)
+			{
+                Debug.LogWarning("Level Complete");
                 Actions.OnLevelComplete?.Invoke();
 			}
-           
+            //Debug.Log($"Requirement for bar update = {maxTime / totalSongSegments * songSegment}");
+           if (timePassed>= maxTime / totalSongSegments * songSegment)
+            {
+                Actions.OnNewSongSegment?.Invoke(songSegment-1);
+                songSegment++;
+			}
         }
     }
     void TogglePause()
@@ -70,17 +97,30 @@ public class TimeController : MonoBehaviour
         isPaused = !isPaused;
         Debug.Log($"Toggling pause for {this.name}");
     }
-    void PlayerDead(Player thisPlayer)
+    void PlayerDead(GameObject thisPlayer)
 	{
         Time.timeScale = 0;
     }
     void ResetTime()
 	{
         timePassed = -startDelay;
+        isPaused = false;
+        musicStarted = false;
+        levelComplete = false;
+        songSegment = 1;
         Time.timeScale = 1;
+	}
+    void SetDefault()
+	{
+        levelComplete = false;
 	}
     public void UpdateSongLength(float _time)
 	{
-        maxTime = _time;
+        maxTime = _time + endDelay;
+	}
+    void StopTime()
+	{
+        Time.timeScale = 0;
+        levelComplete = true;
 	}
 }
